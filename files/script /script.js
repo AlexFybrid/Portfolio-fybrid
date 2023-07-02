@@ -16,7 +16,7 @@ function mobileCheck() {
       $('body').addClass("body_mob")
     }
     swup.on('contentReplaced', function () {
-      window.scrollTo({ top: 0, behavior: 'auto' });
+      window.scrollTo(0, 0);
       if ($('#page').hasClass('page1')) {
         setTimeout(() => {
           mobileAnim();
@@ -190,7 +190,7 @@ function PageHomeScript() {
       swup.on('contentReplaced', function () {
       
         $('w-1').css("transform", "scale(100%)")
-        window.scrollTo({ top: 0, behavior: 'auto' });
+        window.scrollTo(0, 0);
         if ($('#page').hasClass('page1')) {
             mobileAnim();
         }
@@ -223,7 +223,8 @@ function PageHomeScript() {
       swup.on('willReplaceContent', function () {
         shouldMoveNav = false; // Установка флага в false при событии
         $('nav').css("transform", "translateX(0vw)");
-        window.scrollTo({ top: 0, behavior: 'auto' });
+        window.scrollTo(0, 0);
+
 
 
       });
@@ -497,8 +498,7 @@ Page2workScript = function () {
 
       $('.main_next_mob').css('display', 'block')
       $('.main_next').css('display', 'none')
-      window.scrollTo({ top: 0, behavior: 'auto' });
-
+      window.scrollTo(0, 0);
 
       Video = function () {
         $(document).ready(function () {
