@@ -223,8 +223,7 @@ function PageHomeScript() {
       swup.on('willReplaceContent', function () {
         shouldMoveNav = false; // Установка флага в false при событии
         $('nav').css("transform", "translateX(0vw)");
-        window.scrollTo(0, 0);
-
+        window.scroll({ top: 0, });
 
 
       });
