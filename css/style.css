@@ -1511,6 +1511,7 @@ html.is-animating .transition-fade2 {
 }
 
 .background_elipse {
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
