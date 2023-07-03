@@ -266,7 +266,7 @@ function PageHomeScript() {
           });
         }
 
-        activebar()
+        // activebar()
       } else {
         $('.scroll_imgbox_one').addClass('scroll_imgbox_full');
 
@@ -295,7 +295,7 @@ function PageHomeScript() {
           if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
             $('.strip_main').addClass("strip_active")
           }
-          activebar()
+          // activebar()
         }, 5750)
 
 
@@ -312,13 +312,13 @@ function PageHomeScript() {
         if (!$('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
           setTimeout(() => {
             $(this).addClass('scroll_imgbox_full');
-          }, 450)
-          setTimeout(() => {
-            if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
-              $('.strip_main').addClass("strip_active")
+          }, 550)
+          // setTimeout(() => {
+          //   if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
+          //     $('.strip_main').addClass("strip_active")
 
-            }
-          }, 750);
+          //   }
+          // }, 650);
         }
         scroll.scrollTo(this, {
           duration: 350,
@@ -339,13 +339,13 @@ function PageHomeScript() {
           });
          setTimeout(() => {
            $(`#${targetId}`).addClass('scroll_imgbox_full');
-          }, 890)
+          }, 990)
           setTimeout(() => {
             if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
               $('.strip_main').addClass("strip_active")
 
             }
-          }, 990);
+          }, 1090);
         });
       }
       GridClick();
