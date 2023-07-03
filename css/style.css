@@ -8,6 +8,7 @@ Theme Name: Fybrid Studio
   padding: 0;
   margin: 0;
   border: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -15,7 +16,6 @@ Theme Name: Fybrid Studio
 }
 
 body {
-  font-family: "Inter", sans-serif;
   margin: 0px;
   overflow: hidden;
   background-color: #1c1c1c !important;
@@ -72,12 +72,13 @@ li {
 li a {
   text-decoration: none;
   color: black;
-  padding: 5px 25px;
+  padding: 4px 23px;
   transition: 1s;
   margin: 0px 1px;
   font-size: 1.2rem;
-  border-radius: 20px;
+  border-radius: 35px;
   z-index: 100;
+  font-weight: 400;
 }
 
 nav a[aria-current=page] {
@@ -308,6 +309,7 @@ html.is-animating .transition-fade2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  will-change: transform;
 }
 
 .scroll_imgbox_full img {
@@ -471,31 +473,33 @@ html.is-animating .transition-fade2 {
   left: 60%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  overflow: hidden;
   transition: 0.2s;
   pointer-events: none;
 }
 
 .strip {
+  position: absolute;
   text-align: center;
   font-size: 7.5rem;
   line-height: 0.8;
   color: rgba(255, 255, 255, 0.71);
   transform: translateY(105%);
   transition: 0.3s cubic-bezier(0.43, 0.04, 0.14, 0.86);
+  opacity: 0;
 }
 
-.strip_active .strip {
+.strip_active {
+  opacity: 1;
   transform: translateY(0%);
   transition: 0.6s cubic-bezier(0.43, 0.04, 0.14, 0.86);
 }
 
 .strip_main {
   position: absolute;
-  top: 50%;
+  top: 45%;
   right: 0%;
   left: 60%;
-  transform: translate(-13%, -50%);
+  transform: translate(-13%, -55%);
   white-space: nowrap;
 }
 
