@@ -37,6 +37,9 @@ function initScroll(direction) {
   if (direction === 'horizontal') {
     multiplier = 2; 
   }
+  if (direction === 'vertical') {
+    multiplier = 1;
+  }
   if (scroll) {
     scroll.destroy(); 
   }
@@ -117,7 +120,10 @@ function preload() {
       { id: 'big_memo', src: 'img/memo_img.jpg' },
       { id: 'big_org', src: 'img/org_img_full.jpg' },
       { id: 'img_back_main', src: 'img/model.kiev_1.jpg' },
-      { id: 'big_senator', src: 'img/senator_home.jpg' },
+      { id: 'cursera1', src: 'img/cursera_1.jpg' },
+      { id: 'cursera2', src: 'img/cursera_2.jpg' },
+      { id: 'memo_me', src: 'img/memoji_me.png' },
+
     ]);
     queue.addEventListener('complete', function () {
 
@@ -237,17 +243,7 @@ function PageHomeScript() {
   }
   function HomeScript() {
     
-
     changeToHorizontalScroll()
-
-
-
-
-
-
-
-
-
 
 
     function animationPage1() {
@@ -273,17 +269,22 @@ function PageHomeScript() {
         activebar()
       } else {
         $('.scroll_imgbox_one').addClass('scroll_imgbox_full');
+
         setTimeout(() => {
           setTimeout(() => {
             $('.g_home').css("transform", "scale(1)")
           }, 2200)
+
           $('.grid_main_2_1').css("transform", "translate3d(0,-5%, 0)")
           $('.grid-item_2').css("transform", "translate3d(0, 0%, 0)")
           $('.grid_main_2_3').css("transform", "translate3d(0, 5%, 0)")
+
           setTimeout(() => {
             scroll_home();
           }, 4150)
+
         }, 900)
+
         setTimeout(() => {
           $('.gb_img').each(function (index) {
             var $strip = $(this);
@@ -291,9 +292,14 @@ function PageHomeScript() {
               $strip.addClass('animate_2');
             }, index * 70);
           });
-          $('.strip_main').addClass("strip_active")
+          if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
+            $('.strip_main').addClass("strip_active")
+          }
           activebar()
         }, 5750)
+
+
+        
         homeanim = true;
       }
 
@@ -320,20 +326,52 @@ function PageHomeScript() {
         });
       });
 
-      setTimeout(() => {
-        $(window).on('wheel', function () {
+      function GridClick(){
+        $('.grid_bar').on('mouseup', '.gb_img_1, .gb_img_2, .gb_img_3, .gb_img_4, .gb_img_5, .gb_img_6, .gb_img_7, .gb_img_8, .gb_img_9, .gb_img_10', function () {
           if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
             $(".scroll_imgbox").removeClass('scroll_imgbox_full');
             $('.strip_main').removeClass("strip_active")
-            // $('.gb_img').each(function (index) {
-            //   var $strip = $(this);
-            //   setTimeout(function () {
-            //     $strip.removeClass('animate_2');
-            //   }, index * 70);
-            // });
+          }
+          const targetId = $(this).data('target');
+          scroll.scrollTo(`#${targetId}`, {
+            duration: 350,
+            easing: [.65, .02, 0.23, 1]
+          });
+         setTimeout(() => {
+           $(`#${targetId}`).addClass('scroll_imgbox_full');
+          }, 890)
+          setTimeout(() => {
+            if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
+              $('.strip_main').addClass("strip_active")
+
+            }
+          }, 990);
+        });
+      }
+      GridClick();
+
+
+      setTimeout(() => {
+
+        function FullimgOff() {
+          if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
+            $(".scroll_imgbox").removeClass('scroll_imgbox_full');
+            $('.strip_main').removeClass("strip_active")
+          }
+        }
+        
+        $(window).on('wheel', FullimgOff);
+
+        document.addEventListener("keydown", function (event) {
+          if (event.keyCode === 32) {
+            FullimgOff();
           }
         });
-      }, 6000)
+
+
+
+      }, 6000);
+
     })
 
 
@@ -353,20 +391,6 @@ function PageHomeScript() {
       scroll.on('scroll', (instance) => {
         const scrollPosition = instance.scroll.x; // получаем текущую позицию горизонтальной прокрутки
         const scrollPercentage = (scrollPosition / instance.limit.x) * 100; // вычисляем процент прокрутки
-
-        // const progress = (scrollPercentage / 3);
-        // const bars = querySelector('.grid_bar')
-        // bars.style.transform = `translateX(${progress}%)`
-        // $('.grid_bar').css('transform', `translateX(-${1 - progress}%)`)
-
-        // $('.scroll_box').css("transform", "scale(60%)") 
-
-        // if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
-        // setTimeout(() => {
-        //     $('.scroll_imgbox').removeClass('scroll_imgbox_full');
-        //   },600)
-        //   }
-
 
         if (scrollPercentage >= 0) {
           // textAnim()
@@ -631,6 +655,9 @@ Page2workScript = function () {
 
 
             }
+            if (scrollPercentage >= 0.9995) {
+              scroll.stop();
+            }
             if (scrollPercentage >= 1) {
               image.style.transform = 'scale(120%)';
               $('.last_img').css('transform', 'scale(105%)')
@@ -795,9 +822,14 @@ function AboutScript() {
   if (mobile === true) {
     $('.left_box_bar').css('display','none')
   } else {
+
     changeToVerticalScroll();
 
-    
+    var lastImage = document.getElementById('memo_me');
+    lastImage.addEventListener('load', function () {
+      scroll.update();
+    });
+
     function tiltInt() {
       VanillaTilt.init(document.querySelectorAll(".tildcard"));
     }
