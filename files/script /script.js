@@ -246,6 +246,35 @@ function PageHomeScript() {
     changeToHorizontalScroll()
 
 
+
+
+
+    var fps = 0;
+    var lastCalledTime;
+
+    function updateFps() {
+      if (!lastCalledTime) {
+        lastCalledTime = Date.now();
+        fps = 0;
+        return;
+      }
+
+      var delta = (Date.now() - lastCalledTime) / 1000;
+      lastCalledTime = Date.now();
+      fps = 1 / delta;
+
+      // Проверяем, если fps меньше 30, отключаем скрипт
+      if (fps < 30) {
+        alert('меньше 30 ;(')
+      }
+
+      requestAnimationFrame(updateFps);
+    }
+
+    // Запускаем обновление FPS
+    updateFps();
+
+
     function animationPage1() {
       if (homeanim === true) {
         $('.scroll_box').removeClass("scroll_box_anim")
