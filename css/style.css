@@ -2008,6 +2008,27 @@ html.has-scroll-dragging {
 }
 
 @media screen and (max-width: 600px) {
+  .pg-1_bk_0 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .text_plus .col-6 {
+    width: 100%;
+  }
+
+  .text_plus h3 {
+    font-size: 1rem !important;
+  }
+
+  .text_plus_2 h3 {
+    font-size: 1rem !important;
+  }
+
+  .text_plus_2 .col-8 {
+    text-align: start;
+  }
+
   .column {
     flex: 100%;
     max-width: 100%;
