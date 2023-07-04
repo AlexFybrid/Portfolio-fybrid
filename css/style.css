@@ -749,6 +749,10 @@ html.is-animating .transition-fade2 {
   background-color: #c2c0c3;
 }
 
+.pg-1_bk_1fs {
+  background-color: #ececec;
+}
+
 .pg-1_bk_0 {
   background-color: #ffffff;
   padding-top: 150px;
@@ -1378,12 +1382,11 @@ html.is-animating .transition-fade2 {
 }
 
 .imgbox_fyb {
-  justify-content: end;
-  background-color: #d6d6d6;
+  background-color: #424242;
 }
 
 .imgbox_fyb img {
-  width: 60% !important;
+  width: 75% !important;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
