@@ -783,6 +783,10 @@ html.is-animating .transition-fade2 {
   background: radial-gradient(circle, rgb(255, 233, 186) 0%, rgb(199, 226, 255) 92%, rgb(255, 255, 255) 100%);
 }
 
+.pg-1_bk_2_org {
+  background: radial-gradient(circle, rgb(182, 102, 59) 0%, rgb(255, 237, 199) 92%, rgb(255, 255, 255) 100%);
+}
+
 .img_as img {
   box-shadow: 0px 0px 60px rgb(70, 70, 70);
   background-color: #eaeaea;
