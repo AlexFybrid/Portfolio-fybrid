@@ -776,7 +776,11 @@ html.is-animating .transition-fade2 {
 }
 
 .pg-1_bk_2_aston {
-  background: #00251b !important;
+  background: #00271a !important;
+}
+
+.pg-1_bk_2_memoji {
+  background: radial-gradient(circle, rgb(255, 233, 186) 0%, rgb(199, 226, 255) 92%, rgb(255, 255, 255) 100%);
 }
 
 .img_as img {
