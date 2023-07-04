@@ -615,134 +615,134 @@ Page2workScript = function () {
 
 
       
-      function nextAnim() {
-        scroll.on('scroll', (obj) => {
-          const video = document.getElementById("my-video");
+      // function nextAnim() {
+      //   scroll.on('scroll', (obj) => {
+      //     const video = document.getElementById("my-video");
 
-          const progressPath = document.querySelector('.progress-wrap');
-          const scrollPercentage = obj.scroll.y / obj.limit.y;
-          if (video) {
+      //     const progressPath = document.querySelector('.progress-wrap');
+      //     const scrollPercentage = obj.scroll.y / obj.limit.y;
+      //     if (video) {
 
-            if (scrollPercentage >= 0 && scrollPercentage < 0.000000001) {
-              if (!progressPath.classList.contains("pause")) {
-                setTimeout(() => {
-                  video.play();
-                  $(".playButton__icon").addClass("icon_target");
-                }, 200)
-              }
-            } else {
-              video.pause();
-              $(".playButton__icon").removeClass("icon_target")
-            }
+      //       if (scrollPercentage >= 0 && scrollPercentage < 0.000000001) {
+      //         if (!progressPath.classList.contains("pause")) {
+      //           setTimeout(() => {
+      //             video.play();
+      //             $(".playButton__icon").addClass("icon_target");
+      //           }, 200)
+      //         }
+      //       } else {
+      //         video.pause();
+      //         $(".playButton__icon").removeClass("icon_target")
+      //       }
 
-          }
+      //     }
 
-          const image = document.querySelector('.scroll-image');
-          const imagenext = document.querySelector('.last_img');
-          const imageback = document.querySelector('.last_box_info');
-          const percentage = document.querySelector('.percentage');
-          const nextText = document.querySelector('.next_text');
-          const progresslines = document.querySelector('.progress_line');
-          const progresslinesbox = document.querySelector('.progress_line_box');
-          if (scrollPercentage >= 0.84) {
-            $('.last_img').css('transform', 'scale(105%)')
-          }
-          if (scrollPercentage >= 0.85) {
-            image.style.transform = 'scale(90%)';
-
-
-            if (scrollPercentage >= 0.70) {
-              const progress = (scrollPercentage - 0.85) * 665;
-              $('.last_img').css('transform', 'scale(100%)')
-              imageback.style.opacity = '1';
-              imagenext.style.opacity = '0.9';
-              progresslines.style.width = `${progress * 2}px`;
-              percentage.textContent = `${Math.round(progress)}%`;
-              percentage.style.opacity = `1`;
-              progresslinesbox.style.opacity = '1';
-              nextText.style.opacity = '1';
-              nextText.style.top = '48%';
-              percentage.style.top = '52%';
+      //     const image = document.querySelector('.scroll-image');
+      //     const imagenext = document.querySelector('.last_img');
+      //     const imageback = document.querySelector('.last_box_info');
+      //     const percentage = document.querySelector('.percentage');
+      //     const nextText = document.querySelector('.next_text');
+      //     const progresslines = document.querySelector('.progress_line');
+      //     const progresslinesbox = document.querySelector('.progress_line_box');
+      //     if (scrollPercentage >= 0.84) {
+      //       $('.last_img').css('transform', 'scale(105%)')
+      //     }
+      //     if (scrollPercentage >= 0.85) {
+      //       image.style.transform = 'scale(90%)';
 
 
-
-            }
-            if (scrollPercentage >= 0.9995) {
-              scroll.stop();
-            }
-            if (scrollPercentage >= 1) {
-              image.style.transform = 'scale(120%)';
-              $('.last_img').css('transform', 'scale(105%)')
-
-              if ($('#page').hasClass('page3')) {
-                swup.loadPage({
-                  url: 'index4.html'
-                })
-              }
-              if ($('#page').hasClass('page4')) {
-                swup.loadPage({
-                  url: 'index5.html'
-                })
-              }
-              if ($('#page').hasClass('page5')) {
-                swup.loadPage({
-                  url: 'index6.html'
-                })
-              }
-              if ($('#page').hasClass('page6')) {
-                swup.loadPage({
-                  url: 'index7.html'
-                })
-              }
-              if ($('#page').hasClass('page7')) {
-                swup.loadPage({
-                  url: 'index8.html'
-                })
-              }
-              if ($('#page').hasClass('page8')) {
-                swup.loadPage({
-                  url: 'index9.html'
-                })
-              }
-              if ($('#page').hasClass('page9')) {
-                swup.loadPage({
-                  url: 'index10.html'
-                })
-              }
-              if ($('#page').hasClass('page10')) {
-                swup.loadPage({
-                  url: 'index11.html'
-                })
-              }
-              if ($('#page').hasClass('page11')) {
-                swup.loadPage({
-                  url: 'index12.html'
-                })
-              }
-              if ($('#page').hasClass('page12')) {
-                swup.loadPage({
-                  url: 'index2.html'
-                })
-              }
-            }
-          } else {
-            nextText.style.opacity = '0';
-            image.style.borderWidth = '0';
-            percentage.textContent = '0%';
-            percentage.style.opacity = `0`;
-            nextText.style.top = '50%';
-            percentage.style.top = '50%';
-            progresslines.style.width = '0px';
-            progresslinesbox.style.opacity = '0';
-            imagenext.style.opacity = '1';
-            image.style.transform = 'scale(100%)';
-            imageback.style.opacity = '0';
+      //       if (scrollPercentage >= 0.70) {
+      //         const progress = (scrollPercentage - 0.85) * 665;
+      //         $('.last_img').css('transform', 'scale(100%)')
+      //         imageback.style.opacity = '1';
+      //         imagenext.style.opacity = '0.9';
+      //         progresslines.style.width = `${progress * 2}px`;
+      //         percentage.textContent = `${Math.round(progress)}%`;
+      //         percentage.style.opacity = `1`;
+      //         progresslinesbox.style.opacity = '1';
+      //         nextText.style.opacity = '1';
+      //         nextText.style.top = '48%';
+      //         percentage.style.top = '52%';
 
 
-          }
 
-        });
-      }
+      //       }
+      //       if (scrollPercentage >= 0.9995) {
+      //         scroll.stop();
+      //       }
+      //       if (scrollPercentage >= 1) {
+      //         image.style.transform = 'scale(120%)';
+      //         $('.last_img').css('transform', 'scale(105%)')
+
+      //         if ($('#page').hasClass('page3')) {
+      //           swup.loadPage({
+      //             url: 'index4.html'
+      //           })
+      //         }
+      //         if ($('#page').hasClass('page4')) {
+      //           swup.loadPage({
+      //             url: 'index5.html'
+      //           })
+      //         }
+      //         if ($('#page').hasClass('page5')) {
+      //           swup.loadPage({
+      //             url: 'index6.html'
+      //           })
+      //         }
+      //         if ($('#page').hasClass('page6')) {
+      //           swup.loadPage({
+      //             url: 'index7.html'
+      //           })
+      //         }
+      //         if ($('#page').hasClass('page7')) {
+      //           swup.loadPage({
+      //             url: 'index8.html'
+      //           })
+      //         }
+      //         if ($('#page').hasClass('page8')) {
+      //           swup.loadPage({
+      //             url: 'index9.html'
+      //           })
+      //         }
+      //         if ($('#page').hasClass('page9')) {
+      //           swup.loadPage({
+      //             url: 'index10.html'
+      //           })
+      //         }
+      //         if ($('#page').hasClass('page10')) {
+      //           swup.loadPage({
+      //             url: 'index11.html'
+      //           })
+      //         }
+      //         if ($('#page').hasClass('page11')) {
+      //           swup.loadPage({
+      //             url: 'index12.html'
+      //           })
+      //         }
+      //         if ($('#page').hasClass('page12')) {
+      //           swup.loadPage({
+      //             url: 'index2.html'
+      //           })
+      //         }
+      //       }
+      //     } else {
+      //       nextText.style.opacity = '0';
+      //       image.style.borderWidth = '0';
+      //       percentage.textContent = '0%';
+      //       percentage.style.opacity = `0`;
+      //       nextText.style.top = '50%';
+      //       percentage.style.top = '50%';
+      //       progresslines.style.width = '0px';
+      //       progresslinesbox.style.opacity = '0';
+      //       imagenext.style.opacity = '1';
+      //       image.style.transform = 'scale(100%)';
+      //       imageback.style.opacity = '0';
+
+
+      //     }
+
+      //   });
+      // }
       Video = function () {
         $(document).ready(function () {
           var video = $('#my-video')[0];
