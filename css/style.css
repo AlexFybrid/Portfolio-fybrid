@@ -776,7 +776,7 @@ html.is-animating .transition-fade2 {
 }
 
 .pg-1_bk_2_aston {
-  background: #ffffff;
+  background: #0f0f0f !important;
 }
 
 .img_as img {
@@ -961,6 +961,11 @@ html.is-animating .transition-fade2 {
 
 .pg-1_bk_4 {
   padding-top: 150px;
+  background-color: #0f0f0f;
+}
+
+.pg-1_bk_41 {
+  padding-top: 0px;
   background-color: #0f0f0f;
 }
 
