@@ -787,6 +787,14 @@ html.is-animating .transition-fade2 {
   background: radial-gradient(circle, rgb(182, 102, 59) 0%, rgb(255, 237, 199) 92%, rgb(255, 255, 255) 100%);
 }
 
+.pg-1_bk_2_mod {
+  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(95, 63, 52) 54%, rgb(95, 63, 52) 80%, rgb(255, 255, 255) 94%);
+}
+
+.pg-1_bk_2_sen {
+  background: radial-gradient(circle, rgb(93, 93, 93) 0%, rgb(242, 242, 242) 100%);
+}
+
 .img_as img {
   box-shadow: 0px 0px 60px rgb(70, 70, 70);
   background-color: #eaeaea;
@@ -1317,8 +1325,36 @@ html.is-animating .transition-fade2 {
   color: #FF6700 !important;
 }
 
+.b202020 {
+  background-color: #202020 !important;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.b202020 h3 {
+  color: #fff !important;
+}
+
+.b8c564a {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8c564a;
+}
+
+.b8c564a h3 {
+  color: #fff !important;
+}
+
 .bFF6700 {
   background-color: #FF6700;
+}
+
+.b688698 {
+  background-color: #688698;
 }
 
 .b75CCEB {
@@ -1326,7 +1362,7 @@ html.is-animating .transition-fade2 {
 }
 
 .imgbox_mod {
-  background-color: #d5d5d5;
+  background-color: #ffffff;
 }
 
 .imgbox_mod img {
