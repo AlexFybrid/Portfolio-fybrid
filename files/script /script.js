@@ -293,7 +293,7 @@ function PageHomeScript() {
 
         var shouldMoveNav = true; // Флаг для проверки состояния
       function movenav() {
-          window.addEventListener('smovenavcroll', function () {
+          window.addEventListener('scroll', function () {
             if (!shouldMoveNav) return; // Проверка флага перед выполнением кода
 
             var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
@@ -308,7 +308,7 @@ function PageHomeScript() {
         }
       setTimeout(() => {
         movenav();
-      },1000)
+      },700)
 
 
 
