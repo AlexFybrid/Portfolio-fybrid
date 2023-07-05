@@ -26,6 +26,24 @@ function mobileCheck() {
     });
   } else {
     mobile = false;
+    if (window.innerWidth <= 1024) {
+      mobile = true;
+      swup.on('contentReplaced', function () {
+        window.scrollTo(0, 0);
+        if ($('#page').hasClass('page1')) {
+          setTimeout(() => {
+            mobileAnim();
+          }, 200)
+        }
+
+      });
+      $('body').addClass("body_mob")
+      $('.ny_1').addClass("notify_on")
+      setTimeout(() => {
+        $('.ny_2').addClass("notify_on")
+  
+    }, 6000);
+    } 
   }
 }
 
@@ -49,6 +67,7 @@ function initScroll(direction) {
     direction: direction,
     smooth: true,
     multiplier: multiplier,
+    
   });
 }
 function changeToVerticalScroll() {
@@ -62,7 +81,6 @@ function changeToHorizontalScroll() {
 function PageCheck() {
   $(document).ready(function () {
     RotateDevise()
-
     if ($('#page').hasClass('page1')) {
       if (homeanim === true) {
         $('.scroll_box').addClass("scroll_box_anim")
@@ -101,22 +119,8 @@ function preload() {
     const queue = new createjs.LoadQueue();
     preloader.style.backgroundColor = '#1c1c1c';
     queue.addEventListener('progress', function (event) {
-      const progressPercentage = Math.floor(event.progress * 70);
-      progressBar.style.width = progressPercentage + 30 + '%';
-      if (progressPercentage >= 30)
-      {
-        if (!progressPercentage >= 40) {
-          $('.GC').addClass("text_anim_preload")      
-        }
-        
-      }
-      if (progressPercentage >= 75) {
-        $('.GC').removeClass("text_anim_preload")
-      }
-      if (progressPercentage >= 80) {
-        $('.GC').removeClass("text_anim_preload")
-        $('.done').addClass("text_anim_preload")
-      }
+      const progressPercentage = Math.floor(event.progress * 100);
+      progressBar.style.width = progressPercentage + '%';
     });
     queue.loadManifest([
       { id: 'img_main_1', src: 'img/red_friesa.jpg' },
@@ -142,11 +146,10 @@ function preload() {
     ]);
     queue.addEventListener('complete', function () {
 
-      $('.done').removeClass("text_anim_preload")
       setTimeout(() => {
-        // preloader.style.display = 'none';
+        preloader.style.display = 'none';
       }, 1000)
-      // preloader.style.opacity = '0';
+      preloader.style.opacity = '0';
       if ($('#page').hasClass('page1')) {
           setTimeout(() => {
           if (mobile === true) {
@@ -236,14 +239,27 @@ function RotateDevise() {
    }
 }
 
+function reloadResize() {
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (window.innerWidth <= 1024) {
+        location.reload();
+      }
+    }, 100);
+  });
+}
 
 PageCheck();
 swupActiveLinks();
 preload()
+reloadResize()
 
 swup.on('contentReplaced', () => { 
   swupActiveLinks();
   PageCheck();
+  reloadResize()
 });
 
 
@@ -305,9 +321,8 @@ function PageHomeScript() {
     }
   }
   function HomeScript() {
-    
     changeToHorizontalScroll()
-
+  
 
     function animationPage1() {
       if (homeanim === true) {
@@ -372,11 +387,11 @@ function PageHomeScript() {
 
 
 
-          scroll.scrollTo(this, {
-            duration: 350,
-            easing: [.65, .02, 0.23, 1]
-          });
         }
+        scroll.scrollTo(this, {
+          duration: 350,
+          easing: [.65, .02, 0.23, 1]
+        });
       });
 
       function GridClick(){
