@@ -312,9 +312,14 @@ html.is-animating .transition-fade2 {
   will-change: transform;
 }
 
+.scroll_imgbox img {
+  border-radius: 50px;
+}
+
 .scroll_imgbox_full img {
+  border-radius: 0px;
   transform: scale(125%) translate3d(0, 0, 0);
-  transition: transform 0.75s cubic-bezier(0.65, 0.02, 0.23, 1);
+  transition: 0.75s cubic-bezier(0.65, 0.02, 0.23, 1);
 }
 
 .scroll_imgbox_full a {
