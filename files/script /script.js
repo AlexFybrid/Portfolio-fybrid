@@ -316,14 +316,21 @@ function PageHomeScript() {
       $('.scroll_imgbox').on('mouseup', function () {
         const target2 = $(this).data('id');
         if (!$('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
+
           $(this).addClass('scroll_imgbo_click');
-          setTimeout(() => {
+          
+          var timeoutIds;
+          var timeoutIds2;
+          clearTimeout(timeoutIds);
+          clearTimeout(timeoutIds2);
+
+          
+          timeoutIds2 = setTimeout(() => {
+            $(".scroll_imgbox").removeClass('scroll_imgbox_full');
+            $('.strip').removeClass('strip_active');
             $(this).addClass('scroll_imgbox_full');
           }, 500)
 
-          var timeoutIds;
-          
-          clearTimeout(timeoutIds);
 
           timeoutIds = setTimeout(() => {
             if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
@@ -363,10 +370,18 @@ function PageHomeScript() {
             duration: 350,
             easing: [.65, .02, 0.23, 1]
           });
-         setTimeout(() => {
+
+          var timeoutIds;
+          var timeoutIds2;
+          clearTimeout(timeoutIds);
+          clearTimeout(timeoutIds2);
+
+          timeoutIds = setTimeout(() => {
+            $(".scroll_imgbox").removeClass('scroll_imgbox_full');
+            $('.strip').removeClass('strip_active');
            $(`#${targetId}`).addClass('scroll_imgbox_full');
           }, 990)
-          setTimeout(() => {
+         timeoutIds2 =  setTimeout(() => {
             if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
               $(`.${target2}`).addClass("strip_active");
 
