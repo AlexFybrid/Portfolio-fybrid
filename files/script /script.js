@@ -241,15 +241,17 @@ function RotateDevise() {
 }
 
 function reloadResize() {
-  var resizeTimer;
-  window.addEventListener('resize', function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
-      if (window.innerWidth <= 1024) {
-        location.reload();
-      }
-    }, 100);
-  });
+  if (mobile = false) {
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        if (window.innerWidth <= 1024) {
+          location.reload();
+        }
+      }, 100);
+    });
+  }
 }
 
 PageCheck();
