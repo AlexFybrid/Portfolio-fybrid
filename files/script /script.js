@@ -4,6 +4,7 @@ const swup = new Swup({
 
 var homeanim = null;
 var mobile = null;
+var mobileSC = null;
 var mobileRotate = false;
 
 
@@ -25,6 +26,7 @@ function mobileCheck() {
     });
   } else {
     mobile = false;
+    mobileSC = true;
     if (window.innerWidth <= 1024) {
       mobile = true;
       swup.on('contentReplaced', function () {
@@ -241,7 +243,7 @@ function RotateDevise() {
 }
 
 function reloadResize() {
-  if (mobile = false) {
+  if (mobileSC === true) {
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
