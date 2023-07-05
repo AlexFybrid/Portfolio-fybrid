@@ -38,7 +38,7 @@ function initScroll(direction) {
     multiplier = 3; 
   }
   if (direction === 'vertical') {
-    multiplier = 2;
+    multiplier = 1.8;
   }
   if (scroll) {
     scroll.destroy(); 
@@ -315,20 +315,25 @@ function PageHomeScript() {
 
       $('.scroll_imgbox').on('mouseup', function () {
         const target2 = $(this).data('id');
-
         if (!$('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
           $(this).addClass('scroll_imgbo_click');
           setTimeout(() => {
             $(this).addClass('scroll_imgbox_full');
           }, 500)
-          setTimeout(() => {
+
+          var timeoutIds;
+          
+          clearTimeout(timeoutIds);
+
+          timeoutIds = setTimeout(() => {
             if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
-              // $('.strip').addClass("strip_active")
               $(`.${target2}`).addClass("strip_active");
-
-
             }
           }, 650);
+
+
+
+
         }
         scroll.scrollTo(this, {
           duration: 350,
