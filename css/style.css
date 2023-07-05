@@ -753,6 +753,14 @@ html.is-animating .transition-fade2 {
   background-color: #ececec;
 }
 
+.pg-1_bk_1rial {
+  position: relative;
+  top: -2px;
+  z-index: 100;
+  margin-top: 0px;
+  background-color: #000000;
+}
+
 .pg-1_bk_0 {
   background-color: #ffffff;
   padding-top: 150px;
@@ -797,6 +805,18 @@ html.is-animating .transition-fade2 {
 
 .pg-1_bk_2_sen {
   background: radial-gradient(circle, rgb(93, 93, 93) 0%, rgb(242, 242, 242) 100%);
+}
+
+.pg-1_bk_2_rial {
+  background: #191919;
+}
+
+.pg-1_bk_2_ekfood {
+  background: radial-gradient(circle, rgb(65, 118, 48) 0%, rgb(199, 226, 255) 92%, rgb(255, 255, 255) 100%);
+}
+
+.pg-1_bk_2_drdoogy {
+  background: radial-gradient(circle, rgb(84, 11, 11) 0%, rgb(113, 11, 11) 28%, rgb(112, 40, 40) 73%, rgb(255, 255, 255) 95%);
 }
 
 .img_as img {
@@ -1387,6 +1407,30 @@ html.is-animating .transition-fade2 {
 
 .imgbox_fyb img {
   width: 75% !important;
+}
+
+.imgbox_rial {
+  background-color: #f1b700;
+}
+
+.imgbox_rial img {
+  width: 70% !important;
+}
+
+.imgbox_ekfood {
+  background-color: #5bc300;
+}
+
+.imgbox_ekfood img {
+  width: 70% !important;
+}
+
+.imgbox_drdoogy {
+  background-color: #832720;
+}
+
+.imgbox_drdoogy img {
+  width: 80% !important;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
