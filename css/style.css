@@ -512,7 +512,7 @@ html.is-animating .transition-fade2 {
   top: 50%;
   left: 60%;
   transform: translate(-50%, -50%);
-  z-index: 1000;
+  z-index: 990;
   transition: 0.2s;
   pointer-events: none;
 }
@@ -1975,6 +1975,11 @@ html.has-scroll-dragging {
   bottom: 0;
 }
 
+.text_anim_preload {
+  top: 45%;
+  opacity: 1;
+}
+
 #preloader {
   position: fixed;
   top: 0;
@@ -1988,6 +1993,16 @@ html.has-scroll-dragging {
   align-items: center;
   transition: 1s;
   opacity: 1;
+}
+
+#preloader h2 {
+  position: absolute;
+  top: 55%;
+  opacity: 0;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  color: #c8c8c8;
+  transition: 0.4s;
 }
 
 .progress-bar_box {

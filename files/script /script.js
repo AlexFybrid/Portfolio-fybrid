@@ -103,8 +103,16 @@ function preload() {
     queue.addEventListener('progress', function (event) {
       const progressPercentage = Math.floor(event.progress * 70);
       progressBar.style.width = progressPercentage + 30 + '%';
-      if (progressPercentage >= 70) {
-        alert('70%')
+      if (progressPercentage >= 10) {
+      setTimeout(() => {
+          $('.GC').addClass("text_anim_preload")
+      }, 1000);
+      }
+      if (progressPercentage >= 60) {
+        $('.GC').removeClass("text_anim_preload")
+      }
+      if (progressPercentage >= 80) {
+        $('.done').addClass("text_anim_preload")
       }
     });
     queue.loadManifest([
@@ -130,11 +138,11 @@ function preload() {
 
     ]);
     queue.addEventListener('complete', function () {
-
+      $('.done').removeClass("text_anim_preload")
       setTimeout(() => {
-        preloader.style.display = 'none';
+        // preloader.style.display = 'none';
       }, 1000)
-      preloader.style.opacity = '0';
+      // preloader.style.opacity = '0';
       if ($('#page').hasClass('page1')) {
           setTimeout(() => {
           if (mobile === true) {
@@ -360,11 +368,11 @@ function PageHomeScript() {
 
 
 
+          scroll.scrollTo(this, {
+            duration: 350,
+            easing: [.65, .02, 0.23, 1]
+          });
         }
-        scroll.scrollTo(this, {
-          duration: 350,
-          easing: [.65, .02, 0.23, 1]
-        });
       });
 
       function GridClick(){
