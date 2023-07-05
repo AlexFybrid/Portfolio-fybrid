@@ -1976,8 +1976,8 @@ html.has-scroll-dragging {
 }
 
 .text_anim_preload {
-  top: 45%;
-  opacity: 1;
+  top: 45% !important;
+  opacity: 1 !important;
 }
 
 #preloader {

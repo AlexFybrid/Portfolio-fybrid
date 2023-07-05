@@ -103,15 +103,18 @@ function preload() {
     queue.addEventListener('progress', function (event) {
       const progressPercentage = Math.floor(event.progress * 70);
       progressBar.style.width = progressPercentage + 30 + '%';
-      if (progressPercentage >= 10) {
-      setTimeout(() => {
-          $('.GC').addClass("text_anim_preload")
-      }, 1000);
+      if (progressPercentage >= 30)
+      {
+        if (!progressPercentage >= 40) {
+          $('.GC').addClass("text_anim_preload")      
+        }
+        
       }
-      if (progressPercentage >= 60) {
+      if (progressPercentage >= 75) {
         $('.GC').removeClass("text_anim_preload")
       }
       if (progressPercentage >= 80) {
+        $('.GC').removeClass("text_anim_preload")
         $('.done').addClass("text_anim_preload")
       }
     });
@@ -138,6 +141,7 @@ function preload() {
 
     ]);
     queue.addEventListener('complete', function () {
+
       $('.done').removeClass("text_anim_preload")
       setTimeout(() => {
         // preloader.style.display = 'none';
