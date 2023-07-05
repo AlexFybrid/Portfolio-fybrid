@@ -32,6 +32,7 @@ function mobileCheck() {
 mobileCheck();
 
 let scroll = null; 
+
 function initScroll(direction) {
   let multiplier = 2;
   if (direction === 'horizontal') {
@@ -100,8 +101,11 @@ function preload() {
     const queue = new createjs.LoadQueue();
     preloader.style.backgroundColor = '#1c1c1c';
     queue.addEventListener('progress', function (event) {
-      const progressPercentage = Math.floor(event.progress * 100);
-      progressBar.style.width = progressPercentage + '%';
+      const progressPercentage = Math.floor(event.progress * 70);
+      progressBar.style.width = progressPercentage + 30 + '%';
+      if (progressPercentage >= 70) {
+        alert('70%')
+      }
     });
     queue.loadManifest([
       { id: 'img_main_1', src: 'img/red_friesa.jpg' },
@@ -132,7 +136,13 @@ function preload() {
       }, 1000)
       preloader.style.opacity = '0';
       if ($('#page').hasClass('page1')) {
-          mobileAnim();
+          setTimeout(() => {
+          if (mobile === true) {
+            mobileAnim();
+           } else {
+             animStart();
+          }
+        }, 1000);
       }
     });
   });
@@ -154,6 +164,47 @@ function mobileAnim() {
 
       $('.anim-pic').addClass('anim-pic_on');
     }
+}
+function animStart() {
+  $('.scroll_imgbox_one').addClass('scroll_imgbox_full');
+
+  setTimeout(() => {
+    setTimeout(() => {
+      $('.g_home').css("transform", "scale(1)")
+    }, 2200)
+
+    $('.grid_main_2_1').css("transform", "translate3d(0,-5%, 0)")
+    $('.grid-item_2').css("transform", "translate3d(0, 0%, 0)")
+    $('.grid_main_2_3').css("transform", "translate3d(0, 5%, 0)")
+
+    setTimeout(() => {
+      scroll_home();
+    }, 4150)
+
+  }, 900)
+
+  setTimeout(() => {
+    $('.gb_img').each(function (index) {
+      var $strip = $(this);
+      setTimeout(function () {
+        $strip.addClass('animate_2');
+      }, index * 70);
+    });
+    if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
+      $('.strip1').addClass("strip_active")
+    }
+  }, 5750)
+  homeanim = true;
+
+  function scroll_home() {
+    $('.grid_img_main').addClass("grid-item_img_main")
+    $('.info_gradient').css("opacity", "1")
+    $('.scroll_box').css("opacity", "1")
+    setTimeout(() => {
+      $('.g_back').remove()
+      // $('.strip_1').remove()
+    }, 750)
+  }
 }
 function RotateDevise() {
   if (mobile === true) {
@@ -268,39 +319,7 @@ function PageHomeScript() {
 
         // activebar()
       } else {
-        $('.scroll_imgbox_one').addClass('scroll_imgbox_full');
-
-        setTimeout(() => {
-          setTimeout(() => {
-            $('.g_home').css("transform", "scale(1)")
-          }, 2200)
-
-          $('.grid_main_2_1').css("transform", "translate3d(0,-5%, 0)")
-          $('.grid-item_2').css("transform", "translate3d(0, 0%, 0)")
-          $('.grid_main_2_3').css("transform", "translate3d(0, 5%, 0)")
-
-          setTimeout(() => {
-            scroll_home();
-          }, 4150)
-
-        }, 900)
-
-        setTimeout(() => {
-          $('.gb_img').each(function (index) {
-            var $strip = $(this);
-            setTimeout(function () {
-              $strip.addClass('animate_2');
-            }, index * 70);
-          });
-          if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
-            $('.strip1').addClass("strip_active")
-          }
-          // activebar()
-        }, 5750)
-
-
-        
-        homeanim = true;
+        animStart();
       }
 
 
@@ -419,16 +438,6 @@ function PageHomeScript() {
 
 
 
-
-    function scroll_home() {
-      $('.grid_img_main').addClass("grid-item_img_main")
-      $('.info_gradient').css("opacity", "1")
-      $('.scroll_box').css("opacity", "1")
-      setTimeout(() => {
-        $('.g_back').remove()
-        // $('.strip_1').remove()
-      }, 750)
-    }
     function activebar() {
       scroll.on('scroll', (instance) => {
         const scrollPosition = instance.scroll.x; // получаем текущую позицию горизонтальной прокрутки
