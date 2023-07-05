@@ -22,7 +22,6 @@ function mobileCheck() {
           mobileAnim();
         }, 200)
       }
-
     });
   } else {
     mobile = false;
@@ -229,8 +228,10 @@ function RotateDevise() {
         var windowHeight = $(window).height();
         
         if (windowWidth <= 736 && windowHeight <= 414) {
+          $('body').addClass('body_off');
           $('.rotate_box').on('mouseup', function () {
             $('.rotate_box').css("display", "none")
+            $('body').removeClass('body_off');
             mobileRotate = true;
           })
         }
@@ -260,6 +261,9 @@ swup.on('contentReplaced', () => {
   swupActiveLinks();
   PageCheck();
   reloadResize()
+  if (mobile === true) {
+    
+  }
 });
 
 
@@ -308,7 +312,7 @@ function PageHomeScript() {
       swup.on('willReplaceContent', function () {
         shouldMoveNav = false; // Установка флага в false при событии
         $('nav').css("transform", "translateX(0vw)");
-        window.scroll({ top: 0, });
+        // window.scroll({ top: 0, });
 
 
       });
@@ -447,7 +451,7 @@ function PageHomeScript() {
             $('.strip').removeClass("strip_active")
           }
         }
-        
+        window.addEventListener('resize', function () { FullimgOff() })
         $(window).on('wheel', FullimgOff);
 
         document.addEventListener("keydown", function (event) {
@@ -599,7 +603,6 @@ Page2workScript = function () {
 
       $('.main_next_mob').css('display', 'block')
       $('.main_next').css('display', 'none')
-      window.scrollTo(0, 0);
 
       Video = function () {
         $(document).ready(function () {
@@ -663,6 +666,13 @@ Page2workScript = function () {
 
         }
       });
+
+
+      // swup.on('contentReplaced', function () {
+      //   alert('hey')
+      //   window.scrollTo(0, 0);
+
+      // });
 
     } else {
 

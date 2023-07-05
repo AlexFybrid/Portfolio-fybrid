@@ -1716,6 +1716,10 @@ html.is-animating .transition-fade2 {
   overflow: visible;
 }
 
+.body_off {
+  overflow: hidden;
+}
+
 .g_mob_on {
   opacity: 1 !important;
 }
