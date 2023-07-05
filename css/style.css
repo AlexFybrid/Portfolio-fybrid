@@ -321,6 +321,39 @@ html.is-animating .transition-fade2 {
   pointer-events: all !important;
 }
 
+@-webkit-keyframes click_2 {
+  0% {
+    transform: scale(100%);
+  }
+
+  50% {
+    transform: scale(96%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}
+
+@keyframes click_2 {
+  0% {
+    transform: scale(100%);
+  }
+
+  50% {
+    transform: scale(96%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}
+
+.scroll_imgbo_click {
+  -webkit-animation: click_2 0.35s cubic-bezier(0.48, 1.33, 0.67, 1.06);
+          animation: click_2 0.35s cubic-bezier(0.48, 1.33, 0.67, 1.06);
+}
+
 #link_home {
   position: absolute;
   top: 0;

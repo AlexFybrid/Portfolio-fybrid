@@ -33,9 +33,9 @@ mobileCheck();
 
 let scroll = null; 
 function initScroll(direction) {
-  let multiplier = 1;
+  let multiplier = 2;
   if (direction === 'horizontal') {
-    multiplier = 2; 
+    multiplier = 3; 
   }
   if (direction === 'vertical') {
     multiplier = 1;
@@ -246,35 +246,6 @@ function PageHomeScript() {
     changeToHorizontalScroll()
 
 
-
-
-
-    var fps = 0;
-    var lastCalledTime;
-
-    function updateFps() {
-      if (!lastCalledTime) {
-        lastCalledTime = Date.now();
-        fps = 0;
-        return;
-      }
-
-      var delta = (Date.now() - lastCalledTime) / 1000;
-      lastCalledTime = Date.now();
-      fps = 1 / delta;
-
-      // Проверяем, если fps меньше 30, отключаем скрипт
-      if (fps < 30) {
-        alert('меньше 30 ;(')
-      }
-
-      requestAnimationFrame(updateFps);
-    }
-
-    // Запускаем обновление FPS
-    updateFps();
-
-
     function animationPage1() {
       if (homeanim === true) {
         $('.scroll_box').removeClass("scroll_box_anim")
@@ -346,6 +317,7 @@ function PageHomeScript() {
         const target2 = $(this).data('id');
 
         if (!$('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
+          $(this).addClass('scroll_imgbo_click');
           setTimeout(() => {
             $(this).addClass('scroll_imgbox_full');
           }, 500)
@@ -366,6 +338,14 @@ function PageHomeScript() {
 
       function GridClick(){
         $('.grid_bar').on('mouseup', '.gb_img_1, .gb_img_2, .gb_img_3, .gb_img_4, .gb_img_5, .gb_img_6, .gb_img_7, .gb_img_8, .gb_img_9, .gb_img_10', function () {
+         
+          $(this).addClass('scroll_imgbo_click');
+          
+          if ($(this).hasClass('scroll_imgbo_click')) {
+              setTimeout(() => {
+              $(this).removeClass('scroll_imgbo_click');
+              }, 350);
+          }
           if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
             $(".scroll_imgbox").removeClass('scroll_imgbox_full');
             $('.strip').removeClass("strip_active")
@@ -396,6 +376,7 @@ function PageHomeScript() {
 
         function FullimgOff() {
           if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
+            $(".scroll_imgbox").removeClass('scroll_imgbo_click');
             $(".scroll_imgbox").removeClass('scroll_imgbox_full');
             $('.strip').removeClass("strip_active")
           }
