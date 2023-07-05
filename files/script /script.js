@@ -38,7 +38,7 @@ function initScroll(direction) {
     multiplier = 3; 
   }
   if (direction === 'vertical') {
-    multiplier = 1;
+    multiplier = 2;
   }
   if (scroll) {
     scroll.destroy(); 
@@ -340,7 +340,7 @@ function PageHomeScript() {
         $('.grid_bar').on('mouseup', '.gb_img_1, .gb_img_2, .gb_img_3, .gb_img_4, .gb_img_5, .gb_img_6, .gb_img_7, .gb_img_8, .gb_img_9, .gb_img_10', function () {
          
           $(this).addClass('scroll_imgbo_click');
-          
+
           if ($(this).hasClass('scroll_imgbo_click')) {
               setTimeout(() => {
               $(this).removeClass('scroll_imgbo_click');
