@@ -283,7 +283,6 @@ function PageHomeScript() {
       swup.on('contentReplaced', function () {
       
         $('w-1').css("transform", "scale(100%)")
-        window.scrollTo(0, 0);
         if ($('#page').hasClass('page1')) {
             mobileAnim();
         }
@@ -293,8 +292,8 @@ function PageHomeScript() {
 
 
         var shouldMoveNav = true; // Флаг для проверки состояния
-        function movenav() {
-          window.addEventListener('scroll', function () {
+      function movenav() {
+          window.addEventListener('smovenavcroll', function () {
             if (!shouldMoveNav) return; // Проверка флага перед выполнением кода
 
             var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
@@ -309,7 +308,7 @@ function PageHomeScript() {
         }
       setTimeout(() => {
         movenav();
-      },200)
+      },1000)
 
 
 
