@@ -48,6 +48,7 @@ nav {
   border-radius: 20px;
   background-color: rgba(238, 238, 238, 0.4392156863);
   margin-bottom: 0 !important;
+  width: 12.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,22 +68,31 @@ nav::after {
 li {
   list-style-type: none;
   z-index: 100;
+  width: 6.25rem;
+  text-align: center;
 }
 
 li a {
   text-decoration: none;
   color: black;
-  padding: 4px 23px;
   transition: 1s;
-  margin: 0px 1px;
   font-size: 1.2rem;
-  border-radius: 35px;
   z-index: 100;
   font-weight: 400;
 }
 
-nav a[aria-current=page] {
-  background-color: #fff;
+.select_nav {
+  position: absolute;
+  border-radius: 35px;
+  width: 6rem;
+  height: 90%;
+  left: 0.15rem;
+  transition: 0.35s;
+  background-color: white;
+}
+
+.select_about {
+  transform: translateX(104%);
 }
 
 .woks {
@@ -1426,11 +1436,11 @@ html.is-animating .transition-fade2 {
 }
 
 .imgbox_mod {
-  background-color: #ffffff;
+  background-color: #cd7f21;
 }
 
 .imgbox_mod img {
-  width: 80% !important;
+  width: 100% !important;
 }
 
 .imgbox_sen {

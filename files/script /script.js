@@ -83,6 +83,9 @@ function PageCheck() {
   $(document).ready(function () {
     RotateDevise()
     if ($('#page').hasClass('page1')) {
+      if ($('.select_nav').hasClass('select_about')){
+        $('.select_nav').removeClass('select_about')
+      }
       if (homeanim === true) {
         $('.scroll_box').addClass("scroll_box_anim")
       }
@@ -92,26 +95,14 @@ function PageCheck() {
       Page2workScript();
     }
     if ($('#page').hasClass('pageabout')) {
+      $('.select_nav').addClass('select_about')
       AboutScript();
     }
   })
 }
 
 function swupActiveLinks() {
-  let currentPath = window.location.pathname;
-  let links = document.querySelectorAll('nav a'); // <- здесь указываете свой селектор ссылок
-  for (const link of links) {
-    let linkPath = (new URL(link.href)).pathname;
-    link.ariaCurrent = linkPath == currentPath ? 'page' : false;
-  }
 
-  // Дополнительная логика, выполняемая на определенных страницах
-  if (currentPath.includes('index3')) {
-      $('.workBT').text('Back');
-  }
-  else {
-    $('.workBT').text('Work');
-  }
 }
 function preload() {
   document.addEventListener('DOMContentLoaded', function () {
@@ -397,7 +388,7 @@ function PageHomeScript() {
         }
         scroll.scrollTo(this, {
           duration: 350,
-          easing: [.65, .02, 0.23, 1]
+
         });
       });
 
@@ -472,125 +463,7 @@ function PageHomeScript() {
 
 
 
-    function activebar() {
-      scroll.on('scroll', (instance) => {
-        const scrollPosition = instance.scroll.x; // получаем текущую позицию горизонтальной прокрутки
-        const scrollPercentage = (scrollPosition / instance.limit.x) * 100; // вычисляем процент прокрутки
-
-        if (scrollPercentage >= 0) {
-          // textAnim()
-          $('#ChangeText').text('FRIESA');
-          $('.strip_main').css("left", "60%")
-          $(".gb_img_2").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_1").css("border", "rgba(255, 255, 255) solid 1px")
-
-        }
-        if (scrollPercentage >= 5) {
-          $(".gb_img_1").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_3").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_2").css("border", "rgba(255, 255, 255) solid 1px")
-          // $(".gb_img").removeClass("gb_img_border");
-          // $(".gb_img_2").addClass("gb_img_border");
-          // $('.text_pos').css("top", "-87%") 
-          $('#ChangeText').text('ASTON');
-
-          $('.strip_main').css("left", "-10%")
-
-        }
-        if (scrollPercentage >= 20) {
-          $(".gb_img_2").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_4").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_3").css("border", "rgba(255, 255, 255) solid 1px")
-          // $(".gb_img").removeClass("gb_img_border");
-          // $(".gb_img_3").addClass("gb_img_border");
-          // $('.text_pos').css("top", "-175%") 
-          $('#ChangeText').text('MEMOJI');
-          $('.strip_main').css("left", "-10%")
-          $('.strip_main').css("right", "0%")
-
-        }
-        if (scrollPercentage >= 30) {
-          $(".gb_img_5").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_3").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_4").css("border", "rgba(255, 255, 255) solid 1px")
-          // $(".gb_img").removeClass("gb_img_border");
-          // $(".gb_img_4").addClass("gb_img_border");
-          // $('.text_pos').css("top", "-265%") 
-          $('#ChangeText').text('ORANGE');
-          $('.strip_main').css("left", "0%")
-          $('.strip_main').css("right", "-100%")
-
-        }
-        if (scrollPercentage >= 40) {
-          $(".gb_img_4").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_6").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_5").css("border", "rgba(255, 255, 255) solid 1px")
-          // $(".gb_img").removeClass("gb_img_border");
-          // $(".gb_img_5").addClass("gb_img_border");
-          // $('.text_pos').css("top", "-355%") 
-          $('#ChangeText').text('MODEL');
-          $('.strip_main').css("left", "-20%")
-          $('.strip_main').css("right", "0%")
-        }
-        if (scrollPercentage >= 50) {
-          $(".gb_img_5").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_7").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_6").css("border", "rgba(255, 255, 255) solid 1px")
-          // $(".gb_img").removeClass("gb_img_border");
-          // $(".gb_img_6").addClass("gb_img_border");
-          // $('.text_pos').css("top", "-445%") 
-          $('#ChangeText').text('SENATOR');
-          $('.strip_main').css("left", "-20%")
-          $('.strip_main').css("right", "0%")
-        }
-        if (scrollPercentage >= 60) {
-          $(".gb_img_6").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_8").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_7").css("border", "rgba(255, 255, 255) solid 1px")
-          // $(".gb_img").removeClass("gb_img_border");
-          // $(".gb_img_7").addClass("gb_img_border");
-          // $('.text_pos').css("top", "-530%") 
-          $('#ChangeText').text('FYBRID');
-          $('.strip_main').css("left", "-8%")
-          $('.strip_main').css("right", "0%")
-        }
-        if (scrollPercentage >= 70) {
-          $(".gb_img_7").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_9").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_8").css("border", "rgba(255, 255, 255) solid 1px")
-          // $(".gb_img").removeClass("gb_img_border");
-          // $(".gb_img_8").addClass("gb_img_border");
-          // $('.text_pos').css("top", "-620%") 
-          $('#ChangeText').text('RIAL UST');
-          $('.strip_main').css("left", "0%")
-          $('.strip_main').css("right", "-100%")
-
-
-        }
-        if (scrollPercentage >= 80) {
-          $(".gb_img_8").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_10").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_9").css("border", "rgba(255, 255, 255) solid 1px")
-          // $(".gb_img").removeClass("gb_img_border");
-          // $(".gb_img_9").addClass("gb_img_border");
-          // $('.text_pos').css("top", "-710%") 
-          $('#ChangeText').text('EKFOOD');
-          $('.strip_main').css("left", "-10%")
-          $('.strip_main').css("right", "0%")
-        }
-        if (scrollPercentage >= 95) {
-          $(".gb_img_9").css("border", "rgba(255, 255, 255, 0) solid 1px");
-          $(".gb_img_10").css("border", "rgba(255, 255, 255) solid 1px")
-
-          // $(".gb_img").removeClass("gb_img_border");
-          // $(".gb_img_10").addClass("gb_img_border");
-          // $('.text_pos').css("top", "-800%") 
-          $('#ChangeText').text('DRDOOGY');
-          $('.strip_main').css("left", "0%")
-          $('.strip_main').css("right", "-105%")
-        }
-      });
-    }
+ 
 
 
 
@@ -690,6 +563,10 @@ Page2workScript = function () {
       
 
 
+      var lastImage = document.querySelector('.last_img');
+      lastImage.addEventListener('load', function () {
+        scroll.update();
+      });
 
 
 
