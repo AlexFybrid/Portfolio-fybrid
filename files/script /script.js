@@ -175,6 +175,8 @@ function mobileAnim() {
 function animStart() {
   $('.scroll_imgbox_one').addClass('scroll_imgbox_full');
 
+
+
   setTimeout(() => {
     setTimeout(() => {
       $('.g_home').css("transform", "scale(1)")

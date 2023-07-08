@@ -2,8 +2,6 @@
 Theme Name: Fybrid Studio
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
-
 * {
   padding: 0;
   margin: 0;
@@ -124,7 +122,7 @@ li a {
 }
 
 .transition-fade {
-  transition: 0.3s;
+  transition: 0.5s;
   transition-delay: 0.3s;
   opacity: 1;
 }
@@ -329,6 +327,7 @@ html.is-animating .transition-fade2 {
 }
 
 .scroll_imgbox_full img {
+  opacity: 0.75;
   border-radius: 0px;
   transform: scale(125%) translate3d(0, 0, 0);
   transition: 0.75s cubic-bezier(0.65, 0.02, 0.23, 1);
@@ -415,6 +414,7 @@ html.is-animating .transition-fade2 {
   display: flex;
   justify-content: end;
   z-index: 700;
+  opacity: 0.6;
 }
 
 .icon-scroll {
@@ -485,8 +485,8 @@ html.is-animating .transition-fade2 {
 }
 
 .gb_img {
-  width: 3.2rem;
-  height: 2.7rem;
+  width: 3.5rem;
+  height: 2.5rem;
   border-radius: 6px;
   margin: 0px 5px;
   transition: transform 0.6s cubic-bezier(0.65, 0.02, 0.23, 1);
@@ -519,38 +519,74 @@ html.is-animating .transition-fade2 {
 
 .strip_main {
   position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
   z-index: 990;
   transition: 0.2s;
   pointer-events: none;
+  white-space: nowrap;
 }
 
 .strip {
   position: absolute;
+  top: 45%;
+  left: 50%;
   text-align: center;
-  font-size: 7.5rem;
+  font-size: 13rem;
   line-height: 0.8;
   color: rgba(255, 255, 255, 0.71);
-  transform: translateY(105%);
-  transition: 0.3s cubic-bezier(0.43, 0.04, 0.14, 0.86);
+  transform: translate(-50%, -55%) scale(105%);
+  transition: 0.1s cubic-bezier(0.43, 0.04, 0.14, 0.86);
   opacity: 0;
+}
+
+.strip_bt {
+  opacity: 0;
+  position: absolute;
+  top: 62%;
+  left: 62%;
+  transform: translate(-50%, -150%) scale(100%);
+  width: 20rem;
+  height: 2rem;
+  background-color: rgba(217, 217, 217, 0.2745098039);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  transition: 0.2s cubic-bezier(0.43, 0.04, 0.14, 0.86);
+}
+
+.strip_bt .row {
+  padding-bottom: 0px;
+  height: 2rem;
+}
+
+.strip_bt .col-9 {
+  display: flex;
+  align-items: center;
+}
+
+.strip_bt .col-3 {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.strip_bt h2 {
+  color: white;
+  font-size: 1rem;
+  padding-left: 0.2rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .strip_active {
   opacity: 1;
-  transform: translateY(0%);
-  transition: 0.6s cubic-bezier(0.43, 0.04, 0.14, 0.86);
-}
-
-.strip_main {
-  position: absolute;
-  top: 45%;
-  right: 0%;
-  left: 60%;
-  transform: translate(-13%, -55%);
-  white-space: nowrap;
+  transform: translate(-50%, -55%) scale(100%);
+  transition: 0.6s cubic-bezier(0.43, 0.04, 0.14, 0.86) !important;
 }
 
 .anim_letter {
