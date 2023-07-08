@@ -55,7 +55,7 @@ let scroll = null;
 function initScroll(direction) {
   let multiplier = 2;
   if (direction === 'horizontal') {
-    multiplier = 3; 
+    multiplier = 4; 
   }
   if (direction === 'vertical') {
     multiplier = 1.8;
