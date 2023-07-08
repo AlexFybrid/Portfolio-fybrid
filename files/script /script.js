@@ -55,7 +55,7 @@ let scroll = null;
 function initScroll(direction) {
   let multiplier = 2;
   if (direction === 'horizontal') {
-    multiplier = 4; 
+    multiplier = 3.5; 
   }
   if (direction === 'vertical') {
     multiplier = 1.8;
@@ -68,6 +68,7 @@ function initScroll(direction) {
     direction: direction,
     smooth: true,
     multiplier: multiplier,
+    damping: 1,
     
   });
 }
