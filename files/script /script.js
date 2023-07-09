@@ -68,7 +68,7 @@ function initScroll(direction) {
     direction: direction,
     smooth: true,
     multiplier: multiplier,
-    damping: 1,
+    damping: 0,
     
   });
 }
@@ -359,15 +359,15 @@ function PageHomeScript() {
 
 
 
-
       $('.scroll_imgbox').on('mouseup', function () {
         const target2 = $(this).data('id');
         if (!$('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
-
+          
           $(this).addClass('scroll_imgbo_click');
           
-          var timeoutIds;
-          var timeoutIds2;
+                var timeoutIds;
+                var timeoutIds2;
+          
           clearTimeout(timeoutIds);
           clearTimeout(timeoutIds2);
 
@@ -383,6 +383,12 @@ function PageHomeScript() {
             if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
               $(`.${target2}`).addClass("strip_active");
             }
+            $('.link_home').on('mouseup', function () {
+              if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
+                var scrollImgbox = $(this).parent('.scroll_imgbox');
+                scrollImgbox.css('transform', 'scale(110%)');
+              }
+            });
           }, 650);
 
 
@@ -394,6 +400,9 @@ function PageHomeScript() {
 
         });
       });
+
+
+
 
       function GridClick(){
         $('.grid_bar').on('mouseup', '.gb_img_1, .gb_img_2, .gb_img_3, .gb_img_4, .gb_img_5, .gb_img_6, .gb_img_7, .gb_img_8, .gb_img_9, .gb_img_10', function () {
@@ -418,22 +427,33 @@ function PageHomeScript() {
             easing: [.65, .02, 0.23, 1]
           });
 
-          var timeoutIds;
-          var timeoutIds2;
-          clearTimeout(timeoutIds);
-          clearTimeout(timeoutIds2);
+          var timeoutIds4;
+          var timeoutIds5;
+          var timeoutIds3;
 
-          timeoutIds = setTimeout(() => {
-            $(".scroll_imgbox").removeClass('scroll_imgbox_full');
-            $('.strip').removeClass('strip_active');
+
+
+          clearTimeout(timeoutIds4);
+          clearTimeout(timeoutIds5);
+          clearTimeout(timeoutIds3);
+
+
+          timeoutIds4 = setTimeout(() => {
+              $(".scroll_imgbox").removeClass('scroll_imgbox_full');
+              $('.strip').removeClass('strip_active');
            $(`#${targetId}`).addClass('scroll_imgbox_full');
           }, 990)
-         timeoutIds2 =  setTimeout(() => {
+         timeoutIds5 =  setTimeout(() => {
             if ($('.scroll_imgbox').hasClass('scroll_imgbox_full')) {
               $(`.${target2}`).addClass("strip_active");
 
             }
-          }, 1090);
+         }, 1090);
+          timeoutIds3 = setTimeout(() => {
+              $(".scroll_imgbox").removeClass('scroll_imgbox_full');
+              $('.strip').removeClass('strip_active');
+          }
+            , 490);
         });
       }
       GridClick();
@@ -446,6 +466,8 @@ function PageHomeScript() {
             $(".scroll_imgbox").removeClass('scroll_imgbo_click');
             $(".scroll_imgbox").removeClass('scroll_imgbox_full');
             $('.strip').removeClass("strip_active")
+            $('.scroll_imgbox').css('transform', 'scale(100%)');
+
           }
         }
         window.addEventListener('resize', function () { FullimgOff() })
