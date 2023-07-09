@@ -875,7 +875,7 @@ html.is-animating .transition-fade2 {
 }
 
 .pg-1_bk_2_aston {
-  background: #00271a !important;
+  background: radial-gradient(circle, rgb(115, 163, 158) 0%, rgb(0, 39, 26) 100%) !important;
 }
 
 .pg-1_bk_2_memoji {
@@ -887,7 +887,7 @@ html.is-animating .transition-fade2 {
 }
 
 .pg-1_bk_2_mod {
-  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(95, 63, 52) 54%, rgb(95, 63, 52) 80%, rgb(255, 255, 255) 94%);
+  background: #9a8e81;
 }
 
 .pg-1_bk_2_sen {
@@ -1473,7 +1473,7 @@ html.is-animating .transition-fade2 {
 }
 
 .imgbox_mod {
-  background-color: #cd7f21;
+  background-color: #b6b2aa;
 }
 
 .imgbox_mod img {
