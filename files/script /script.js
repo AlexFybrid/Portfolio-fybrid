@@ -139,7 +139,7 @@ function preload() {
       { id: 'img_back_main_ORG', src: 'img/Landing_org_2.jpg' },
       { id: 'img_back_ORG_2', src: 'img/Landing_org_3.jpg' },
       { id: 'img_back_ORG_3', src: 'img/Orange_ver.jpg' },
-      { id: 'img_back_ORG_4', src: 'img/orange_macbook.png' },
+      { id: 'img_back_ORG_4', src: 'img/Orange_macbook.png' },
       { id: 'img_back_ORG_5', src: 'img/orange_imac.jpg' },
 
       //Model >
