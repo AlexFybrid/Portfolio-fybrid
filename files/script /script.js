@@ -306,7 +306,6 @@ swup.on('animationInStart', function () {
     waitForImagesLoaded(function () {
         changeToOnScroll();
         PageCheck();
-      swup.triggerPage();
     });
   }
 });
