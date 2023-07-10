@@ -120,21 +120,103 @@ function preload() {
       { id: 'img_main_2', src: 'img/aston_martin_main.jpg' },
       { id: 'img_main_3', src: 'img/Landing_Memoj.jpg' },
       { id: 'img_main_4', src: 'img/Landing_org.jpg' },
-      { id: 'img_main_5', src: 'img/Model_main.jpg' },
+      { id: 'img_main_5', src: 'img/model_post_5.jpg' },
       { id: 'img_main_6', src: 'img/senator_main.jpg' },
       { id: 'img_main_7', src: 'img/Fs_home.jpg' },
       { id: 'img_main_8', src: 'img/rialust_main.jpg' },
       { id: 'img_main_9', src: 'img/ekfood_main.jpg' },
       { id: 'img_main_10', src: 'img/dr.doogy.jpg' },
-      { id: 'big_as_1', src: 'img/as_img_2.jpg' },
-      { id: 'big_as_2', src: 'img/as_img_3.jpg' },
-      { id: 'big_as_3', src: 'img/as_img_4.jpg' },
-      { id: 'big_memo', src: 'img/memo_img.jpg' },
-      { id: 'big_org', src: 'img/org_img_full.jpg' },
-      { id: 'img_back_main', src: 'img/model.kiev_1.jpg' },
+
+      //About >
       { id: 'cursera1', src: 'img/cursera_1.jpg' },
       { id: 'cursera2', src: 'img/cursera_2.jpg' },
       { id: 'memo_me', src: 'img/memoji_me.png' },
+
+      //Friesa >
+      { id: 'img_back_main_FR', src: 'img/Back_2.jpg' },
+      { id: 'img_back_FR_2', src: 'img/Back_3.jpg' },
+      { id: 'img_back_FR_3', src: 'img/Back_5.jpg' },
+      { id: 'img_back_FR_4', src: 'img/Back_5.5.jpg' },
+      { id: 'img_back_FR_5', src: 'img/Back_5.6.jpg' },
+      { id: 'img_back_FR_6', src: 'img/Back_4.jpg' },
+      { id: 'img_back_FR_7', src: 'img/Friesa_reg.jpg' },
+      { id: 'img_back_FR_8', src: 'img/Friesa_phones.jpg' },
+      { id: 'img_back_FR_9', src: 'img/Friesa_Mac`s.jpg' },
+
+      //Aston >
+      { id: 'img_back_main_AS', src: 'img/Back_Aston.jpg' },
+      { id: 'img_back_AS_2', src: 'img/Aston_main.jpg' },
+      { id: 'img_back_AS_3', src: 'img/aston_post_5.jpg' },
+      { id: 'img_back_AS_4', src: 'img/aston_macbook.png' },
+      { id: 'img_back_AS_5', src: 'img/aston_post_6.jpg' },
+      { id: 'img_back_AS_6', src: 'img/Aston_mac.jpg' },
+
+      //Memoji >
+      { id: 'img_back_main_MJ', src: 'img/Back_memoji.jpg' },
+      { id: 'img_back_MJ_2', src: 'img/memoji_main.jpg' },
+      { id: 'img_back_MJ_3', src: 'img/memo_img.jpg' },
+      { id: 'img_back_MJ_4', src: 'img/memoji_macbook.png' },
+      { id: 'img_back_MJ_5', src: 'img/memoji_imac.jpg' },
+
+      //Org >
+      { id: 'img_back_main_ORG', src: 'img/Landing_org_2.jpg' },
+      { id: 'img_back_ORG_2', src: 'img/Landing_org_3.jpg' },
+      { id: 'img_back_ORG_3', src: 'img/Orange_ver.jpg' },
+      { id: 'img_back_ORG_4', src: 'img/orange_macbook.png' },
+      { id: 'img_back_ORG_5', src: 'img/orange_imac.jpg' },
+
+      //Model >
+      { id: 'img_back_main_MD', src: 'img/model_post_5.jpg' },
+      { id: 'img_back_MG_2', src: 'img/model.kiev_2.jpg' },
+      { id: 'img_back_MG_3', src: 'img/model_post_7.jpg' },
+      { id: 'img_back_MG_4', src: 'img/model_post_9.jpg' },
+      { id: 'img_back_MG_5', src: 'img/model_imac.jpg' },
+
+      //Senator >
+      { id: 'img_back_main_SN', src: 'img/senator_home.jpg' },
+      { id: 'img_back_SN_2', src: 'img/senator_post.jpg' },
+      { id: 'img_back_SN_3', src: 'img/senator_ver.jpg' },
+      { id: 'img_back_SN_4', src: 'img/senator_macbook.png' },
+      { id: 'img_back_SN_5', src: 'img/senator_imac.jpg' },
+
+      //FS >
+      { id: 'img_back_main_FS', src: 'img/fybridS_main.jpg' },
+      { id: 'img_back_FS_2', src: 'img/iphone_fs_2.jpg' },
+      { id: 'img_back_FS_3', src: 'img/fybrid_macbook.jpg' },
+      { id: 'img_back_FS_4', src: 'img/fybrid_imac.jpg' },
+      { id: 'img_back_FS_5', src: 'img/fybrid_ipad.jpg' },
+      { id: 'img_back_FS_6', src: 'img/fybrid_mobile.jpg' },
+
+      //RIAL >
+      { id: 'img_back_main_RL', src: 'img/rialust_main_2.jpg' },
+      { id: 'img_back_RL_2', src: 'img/rial_mac_one.jpg' },
+      { id: 'img_back_RL_3', src: 'img/rial_ver.jpg' },
+      { id: 'img_back_RL_4', src: 'img/rial_macbook.png' },
+      { id: 'img_back_RL_5', src: 'img/rial_imac.jpg' },
+      { id: 'img_back_RL_6', src: 'img/rialust_ipad.jpg' },
+      { id: 'img_back_RL_7', src: 'img/rial_iphones.jpg' },
+
+      //EK
+      { id: 'img_back_main_EK', src: 'img/ekfood_main_2.jpg' },
+      { id: 'img_back_EK_2', src: 'img/ekfood_main_3.jpg' },
+      { id: 'img_back_EK_3', src: 'img/ekfood_ver.jpg' },
+      { id: 'img_back_EK_4', src: 'img/ekfood_ver_2.jpg' },
+      { id: 'img_back_EK_5', src: 'img/ekfood_macbook.png' },
+      { id: 'img_back_EK_6', src: 'img/ekfood_imac.jpg' },
+      { id: 'img_back_EK_7', src: 'img/ekfood_main_5.jpg' },
+
+      //DR
+      { id: 'img_back_main_DR', src: 'img/drdoogy_main_2.jpg' },
+      { id: 'img_back_DR_2', src: 'img/drdoogy_main_3.jpg' },
+      { id: 'img_back_DR_3', src: 'img/drdoogy_ver.jpg' },
+      { id: 'img_back_DR_4', src: 'img/drdoogy_macbook.png' },
+      { id: 'img_back_DR_5', src: 'img/drdoogy_imac.jpg' },
+      { id: 'img_back_DR_6', src: 'img/drdoogy_main_4.jpg' },
+
+
+
+
+
 
     ]);
     queue.addEventListener('complete', function () {
@@ -280,6 +362,17 @@ function PageHomeScript() {
 
 
   $('.g_mobile').addClass("g_mob_on")
+
+
+
+
+
+
+
+
+
+
+
 
 
 
