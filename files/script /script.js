@@ -16,28 +16,12 @@ function mobileCheck() {
     if (mobile === true) {
       $('body').addClass("body_mob")
     }
-    swup.on('contentReplaced', function () {
-      window.scrollTo(0, 0);
-      if ($('#page').hasClass('page1')) {
-        setTimeout(() => {
-          mobileAnim();
-        }, 200)
-      }
-    });
   } else {
+    changeToOnScroll();
     mobile = false;
     mobileSC = true;
     if (window.innerWidth <= 1024) {
       mobile = true;
-      swup.on('contentReplaced', function () {
-        window.scrollTo(0, 0);
-        if ($('#page').hasClass('page1')) {
-          setTimeout(() => {
-            mobileAnim();
-          }, 200)
-        }
-
-      });
       $('body').addClass("body_mob")
       $('.ny_1').addClass("notify_on")
       setTimeout(() => {
@@ -48,36 +32,32 @@ function mobileCheck() {
   }
 }
 
-mobileCheck();
-
-let scroll = null; 
+let scroll = null;
 
 function initScroll(direction) {
   let multiplier = 2;
-  if (direction === 'horizontal') {
-    multiplier = 3.5; 
-  }
-  if (direction === 'vertical') {
-    multiplier = 1.8;
-  }
   if (scroll) {
-    scroll.destroy(); 
+    scroll.destroy();
   }
-  scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    direction: direction,
-    smooth: true,
-    multiplier: multiplier,
-    damping: 0,
-    
-  });
+  if (direction === 'on') {
+    scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      direction: 'vertical',
+      multiplier: multiplier,
+      damping: 0
+    });
+  }
 }
-function changeToVerticalScroll() {
-  initScroll('vertical');
+
+function changeToOnScroll() {
+  initScroll('on');
 }
-function changeToHorizontalScroll() {
-  initScroll('horizontal');
+
+function changeToOffScroll() {
+  initScroll('off');
 }
+
 
 
 function PageCheck() {
@@ -100,10 +80,6 @@ function PageCheck() {
       AboutScript();
     }
   })
-}
-
-function swupActiveLinks() {
-
 }
 function preload() {
   document.addEventListener('DOMContentLoaded', function () {
@@ -182,7 +158,7 @@ function preload() {
       //FS >
       { id: 'img_back_main_FS', src: 'img/fybridS_main.jpg' },
       { id: 'img_back_FS_2', src: 'img/iphone_fs_2.jpg' },
-      { id: 'img_back_FS_3', src: 'img/fybrid_macbook.jpg' },
+      { id: 'img_back_FS_3', src: 'img/fybrid_macbook.png' },
       { id: 'img_back_FS_4', src: 'img/fybrid_imac.jpg' },
       { id: 'img_back_FS_5', src: 'img/fybrid_ipad.jpg' },
       { id: 'img_back_FS_6', src: 'img/fybrid_mobile.jpg' },
@@ -234,10 +210,8 @@ function preload() {
   });
 
 }
-
 function mobileAnim() {
     if (homeanim === null) {
-
       $('.anim-pic').each(function (index) {
         var $strip = $(this);
         setTimeout(function () {
@@ -251,7 +225,6 @@ function mobileAnim() {
       $('.anim-pic').addClass('anim-pic_on');
     }
 }
-
 function RotateDevise() {
   if (mobile === true) {
     if (mobileRotate === false) {      
@@ -271,7 +244,6 @@ function RotateDevise() {
     }
    }
 }
-
 function reloadResize() {
   if (mobileSC === true) {
     var resizeTimer;
@@ -285,21 +257,63 @@ function reloadResize() {
     });
   }
 }
+function waitForImagesLoaded(callback) {
+  var images = document.getElementsByTagName('img');
+  var totalImages = images.length;
+  var loadedImages = 0;
+
+  function imageLoaded() {
+    loadedImages++;
+    if (loadedImages === totalImages) {
+      callback();
+    }
+  }
+
+  for (var i = 0; i < totalImages; i++) {
+    if (images[i].complete) {
+      imageLoaded();
+    } else {
+      images[i].addEventListener('load', imageLoaded);
+    }
+  }
+}
+
+mobileCheck();
 
 PageCheck();
-swupActiveLinks();
 preload()
 reloadResize()
 
 swup.on('contentReplaced', () => { 
-  swupActiveLinks();
-  PageCheck();
-  reloadResize()
   if ($('#page').hasClass('page1')) {
     mobileAnim();
   }
-  $('nav').css("transform", "translateX(0vw)");
+  if (mobile === true) {
+    window.scrollTo(0, 0);
+    $('nav').css("transform", "translateX(0vw)");
+    PageCheck();
+    reloadResize()
+  } else {
+    changeToOffScroll();
+  }
 });
+
+
+swup.on('animationInStart', function () {
+  if (mobile === false) {
+    waitForImagesLoaded(function () {
+        changeToOnScroll();
+        PageCheck();
+      swup.triggerPage();
+    });
+  }
+});
+
+
+
+
+
+
 
 
 function PageHomeScript() {
@@ -307,14 +321,12 @@ function PageHomeScript() {
   function mobileCk() {    
     if (mobile === true) { 
       $('body').addClass("body_mob")
-      $('.g_mobile').addClass("g_mob_on")
       $('nav').css("transform","translateX(20vw)")
       
       swup.on('contentReplaced', function () {
       
         $('w-1').css("transform", "scale(100%)")
         if ($('#page').hasClass('page1')) {
-            mobileAnim();
         }
 
       });
@@ -352,31 +364,8 @@ function PageHomeScript() {
 
 
 
-    } else {
-      changeToVerticalScroll()
     }
   }
-
-
-
-
-
-  $('.g_mobile').addClass("g_mob_on")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
 };
 Page2workScript = function () {
@@ -461,231 +450,227 @@ Page2workScript = function () {
 
     } else {
 
+      // $('.last_img').each(function () {
+      //   $(this).on('load', function () {
 
-      changeToVerticalScroll()
-
-
-
-      $('.main_next_mob').css('display', 'none')
-      $('.main_next').css('display', 'block')
-      nextAnim();
-      
-
-
-      var lastImage = document.querySelector('.last_img');
-      lastImage.addEventListener('load', function () {
-        scroll.update();
-      });
-
-
-
-      
-      function nextAnim() {
-        scroll.on('scroll', (obj) => {
+          $('.main_next_mob').css('display', 'none')
+          $('.main_next').css('display', 'block')
+          nextAnim();
+    
+    
+          const imgbox = document.querySelector('.imgbox');
           const video = document.getElementById("my-video");
-
-          const progressPath = document.querySelector('.progress-wrap');
-          const scrollPercentage = obj.scroll.y / obj.limit.y;
+    
+    
+          function LoadVideo() {
+            setTimeout(() => {
+              imgbox.style.opacity = '0';
+              video.play();
+              $(".progress-wrap").addClass("playbt_on");
+              $("#img_back_main").remove();
+              $('.descrip').css('opacity', '1');
+            }, 2500)
+            scroll.update();
+    
+            Video();
+          }
+    
           if (video) {
-
-            if (scrollPercentage >= 0 && scrollPercentage < 0.000000001) {
-              if (!progressPath.classList.contains("pause")) {
-                setTimeout(() => {
+            video.addEventListener("loadeddata", LoadVideo);
+    
+          }
+    
+    
+    
+          function nextAnim() {
+            scroll.on('scroll', (obj) => {
+              const video = document.getElementById("my-video");
+    
+              const progressPath = document.querySelector('.progress-wrap');
+              const scrollPercentage = obj.scroll.y / obj.limit.y;
+              if (video) {
+    
+                if (scrollPercentage >= 0 && scrollPercentage < 0.000000001) {
+                  if (!progressPath.classList.contains("pause")) {
+                    setTimeout(() => {
+                      video.play();
+                      $(".playButton__icon").addClass("icon_target");
+                    }, 200)
+                  }
+                } else {
+                  video.pause();
+                  $(".playButton__icon").removeClass("icon_target")
+                }
+    
+              }
+    
+              const image = document.querySelector('.scroll-image');
+              const imagenext = document.querySelector('.last_img');
+              const imageback = document.querySelector('.last_box_info');
+              const percentage = document.querySelector('.percentage');
+              const nextText = document.querySelector('.next_text');
+              const progresslines = document.querySelector('.progress_line');
+              const progresslinesbox = document.querySelector('.progress_line_box');
+              if (scrollPercentage >= 0.84) {
+                $('.last_img').css('transform', 'scale(105%)')
+              }
+              if (scrollPercentage >= 0.85) {
+                image.style.transform = 'scale(90%)';
+    
+    
+                if (scrollPercentage >= 0.70) {
+                  const progress = (scrollPercentage - 0.85) * 665;
+                  $('.last_img').css('transform', 'scale(100%)')
+                  imageback.style.opacity = '1';
+                  imagenext.style.opacity = '0.9';
+                  progresslines.style.width = `${progress * 2}px`;
+                  percentage.textContent = `${Math.round(progress)}%`;
+                  percentage.style.opacity = `1`;
+                  progresslinesbox.style.opacity = '1';
+                  nextText.style.opacity = '1';
+                  nextText.style.top = '48%';
+                  percentage.style.top = '52%';
+    
+    
+    
+                }
+                if (scrollPercentage >= 0.9995) {
+                  scroll.stop();
+                }
+                if (scrollPercentage >= 1) {
+                  image.style.transform = 'scale(120%)';
+                  $('.last_img').css('transform', 'scale(105%)')
+    
+                  if ($('#page').hasClass('page3')) {
+                    swup.loadPage({
+                      url: 'index4.html'
+                    })
+                  }
+                  if ($('#page').hasClass('page4')) {
+                    swup.loadPage({
+                      url: 'index5.html'
+                    })
+                  }
+                  if ($('#page').hasClass('page5')) {
+                    swup.loadPage({
+                      url: 'index6.html'
+                    })
+                  }
+                  if ($('#page').hasClass('page6')) {
+                    swup.loadPage({
+                      url: 'index7.html'
+                    })
+                  }
+                  if ($('#page').hasClass('page7')) {
+                    swup.loadPage({
+                      url: 'index8.html'
+                    })
+                  }
+                  if ($('#page').hasClass('page8')) {
+                    swup.loadPage({
+                      url: 'index9.html'
+                    })
+                  }
+                  if ($('#page').hasClass('page9')) {
+                    swup.loadPage({
+                      url: 'index10.html'
+                    })
+                  }
+                  if ($('#page').hasClass('page10')) {
+                    swup.loadPage({
+                      url: 'index11.html'
+                    })
+                  }
+                  if ($('#page').hasClass('page11')) {
+                    swup.loadPage({
+                      url: 'index12.html'
+                    })
+                  }
+                  if ($('#page').hasClass('page12')) {
+                    swup.loadPage({
+                      url: 'index2.html'
+                    })
+                  }
+                }
+              } else {
+                nextText.style.opacity = '0';
+                image.style.borderWidth = '0';
+                percentage.textContent = '0%';
+                percentage.style.opacity = `0`;
+                nextText.style.top = '50%';
+                percentage.style.top = '50%';
+                progresslines.style.width = '0px';
+                progresslinesbox.style.opacity = '0';
+                imagenext.style.opacity = '1';
+                image.style.transform = 'scale(100%)';
+                imageback.style.opacity = '0';
+    
+    
+              }
+    
+            });
+          }
+          Video = function () {
+            $(document).ready(function () {
+              var video = $('#my-video')[0];
+              var progressPath = $('.progress-wrap svg path');
+              const progressPath2 = document.querySelector('.progress-wrap');
+              const pwrap = document.querySelector('.progress-wrap ');
+    
+              var pathLength = progressPath[0].getTotalLength();
+              progressPath.css('stroke-dasharray', pathLength + ' ' + pathLength);
+              progressPath.css('stroke-dashoffset', pathLength);
+              progressPath.css('transition', '0.5s');
+              video.addEventListener('timeupdate', function () {
+                var progress = video.currentTime / video.duration;
+                progressPath.css('stroke-dashoffset', pathLength * (1 - progress));
+              });
+              pwrap.addEventListener("click", function () {
+                $(".progress-wrap").addClass("pause");
+                $(".progress-wrap").addClass("clck_anim");
+    
+                if (progressPath2.classList.contains("clck_anim")) {
+                  setTimeout(() => {
+                    $(".progress-wrap").removeClass("clck_anim");
+                  }, 450);
+                };
+    
+                if (video.paused) {
                   video.play();
                   $(".playButton__icon").addClass("icon_target");
-                }, 200)
-              }
-            } else {
-              video.pause();
-              $(".playButton__icon").removeClass("icon_target")
-            }
-
+                  $(".progress-wrap").removeClass("pause");
+    
+                  progressPath.parent().addClass('active');
+                } else {
+                  video.pause();
+                  progressPath.parent().removeClass('active');
+                  $(".playButton__icon").removeClass("icon_target")
+    
+    
+    
+                }
+              })
+            });
+    
+    
           }
 
-          const image = document.querySelector('.scroll-image');
-          const imagenext = document.querySelector('.last_img');
-          const imageback = document.querySelector('.last_box_info');
-          const percentage = document.querySelector('.percentage');
-          const nextText = document.querySelector('.next_text');
-          const progresslines = document.querySelector('.progress_line');
-          const progresslinesbox = document.querySelector('.progress_line_box');
-          if (scrollPercentage >= 0.84) {
-            $('.last_img').css('transform', 'scale(105%)')
-          }
-          if (scrollPercentage >= 0.85) {
-            image.style.transform = 'scale(90%)';
-
-
-            if (scrollPercentage >= 0.70) {
-              const progress = (scrollPercentage - 0.85) * 665;
-              $('.last_img').css('transform', 'scale(100%)')
-              imageback.style.opacity = '1';
-              imagenext.style.opacity = '0.9';
-              progresslines.style.width = `${progress * 2}px`;
-              percentage.textContent = `${Math.round(progress)}%`;
-              percentage.style.opacity = `1`;
-              progresslinesbox.style.opacity = '1';
-              nextText.style.opacity = '1';
-              nextText.style.top = '48%';
-              percentage.style.top = '52%';
+      //   })
+      // })
 
 
 
-            }
-            if (scrollPercentage >= 0.9995) {
-              scroll.stop();
-            }
-            if (scrollPercentage >= 1) {
-              image.style.transform = 'scale(120%)';
-              $('.last_img').css('transform', 'scale(105%)')
-
-              if ($('#page').hasClass('page3')) {
-                swup.loadPage({
-                  url: 'index4.html'
-                })
-              }
-              if ($('#page').hasClass('page4')) {
-                swup.loadPage({
-                  url: 'index5.html'
-                })
-              }
-              if ($('#page').hasClass('page5')) {
-                swup.loadPage({
-                  url: 'index6.html'
-                })
-              }
-              if ($('#page').hasClass('page6')) {
-                swup.loadPage({
-                  url: 'index7.html'
-                })
-              }
-              if ($('#page').hasClass('page7')) {
-                swup.loadPage({
-                  url: 'index8.html'
-                })
-              }
-              if ($('#page').hasClass('page8')) {
-                swup.loadPage({
-                  url: 'index9.html'
-                })
-              }
-              if ($('#page').hasClass('page9')) {
-                swup.loadPage({
-                  url: 'index10.html'
-                })
-              }
-              if ($('#page').hasClass('page10')) {
-                swup.loadPage({
-                  url: 'index11.html'
-                })
-              }
-              if ($('#page').hasClass('page11')) {
-                swup.loadPage({
-                  url: 'index12.html'
-                })
-              }
-              if ($('#page').hasClass('page12')) {
-                swup.loadPage({
-                  url: 'index2.html'
-                })
-              }
-            }
-          } else {
-            nextText.style.opacity = '0';
-            image.style.borderWidth = '0';
-            percentage.textContent = '0%';
-            percentage.style.opacity = `0`;
-            nextText.style.top = '50%';
-            percentage.style.top = '50%';
-            progresslines.style.width = '0px';
-            progresslinesbox.style.opacity = '0';
-            imagenext.style.opacity = '1';
-            image.style.transform = 'scale(100%)';
-            imageback.style.opacity = '0';
 
 
-          }
-
-        });
-      }
-      Video = function () {
-        $(document).ready(function () {
-          var video = $('#my-video')[0];
-          var progressPath = $('.progress-wrap svg path');
-          const progressPath2 = document.querySelector('.progress-wrap');
-          const pwrap = document.querySelector('.progress-wrap ');
-
-          var pathLength = progressPath[0].getTotalLength();
-          progressPath.css('stroke-dasharray', pathLength + ' ' + pathLength);
-          progressPath.css('stroke-dashoffset', pathLength);
-          progressPath.css('transition', '0.5s');
-          video.addEventListener('timeupdate', function () {
-            var progress = video.currentTime / video.duration;
-            progressPath.css('stroke-dashoffset', pathLength * (1 - progress));
-          });
-          pwrap.addEventListener("click", function () {
-            $(".progress-wrap").addClass("pause");
-            $(".progress-wrap").addClass("clck_anim");
-
-            if (progressPath2.classList.contains("clck_anim")) {
-              setTimeout(() => {
-                $(".progress-wrap").removeClass("clck_anim");
-              }, 450);
-            };
-
-            if (video.paused) {
-              video.play();
-              $(".playButton__icon").addClass("icon_target");
-              $(".progress-wrap").removeClass("pause");
-
-              progressPath.parent().addClass('active');
-            } else {
-              video.pause();
-              progressPath.parent().removeClass('active');
-              $(".playButton__icon").removeClass("icon_target")
+      
+      
+      
+      
 
 
 
-            }
-          })
-        });
+      
 
-
-      }
-      $('.last_img').each(function () {
-        const imgbox = document.querySelector('.imgbox');
-        const video = document.getElementById("my-video");
-
-
-        function LoadVideo() {
-          setTimeout(() => {
-            imgbox.style.opacity = '0';
-            video.play();
-            $(".progress-wrap").addClass("playbt_on");
-            $("#img_back_main").remove();
-            $('.descrip').css('opacity', '1');
-          }, 2500)
-          scroll.update();
-
-          Video();
-        }
-
-        if (video) {
-          video.addEventListener("loadeddata", LoadVideo);
-
-        }
-        else {
-          $('.last_img').each(function () {
-            $(this).on('load', function () {
-              scroll.update();
-            })
-          })
-
-        }
-
-
-
-      });
     }
 
     });
@@ -700,12 +685,6 @@ function AboutScript() {
     $('.left_box_bar').css('display','none')
   } else {
 
-    changeToVerticalScroll();
-
-    var lastImage = document.getElementById('memo_me');
-    lastImage.addEventListener('load', function () {
-      scroll.update();
-    });
 
     function tiltInt() {
       VanillaTilt.init(document.querySelectorAll(".tildcard"));

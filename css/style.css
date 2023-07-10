@@ -807,10 +807,6 @@ html.is-animating .transition-fade2 {
   z-index: 1;
 }
 
-.main_next_mob .back_blur {
-  z-index: 0;
-}
-
 .last_scroll_box {
   height: 100vh;
   justify-content: center;
@@ -1312,7 +1308,6 @@ html.is-animating .transition-fade2 {
 
 .g_mobile {
   overflow: hidden;
-  opacity: 0;
   transition: 0.5s;
   position: absolute;
   width: 100%;
@@ -1325,10 +1320,6 @@ html.is-animating .transition-fade2 {
 
 .body_off {
   overflow: hidden;
-}
-
-.g_mob_on {
-  opacity: 1 !important;
 }
 
 .col_head {
@@ -1386,6 +1377,7 @@ html.is-animating .transition-fade2 {
 }
 
 .block_main_home {
+  z-index: 1;
   max-width: 700px !important;
 }
 
@@ -1435,7 +1427,7 @@ html.is-animating .transition-fade2 {
   top: 0;
   height: 30vh;
   width: 100%;
-  z-index: -1;
+  z-index: 0;
 }
 
 .blur_obj {
