@@ -6,6 +6,7 @@ var homeanim = null;
 var mobile = null;
 var mobileSC = null;
 var mobileRotate = false;
+var loadVideoT;
 
 
 function mobileCheck() {
@@ -288,6 +289,7 @@ swup.on('contentReplaced', () => {
   if ($('#page').hasClass('page1')) {
     mobileAnim();
   }
+  clearTimeout(loadVideoT);
   if (mobile === true) {
     window.scrollTo(0, 0);
     $('nav').css("transform", "translateX(0vw)");
@@ -462,22 +464,21 @@ Page2workScript = function () {
           const video = document.getElementById("my-video");
     
     
-          function LoadVideo() {
-            setTimeout(() => {
+      function LoadVideo() {
+            
+        loadVideoT = setTimeout(() => {
               imgbox.style.opacity = '0';
               video.play();
               $(".progress-wrap").addClass("playbt_on");
               $("#img_back_main").remove();
               $('.descrip').css('opacity', '1');
             }, 2500)
-            scroll.update();
     
             Video();
           }
     
           if (video) {
             video.addEventListener("loadeddata", LoadVideo);
-    
           }
     
     
