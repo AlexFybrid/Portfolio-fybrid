@@ -18,213 +18,6 @@ const swup = new Swup({
 
 
 //Performance >
-function readFromCache() {
-  return new Promise((resolve, reject) => {
-    if ('caches' in window) {
-      caches.open('my-cache').then(function (cache) {
-        var cacheKey = 'my-data';
-
-        cache.match(cacheKey).then(function (response) {
-          if (response) {
-            response.text().then(function (data) {
-              console.log('Data from cache:', data);
-              FPSsmall = true;
-              console.log(FPSsmall);
-
-              // Удаляем запись из кэша через 1 минуту
-              setTimeout(function () {
-                cache.delete(cacheKey).then(function () {
-                  console.log('Cache entry deleted');
-                }).catch(function (error) {
-                  console.log('Error deleting cache entry:', error);
-                });
-              }, 180000); 
-            });
-          } else {
-            console.log('Data not found in cache');
-          }
-          resolve(); 
-        });
-      });
-    } else {
-      resolve();
-    }
-  });
-}
-function reloadResize() {
-  if (mobileSC === true) {
-    var resizeTimer;
-    window.addEventListener('resize', function () {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () {
-        if (window.innerWidth <= 1024) {
-          location.reload();
-        }
-      }, 100);
-    });
-  }
-}
-function mobileCheck() {
-  var userAgent = navigator.userAgent;
-  var isMobile = /Mobi/i.test(userAgent);
-  if (isMobile) {
-    mobile = true;
-    if (mobile === true) {
-      $('body').addClass("body_mob");
-      PageCheck();
-    }
-  } else {
-    if (FPSsmall === true) {
-      mobile = true;
-      $('body').addClass("body_mob");
-      $('.ny_1').addClass("notify_on");
-      PageCheck();
-      setTimeout(() => {
-        $('.ny_3').addClass("notify_on");
-      }, 6000);
-    } else {
-      changeToOnScroll();
-      mobile = false;
-      mobileSC = true;
-      reloadResize()
-      if (window.innerWidth <= 1024) {
-        mobile = true;
-        $('body').addClass("body_mob");
-        $('.ny_1').addClass("notify_on");
-        setTimeout(() => {
-          $('.ny_2').addClass("notify_on");
-        }, 6000);
-      }
-      PageCheck();
-    }
-  }
-}
-
-async function mainScript() {
-  try {
-    await readFromCache();
-    mobileCheck();
-  } catch (error) {
-    console.error("Произошла ошибка:", error);
-  }
-}
-
-mainScript();
-var checkInterval = 5000;
-var FPSoff = false;
-var fps = 0;
-var startTime = performance.now();
-var numChecks = 0;
-
-function checkFPS() {
-  if (FPSsmall === false) {
-    if (FPSoff === false) {
-
-      var currentTime = performance.now();
-      var elapsedTime = currentTime - startTime;
-
-      if (elapsedTime >= checkInterval) {
-        var averageFPS = Math.round((fps / elapsedTime) * 1000);
-        console.log("Average FPS: " + averageFPS);
-
-        if (averageFPS < 33) {
-          writeToCache();
-        }
-
-        fps = 0;
-        startTime = currentTime;
-        numChecks++;
-
-        if (numChecks >= 5) {
-          FPSsmall = true;
-        }
-      }
-
-      fps++;
-      requestAnimationFrame(checkFPS);
-    }
-  }
-}
-function writeToCache() {
-  if ('caches' in window) {
-    caches.open('my-cache').then(function (cache) {
-      // Генерируем уникальный ключ для записи в кэш
-      var cacheKey = 'my-data';
-
-      // Создаем новый запрос с ключом
-      var request = new Request(cacheKey);
-
-      // Записываем данные в кэш
-      cache.put(request, new Response('Data to be cached')).then(function () {
-        console.log("Data cached successfully.");
-
-        // Перезагружаем страницу
-        location.reload();
-      }).catch(function (error) {
-        console.log("Error caching data:", error);
-      });
-    });
-  }
-  console.log("Writing to cache...");
-}
-checkFPS();
-
-
-
-
-//Scroll >
-let scroll = null;
-
-function initScroll(direction) {
-  let multiplier = 1;
-  if (scroll) {
-    scroll.destroy();
-  }
-  if (direction === 'on') {
-    scroll = new LocomotiveScroll({
-      el: document.querySelector('[data-scroll-container]'),
-      smooth: true,
-      direction: 'vertical',
-      multiplier: multiplier,
-      damping: 0
-    });
-  }
-}
-
-function changeToOnScroll() {
-  initScroll('on');
-}
-
-function changeToOffScroll() {
-  initScroll('off');
-}
-
-
-
-
-//Before Page Script >
-
-function PageCheck() {
-  $(document).ready(function () {
-    RotateDevise()
-    if ($('#page').hasClass('page1')) {
-      if ($('.select_nav').hasClass('select_about')){
-        $('.select_nav').removeClass('select_about')
-      }
-      if (homeanim === true) {
-        $('.scroll_box').addClass("scroll_box_anim")
-      }
-      PageHomeScript();
-    }
-    if ($('#page').hasClass('pagework')) {
-      Page2workScript();
-    }
-    if ($('#page').hasClass('pageabout')) {
-      $('.select_nav').addClass('select_about')
-      AboutScript();
-    }
-  })
-}
 function preload() {
   document.addEventListener('DOMContentLoaded', function () {
     const preloader = document.getElementById('preloader');
@@ -342,6 +135,7 @@ function preload() {
     queue.addEventListener('complete', function () {
 
       setTimeout(() => {
+        mainScript();
         preloader.style.display = 'none';
       }, 1000)
       preloader.style.opacity = '0';
@@ -353,6 +147,212 @@ function preload() {
     });
   });
 
+}
+function readFromCache() {
+  return new Promise((resolve, reject) => {
+    if ('caches' in window) {
+      caches.open('my-cache').then(function (cache) {
+        var cacheKey = 'my-data';
+
+        cache.match(cacheKey).then(function (response) {
+          if (response) {
+            response.text().then(function (data) {
+              console.log('Data from cache:', data);
+              FPSsmall = true;
+              console.log(FPSsmall);
+
+              // Удаляем запись из кэша через 1 минуту
+              setTimeout(function () {
+                cache.delete(cacheKey).then(function () {
+                  console.log('Cache entry deleted');
+                }).catch(function (error) {
+                  console.log('Error deleting cache entry:', error);
+                });
+              }, 180000); 
+            });
+          } else {
+            console.log('Data not found in cache');
+          }
+          resolve(); 
+        });
+      });
+    } else {
+      resolve();
+    }
+  });
+}
+function reloadResize() {
+  if (mobileSC === true) {
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        if (window.innerWidth <= 1024) {
+          location.reload();
+        }
+      }, 100);
+    });
+  }
+}
+function mobileCheck() {
+  var userAgent = navigator.userAgent;
+  var isMobile = /Mobi/i.test(userAgent);
+  if (isMobile) {
+    mobile = true;
+    if (mobile === true) {
+      $('body').addClass("body_mob");
+      PageCheck();
+    }
+  } else {
+    if (FPSsmall === true) {
+      mobile = true;
+      $('body').addClass("body_mob");
+      $('.ny_1').addClass("notify_on");
+      PageCheck();
+      setTimeout(() => {
+        $('.ny_3').addClass("notify_on");
+      }, 6000);
+    } else {
+      changeToOnScroll();
+      mobile = false;
+      mobileSC = true;
+      reloadResize()
+      if (window.innerWidth <= 1024) {
+        mobile = true;
+        $('body').addClass("body_mob");
+        $('.ny_1').addClass("notify_on");
+        setTimeout(() => {
+          $('.ny_2').addClass("notify_on");
+        }, 6000);
+      }
+      PageCheck();
+    }
+  }
+}
+
+async function mainScript() {
+  try {
+    await readFromCache();
+    mobileCheck();
+  } catch (error) {
+    console.error("Произошла ошибка:", error);
+  }
+}
+
+var checkInterval = 5000;
+var FPSoff = false;
+var fps = 0;
+var startTime = performance.now();
+var numChecks = 0;
+
+function checkFPS() {
+  if (FPSsmall === false) {
+    if (FPSoff === false) {
+
+      var currentTime = performance.now();
+      var elapsedTime = currentTime - startTime;
+
+      if (elapsedTime >= checkInterval) {
+        var averageFPS = Math.round((fps / elapsedTime) * 1000);
+        console.log("Average FPS: " + averageFPS);
+
+        if (averageFPS < 33) {
+          writeToCache();
+        }
+
+        fps = 0;
+        startTime = currentTime;
+        numChecks++;
+
+        if (numChecks >= 5) {
+          FPSsmall = true;
+        }
+      }
+
+      fps++;
+      requestAnimationFrame(checkFPS);
+    }
+  }
+}
+function writeToCache() {
+  if ('caches' in window) {
+    caches.open('my-cache').then(function (cache) {
+      // Генерируем уникальный ключ для записи в кэш
+      var cacheKey = 'my-data';
+
+      // Создаем новый запрос с ключом
+      var request = new Request(cacheKey);
+
+      // Записываем данные в кэш
+      cache.put(request, new Response('Data to be cached')).then(function () {
+        console.log("Data cached successfully.");
+
+        // Перезагружаем страницу
+        location.reload();
+      }).catch(function (error) {
+        console.log("Error caching data:", error);
+      });
+    });
+  }
+  console.log("Writing to cache...");
+}
+checkFPS();
+
+
+
+
+//Scroll >
+let scroll = null;
+
+function initScroll(direction) {
+  let multiplier = 1;
+  if (scroll) {
+    scroll.destroy();
+  }
+  if (direction === 'on') {
+    scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      direction: 'vertical',
+      multiplier: multiplier,
+      damping: 0
+    });
+  }
+}
+
+function changeToOnScroll() {
+  initScroll('on');
+}
+
+function changeToOffScroll() {
+  initScroll('off');
+}
+
+
+
+
+//Before Page Script >
+
+function PageCheck() {
+  $(document).ready(function () {
+    RotateDevise()
+    if ($('#page').hasClass('page1')) {
+      if ($('.select_nav').hasClass('select_about')){
+        $('.select_nav').removeClass('select_about')
+      }
+      if (homeanim === true) {
+        $('.scroll_box').addClass("scroll_box_anim")
+      }
+      PageHomeScript();
+    }
+    if ($('#page').hasClass('pagework')) {
+      Page2workScript();
+    }
+    if ($('#page').hasClass('pageabout')) {
+      $('.select_nav').addClass('select_about')
+      AboutScript();
+    }
+  })
 }
 function mobileAnim() {
     if (homeanim === null) {
