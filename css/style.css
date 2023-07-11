@@ -1181,6 +1181,11 @@ html.is-animating .transition-fade2 {
   margin-left: 5vw;
 }
 
+.tildcard_mobile {
+  width: 100% !important;
+  margin-left: 0px !important;
+}
+
 .tildcard_mini {
   margin-left: 2vh;
   margin-top: 0.8vh;
@@ -1199,6 +1204,15 @@ html.is-animating .transition-fade2 {
 .me_memoji img {
   margin-left: 12vw;
   width: 35vh;
+}
+
+.me_memoji_mob {
+  display: flex;
+  justify-content: center;
+}
+
+.me_memoji_mob img {
+  margin-left: 2vw;
 }
 
 .me_memoji_mini {

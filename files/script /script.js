@@ -814,6 +814,10 @@ function AboutScript() {
     $('.left_box_bar').css('display', 'none')
     $('.row_mob_ab').addClass('row_mob_ab_on');
     $('.about_text').addClass('row_mob_ab_on');
+    $('.tildcard').addClass('tildcard_mobile')
+    $('.me_memoji').addClass('me_memoji_mob')
+
+
 
 
   } else {
