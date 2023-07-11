@@ -716,7 +716,7 @@ Page2workScript = function () {
                   }
                   if ($('#page').hasClass('page12')) {
                     swup.loadPage({
-                      url: 'index2.html'
+                      url: 'index3.html'
                     })
                   }
                 }

@@ -1100,6 +1100,7 @@ html.is-animating .transition-fade2 {
 .row_mob_ab_on {
   display: flex;
   justify-content: center;
+  white-space: normal !important;
 }
 
 .about_body {
