@@ -1093,6 +1093,15 @@ html.is-animating .transition-fade2 {
   padding-top: 30vh;
 }
 
+.con-off-mob {
+  display: none;
+}
+
+.row_mob_ab_on {
+  display: flex;
+  justify-content: center;
+}
+
 .about_body {
   background-color: #191919 !important;
 }
@@ -1704,10 +1713,6 @@ html.has-scroll-dragging {
 
 @media screen and (max-width: 1100px) {
   .left_box_bar {
-    display: none;
-  }
-
-  .con-off-mob {
     display: none;
   }
 
