@@ -9,6 +9,7 @@ var mobileRotate = false;
 var loadVideoT;
 
 
+
 function mobileCheck() {
   var userAgent = navigator.userAgent;
   var isMobile = /Mobi/i.test(userAgent);
@@ -36,7 +37,7 @@ function mobileCheck() {
 let scroll = null;
 
 function initScroll(direction) {
-  let multiplier = 2;
+  let multiplier = 1.5;
   if (scroll) {
     scroll.destroy();
   }
@@ -58,6 +59,7 @@ function changeToOnScroll() {
 function changeToOffScroll() {
   initScroll('off');
 }
+
 
 
 
@@ -310,7 +312,15 @@ swup.on('animationInStart', function () {
   }
 });
 
+swup.on('popState', function () {
+  setTimeout(() => {
+    waitForImagesLoaded(function () {
+      changeToOnScroll();
+        PageCheck();
+    });
+  }, 50);
 
+});
 
 
 
@@ -538,7 +548,7 @@ Page2workScript = function () {
                   scroll.stop();
                 }
                 if (scrollPercentage >= 1) {
-                  image.style.transform = 'scale(120%)';
+                  image.style.transform = 'scale(100%)';
                   $('.last_img').css('transform', 'scale(105%)')
     
                   if ($('#page').hasClass('page3')) {
