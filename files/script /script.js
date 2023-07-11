@@ -37,7 +37,7 @@ function mobileCheck() {
 let scroll = null;
 
 function initScroll(direction) {
-  let multiplier = 1.5;
+  let multiplier = 1;
   if (scroll) {
     scroll.destroy();
   }
