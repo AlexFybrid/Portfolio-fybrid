@@ -408,6 +408,10 @@ html.is-animating .transition-fade2 {
   background-color: #000000;
 }
 
+.pg-1_bk_1rial .row {
+  padding-bottom: 0px;
+}
+
 .pg-1_bk_0 {
   background-color: #ffffff;
   padding-top: 150px;
@@ -964,6 +968,11 @@ html.is-animating .transition-fade2 {
   display: flex;
 }
 
+.info_up_box_rial {
+  margin-left: 30px;
+  color: rgba(255, 255, 255, 0.63);
+}
+
 .imgbox_memoji {
   background-color: #f2d667;
 }
@@ -1002,6 +1011,14 @@ html.is-animating .transition-fade2 {
 
 .b202020 h3 {
   color: #fff !important;
+}
+
+.b9fca2f {
+  background-color: #9fca2f !important;
+}
+
+.bde9d43 {
+  background-color: #de9d43;
 }
 
 .b8c564a {
@@ -1780,6 +1797,10 @@ html.has-scroll-dragging {
 }
 
 @media screen and (max-width: 800px) {
+  .col-ver {
+    width: 90% !important;
+  }
+
   .column {
     flex: 50%;
     max-width: 50%;

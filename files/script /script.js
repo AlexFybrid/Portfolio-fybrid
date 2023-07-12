@@ -417,7 +417,11 @@ swup.on('contentReplaced', () => {
   }
   clearTimeout(loadVideoT);
   if (mobile === true) {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      left: 0,
+      top: 0,
+      behavior: 'auto'
+    });
     $('nav').css("transform", "translateX(0vw)");
     PageCheck();
   } else {
@@ -438,13 +442,16 @@ swup.on('animationInStart', function () {
 
 swup.on('popState', function () {
   setTimeout(() => {
-    waitForImagesLoaded(function () {
-      changeToOnScroll();
+    if (mobile === false) {
+      waitForImagesLoaded(function () {
+        changeToOnScroll();
         PageCheck();
-    });
-  }, 50);
+      });
+    } 
+    }, 50);
 
-});
+    
+  });
 
 
 
