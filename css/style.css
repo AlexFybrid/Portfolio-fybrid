@@ -623,6 +623,18 @@ html.is-animating .transition-fade2 {
   background-color: #e5e4a2;
 }
 
+.be7c854 {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7c854;
+}
+
+.be7c854 h3 {
+  color: #000000 !important;
+}
+
 .pg-1_bk_1 h2 {
   font-size: 3rem !important;
   font-weight: 400;
