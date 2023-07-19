@@ -13,6 +13,11 @@ Theme Name: Fybrid Studio
   width: 0px;
 }
 
+html {
+  overflow: hidden;
+  width: 100%;
+}
+
 body {
   margin: 0px;
   overflow: hidden;
@@ -408,10 +413,6 @@ html.is-animating .transition-fade2 {
   background-color: #000000;
 }
 
-.pg-1_bk_1rial .row {
-  padding-bottom: 0px;
-}
-
 .pg-1_bk_0 {
   background-color: #ffffff;
   padding-top: 150px;
@@ -621,18 +622,6 @@ html.is-animating .transition-fade2 {
 
 .be5e4a2 {
   background-color: #e5e4a2;
-}
-
-.be7c854 {
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e7c854;
-}
-
-.be7c854 h3 {
-  color: #000000 !important;
 }
 
 .pg-1_bk_1 h2 {
@@ -980,11 +969,6 @@ html.is-animating .transition-fade2 {
   display: flex;
 }
 
-.info_up_box_rial {
-  margin-left: 30px;
-  color: rgba(255, 255, 255, 0.63);
-}
-
 .imgbox_memoji {
   background-color: #f2d667;
 }
@@ -1023,14 +1007,6 @@ html.is-animating .transition-fade2 {
 
 .b202020 h3 {
   color: #fff !important;
-}
-
-.b9fca2f {
-  background-color: #9fca2f !important;
-}
-
-.bde9d43 {
-  background-color: #de9d43;
 }
 
 .b8c564a {
@@ -1368,7 +1344,8 @@ html.is-animating .transition-fade2 {
 }
 
 .body_mob {
-  overflow: visible;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .body_off {
@@ -1809,10 +1786,6 @@ html.has-scroll-dragging {
 }
 
 @media screen and (max-width: 800px) {
-  .col-ver {
-    width: 90% !important;
-  }
-
   .column {
     flex: 50%;
     max-width: 50%;

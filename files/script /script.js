@@ -377,8 +377,10 @@ function RotateDevise() {
         var windowHeight = $(window).height();
         
         if (windowWidth <= 736 && windowHeight <= 414) {
+          $('body').addClass('body_off');
           $('.rotate_box').on('mouseup', function () {
             $('.rotate_box').css("display", "none")
+            $('body').removeClass('body_off');
             mobileRotate = true;
           })
         }
@@ -415,11 +417,7 @@ swup.on('contentReplaced', () => {
   }
   clearTimeout(loadVideoT);
   if (mobile === true) {
-    window.scrollTo({
-      left: 0,
-      top: 0,
-      behavior: 'auto'
-    });
+    window.scrollTo(0, 0);
     $('nav').css("transform", "translateX(0vw)");
     PageCheck();
   } else {
@@ -440,16 +438,13 @@ swup.on('animationInStart', function () {
 
 swup.on('popState', function () {
   setTimeout(() => {
-    if (mobile === false) {
-      waitForImagesLoaded(function () {
-        changeToOnScroll();
+    waitForImagesLoaded(function () {
+      changeToOnScroll();
         PageCheck();
-      });
-    } 
-    }, 50);
+    });
+  }, 50);
 
-    
-  });
+});
 
 
 
