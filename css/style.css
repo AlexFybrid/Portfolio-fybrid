@@ -22,6 +22,10 @@ body {
   transition: 1.5s;
 }
 
+body > div {
+  background-color: #1c1c1c;
+}
+
 #swup {
   background-color: #ffffff;
 }
