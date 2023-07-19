@@ -452,6 +452,13 @@ swup.on('popState', function () {
 //Page Script >
 
 function PageHomeScript() {
+
+
+  if ($('#page').hasClass('page1')) {
+    $('body').css('background-color', 'rgb(28, 28, 28)')
+  }
+
+
   mobileCk();
   function mobileCk() {    
     if (mobile === true) { 
@@ -503,10 +510,43 @@ function PageHomeScript() {
   }
 
 };
-Page2workScript = function () {
-    
-  $(document).ready(function () {
 
+
+Page2workScript = function () {
+  
+  if ($('#page').hasClass('page3')) {
+    $('body').css('background-color','rgb(93, 24, 42)')
+  }
+  if ($('#page').hasClass('page4')) {
+    $('body').css('background-color', 'rgb(1, 101, 74)')
+  }
+  if ($('#page').hasClass('page5')) {
+    $('body').css('background-color', 'rgb(210, 186, 88)')
+  }
+  if ($('#page').hasClass('page6')) {
+    $('body').css('background-color', 'rgb(183, 120, 56)')
+  }
+  if ($('#page').hasClass('page7')) {
+    $('body').css('background-color', 'rgb(154, 142, 129)')
+  }
+  if ($('#page').hasClass('page8')) {
+    $('body').css('background-color', 'rgb(188, 188, 188)')
+  }
+  if ($('#page').hasClass('page9')) {
+    $('body').css('background-color', 'rgb(56, 56, 56)')
+  }
+  if ($('#page').hasClass('page10')) {
+    $('body').css('background-color', 'rgb(210, 160, 1)')
+  }
+  if ($('#page').hasClass('page11')) {
+    $('body').css('background-color', 'rgb(80, 171, 1)')
+  }
+  if ($('#page').hasClass('page12')) {
+    $('body').css('background-color', 'rgb(115, 33, 26)')
+  }
+  $(document).ready(function () {
+    
+    
 
     if (mobile === true) {
 
@@ -808,7 +848,7 @@ Page2workScript = function () {
 
 }
 function AboutScript() {
-
+  $('body').css('background-color', 'rgb(25, 24, 26)')
   if (mobile === true) {
     $('.con-on-mob').addClass('con-off-mob');
     $('.left_box_bar').css('display', 'none')
@@ -853,7 +893,6 @@ function AboutScript() {
 
 
 }
-
 
 
 
