@@ -16,6 +16,7 @@ Theme Name: Fybrid Studio
 body {
   margin: 0px;
   overflow: hidden;
+  background-color: #1c1c1c !important;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
