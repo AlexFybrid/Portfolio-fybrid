@@ -417,6 +417,7 @@ swup.on('contentReplaced', () => {
   }
   clearTimeout(loadVideoT);
   if (mobile === true) {
+    window.scrollTo(0, 0);
     $('nav').css("transform", "translateX(0vw)");
     PageCheck();
   } else {
@@ -491,7 +492,8 @@ function PageHomeScript() {
       swup.on('willReplaceContent', function () {
         shouldMoveNav = false; // Установка флага в false при событии
         $('nav').css("transform", "translateX(0vw)");
-        // window.scroll({ top: 0, });
+        window.scrollTo(0, 0);
+
 
 
       });
