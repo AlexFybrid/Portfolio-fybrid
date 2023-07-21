@@ -417,7 +417,6 @@ swup.on('contentReplaced', () => {
   }
   clearTimeout(loadVideoT);
   if (mobile === true) {
-    window.scrollTo(0, 0);
     $('nav').css("transform", "translateX(0vw)");
     PageCheck();
   } else {
