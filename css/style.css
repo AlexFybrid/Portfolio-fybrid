@@ -1518,7 +1518,7 @@ html.is-animating .transition-fade2 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3137254902);
+  background-color: #1c1c1c;
   color: white;
 }
 
@@ -1842,13 +1842,15 @@ html.has-scroll-dragging {
   .box_img {
     height: 40vh !important;
   }
+
+  .pg-1_bk_2 h2 {
+    font-size: 3rem !important;
+  }
 }
 
 @media screen and (max-width: 736px) and (max-height: 414px) {
   .rotate_box {
     display: flex;
-    -webkit-backdrop-filter: blur(28px);
-    backdrop-filter: blur(28px);
   }
 }
 
