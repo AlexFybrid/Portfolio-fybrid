@@ -1514,7 +1514,7 @@ html.is-animating .transition-fade2 {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100lvh;
+  height: 100dvh;
   align-items: center;
   justify-content: center;
   text-align: center;
