@@ -438,10 +438,12 @@ swup.on('animationInStart', function () {
 swup.on('popState', function () {
   setTimeout(() => {
     waitForImagesLoaded(function () {
-      changeToOnScroll();
+      if (!mobile === true) {
+        changeToOnScroll();
+      }
         PageCheck();
     });
-  }, 10);
+  }, 50);
 
 });
 
