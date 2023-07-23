@@ -1,6 +1,7 @@
 // Var >
 var homeanim = null;
 var mobile = null;
+var mobilePC = null
 var mobileSC = null;
 var mobileRotate = false;
 var loadVideoT;
@@ -206,6 +207,7 @@ function mobileCheck() {
   } else {
     if (FPSsmall === true) {
       mobile = true;
+      mobilePC = true;
       $('body').addClass("body_mob");
       $('.ny_1').addClass("notify_on");
       PageCheck();
@@ -457,8 +459,9 @@ function PageHomeScript() {
   function mobileCk() {    
     if (mobile === true) { 
       $('body').addClass("body_mob")
-      $('nav').css("transform","translateX(20vw)")
-      
+      if (!mobilePC === true) {
+        $('nav').css("transform","translateX(20vw)")
+      }
       swup.on('contentReplaced', function () {
       
         $('w-1').css("transform", "scale(100%)")
@@ -485,7 +488,9 @@ function PageHomeScript() {
           });
         }
       setTimeout(() => {
-        movenav();
+        if (!mobilePC === true) {
+          movenav();
+        }
       },700)
 
 
