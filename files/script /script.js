@@ -435,12 +435,12 @@ swup.on('animationInStart', function () {
 });
 
 swup.on('popState', function () {
-  setTimeout(() => {
+  // setTimeout(() => {
     waitForImagesLoaded(function () {
       changeToOnScroll();
         PageCheck();
     });
-  }, 50);
+  // }, 50);
 
 });
 
