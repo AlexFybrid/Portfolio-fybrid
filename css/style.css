@@ -16,6 +16,7 @@ Theme Name: Fybrid Studio
 
 body {
   margin: 0px;
+  overflow: hidden;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -143,7 +144,7 @@ html.is-animating .transition-fade {
 
 html.is-animating .transition-down {
   opacity: 0;
-  transform: scale(102%) translateY(0.9%);
+  transform: scale(101.5%) translateY(0.6%);
 }
 
 .transition-fade2 {
@@ -1462,6 +1463,7 @@ html.is-animating .transition-fade2 {
 
 .blur_obj {
   position: absolute;
+  opacity: 1;
   top: -15vh;
   left: -10vh;
   width: 150%;

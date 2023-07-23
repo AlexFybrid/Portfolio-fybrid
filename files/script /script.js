@@ -355,7 +355,8 @@ function PageCheck() {
   })
 }
 function mobileAnim() {
-    if (homeanim === null) {
+  if (homeanim === null) {
+    $('.blur_obj').css('opacity','1')
       $('.anim-pic').each(function (index) {
         var $strip = $(this);
         setTimeout(function () {
