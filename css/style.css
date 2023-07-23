@@ -126,7 +126,8 @@ li a {
 }
 
 .transition-fade {
-  transition: 0.5s;
+  transition: 0.4s;
+  transition-delay: 0.2s;
   opacity: 1;
 }
 

@@ -508,7 +508,6 @@ Page2workScript = function () {
   
   $(document).ready(function () {
     
-    
 
     if (mobile === true) {
 
