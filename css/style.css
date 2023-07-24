@@ -16,14 +16,10 @@ Theme Name: Fybrid Studio
 
 body {
   margin: 0px;
-  overflow: hidden;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   transition: 0.5s;
-}
-
-body > div {
   background-color: #1c1c1c;
 }
 
@@ -31,22 +27,18 @@ body > div {
   background-color: #ffffff;
 }
 
-#page {
-  overflow: hidden;
-}
-
 header {
-  position: fixed;
+  position: absolute;
   height: 50px;
   width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
-  z-index: 1000;
+  z-index: 9000;
 }
 
 nav {
-  position: relative;
+  position: fixed;
   padding: 5px 2px !important;
   border-radius: 20px;
   background-color: rgba(238, 238, 238, 0.4392156863);
@@ -402,6 +394,10 @@ html.is-animating .transition-fade2 {
   background-color: #c2c0c3;
 }
 
+.pg-1_bk_carusel {
+  padding-top: 50px;
+}
+
 .pg-1_bk_1fs {
   background-color: #ececec;
 }
@@ -691,6 +687,7 @@ html.is-animating .transition-fade2 {
   justify-content: center;
   align-items: end;
   display: flex;
+  z-index: 1;
 }
 
 .Prew .container .row .col {
@@ -794,6 +791,7 @@ html.is-animating .transition-fade2 {
   height: 2500px;
   width: 100%;
   background-color: #292929;
+  display: flex;
 }
 
 .main_next_mob {
@@ -814,11 +812,14 @@ html.is-animating .transition-fade2 {
 }
 
 .last_scroll_box {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  width: 100%;
   height: 100vh;
   justify-content: center;
   align-items: center;
   display: flex;
-  position: relative;
 }
 
 .box_img {
@@ -1096,7 +1097,6 @@ html.is-animating .transition-fade2 {
   top: 0vh;
   left: 5vh;
   height: 100%;
-  padding-top: 30vh;
 }
 
 .con-off-mob {
@@ -1238,10 +1238,14 @@ html.is-animating .transition-fade2 {
 
 .scroll_bar_box {
   height: 50vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30vh;
   border: solid 1px #313131;
   width: 15vw;
   overflow: hidden;
   border-radius: 20px;
+  z-index: -1;
 }
 
 .box_back {
@@ -1525,91 +1529,6 @@ html.is-animating .transition-fade2 {
   color: white;
 }
 
-/*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
-
-html.has-scroll-dragging {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-.has-scroll-smooth body {
-  overflow: hidden;
-}
-
-.has-scroll-smooth [data-scroll-container] {
-  min-height: 100vh;
-}
-
-[data-scroll-direction=horizontal] [data-scroll-container] {
-  height: 100vh;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-[data-scroll-direction=horizontal] [data-scroll-section] {
-  display: inline-block;
-  vertical-align: top;
-  white-space: nowrap;
-  height: 100%;
-}
-
-.c-scrollbar {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 11px;
-  height: 100%;
-  transform-origin: center right;
-  transition: transform 0.3s, opacity 0.3s;
-  opacity: 0;
-}
-
-.c-scrollbar:hover {
-  transform: scaleX(1.45);
-}
-
-.c-scrollbar:hover,
-.has-scroll-scrolling .c-scrollbar,
-.has-scroll-dragging .c-scrollbar {
-  opacity: 1;
-}
-
-[data-scroll-direction=horizontal] .c-scrollbar {
-  width: 100%;
-  height: 10px;
-  top: auto;
-  bottom: 0;
-  transform: scaleY(1);
-}
-
-[data-scroll-direction=horizontal] .c-scrollbar:hover {
-  transform: scaleY(1.3);
-}
-
-.c-scrollbar_thumb {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: black;
-  opacity: 0.5;
-  width: 7px;
-  border-radius: 10px;
-  margin: 2px;
-  cursor: -webkit-grab;
-  cursor: grab;
-}
-
-.has-scroll-dragging .c-scrollbar_thumb {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
-}
-
-[data-scroll-direction=horizontal] .c-scrollbar_thumb {
-  right: auto;
-  bottom: 0;
-}
-
 .notify {
   position: fixed;
   top: 0;
@@ -1732,6 +1651,14 @@ html.has-scroll-dragging {
   font-size: 0.75rem;
   background-color: #e9ecef;
   border-radius: 10px;
+}
+
+.carousel-inner {
+  overflow: visible !important;
+}
+
+.carousel_img {
+  border-radius: 15px;
 }
 
 @media screen and (max-width: 1100px) {

@@ -2,15 +2,18 @@
 var homeanim = null;
 var mobile = null;
 var mobilePC = null
-var mobileSC = null;
 var mobileRotate = false;
 var loadVideoT;
-var FPSsmall = false;
 
-//Swup transition > 
+
+
+  //Swup transition >
 const swup = new Swup({
   plugins: [new SwupPreloadPlugin()]
 });
+
+
+
 
 
 
@@ -136,7 +139,8 @@ function preload() {
     queue.addEventListener('complete', function () {
 
       setTimeout(() => {
-        mainScript();
+        mobileCheck();
+
         preloader.style.display = 'none';
       }, 1000)
       preloader.style.opacity = '0';
@@ -149,186 +153,24 @@ function preload() {
   });
 
 }
-function readFromCache() {
-  return new Promise((resolve, reject) => {
-    if ('caches' in window) {
-      caches.open('my-cache').then(function (cache) {
-        var cacheKey = 'my-data';
 
-        cache.match(cacheKey).then(function (response) {
-          if (response) {
-            response.text().then(function (data) {
-              console.log('Data from cache:', data);
-              FPSsmall = true;
-              console.log(FPSsmall);
-
-              // Удаляем запись из кэша через 1 минуту
-              setTimeout(function () {
-                cache.delete(cacheKey).then(function () {
-                  console.log('Cache entry deleted');
-                }).catch(function (error) {
-                  console.log('Error deleting cache entry:', error);
-                });
-              }, 180000); 
-            });
-          } else {
-            console.log('Data not found in cache');
-          }
-          resolve(); 
-        });
-      });
-    } else {
-      resolve();
-    }
-  });
-}
-function reloadResize() {
-  if (mobileSC === true) {
-    var resizeTimer;
-    window.addEventListener('resize', function () {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () {
-        if (window.innerWidth <= 1024) {
-          location.reload();
-        }
-      }, 100);
-    });
-  }
-}
 function mobileCheck() {
   var userAgent = navigator.userAgent;
   var isMobile = /Mobi/i.test(userAgent);
   if (isMobile) {
     mobile = true;
     if (mobile === true) {
-      $('body').addClass("body_mob");
       PageCheck();
     }
   } else {
-    if (FPSsmall === true) {
-      mobile = true;
-      mobilePC = true;
-      $('body').addClass("body_mob");
-      $('.ny_1').addClass("notify_on");
-      PageCheck();
-      setTimeout(() => {
-        $('.ny_3').addClass("notify_on");
-      }, 6000);
-    } else {
-      changeToOnScroll();
       mobile = false;
-      mobileSC = true;
-      reloadResize()
-      if (window.innerWidth <= 1024) {
-        mobile = true;
-        $('body').addClass("body_mob");
-        $('.ny_1').addClass("notify_on");
-        setTimeout(() => {
-          $('.ny_2').addClass("notify_on");
-        }, 6000);
-      }
       PageCheck();
-    }
   }
 }
 
-async function mainScript() {
-  try {
-    await readFromCache();
-    mobileCheck();
-  } catch (error) {
-    console.error("Произошла ошибка:", error);
-  }
-}
-
-var checkInterval = 5000;
-var FPSoff = false;
-var fps = 0;
-var startTime = performance.now();
-var numChecks = 0;
-
-function checkFPS() {
-  if (FPSsmall === false) {
-    if (FPSoff === false) {
-
-      var currentTime = performance.now();
-      var elapsedTime = currentTime - startTime;
-
-      if (elapsedTime >= checkInterval) {
-        var averageFPS = Math.round((fps / elapsedTime) * 1000);
-        console.log("Average FPS: " + averageFPS);
-
-        if (averageFPS < 33) {
-          writeToCache();
-        }
-
-        fps = 0;
-        startTime = currentTime;
-        numChecks++;
-
-        if (numChecks >= 5) {
-          FPSsmall = true;
-        }
-      }
-
-      fps++;
-      requestAnimationFrame(checkFPS);
-    }
-  }
-}
-function writeToCache() {
-  if ('caches' in window) {
-    caches.open('my-cache').then(function (cache) {
-      // Генерируем уникальный ключ для записи в кэш
-      var cacheKey = 'my-data';
-
-      // Создаем новый запрос с ключом
-      var request = new Request(cacheKey);
-
-      // Записываем данные в кэш
-      cache.put(request, new Response('Data to be cached')).then(function () {
-        console.log("Data cached successfully.");
-
-        // Перезагружаем страницу
-        location.reload();
-      }).catch(function (error) {
-        console.log("Error caching data:", error);
-      });
-    });
-  }
-  console.log("Writing to cache...");
-}
-checkFPS();
 
 
 
-
-//Scroll >
-let scroll = null;
-
-function initScroll(direction) {
-  let multiplier = 1;
-  if (scroll) {
-    scroll.destroy();
-  }
-  if (direction === 'on') {
-    scroll = new LocomotiveScroll({
-      el: document.querySelector('[data-scroll-container]'),
-      smooth: true,
-      direction: 'vertical',
-      multiplier: multiplier,
-      damping: 0
-    });
-  }
-}
-
-function changeToOnScroll() {
-  initScroll('on');
-}
-
-function changeToOffScroll() {
-  initScroll('off');
-}
 
 
 
@@ -348,6 +190,9 @@ function PageCheck() {
       PageHomeScript();
     }
     if ($('#page').hasClass('pagework')) {
+      if ($('.select_nav').hasClass('select_about')) {
+        $('.select_nav').removeClass('select_about')
+      }
       Page2workScript();
     }
     if ($('#page').hasClass('pageabout')) {
@@ -389,26 +234,28 @@ function RotateDevise() {
     }
    }
 }
-function waitForImagesLoaded(callback) {
-  var images = document.getElementsByTagName('img');
-  var totalImages = images.length;
-  var loadedImages = 0;
+// function waitForImagesLoaded(callback) {
+//   var images = document.getElementsByTagName('img');
+//   var totalImages = images.length;
+//   var loadedImages = 0;
 
-  function imageLoaded() {
-    loadedImages++;
-    if (loadedImages === totalImages) {
-      callback();
-    }
-  }
+//   function imageLoaded() {
+//     loadedImages++;
+//     if (loadedImages === totalImages) {
+//       callback();
+//     }
+//   }
 
-  for (var i = 0; i < totalImages; i++) {
-    if (images[i].complete) {
-      imageLoaded();
-    } else {
-      images[i].addEventListener('load', imageLoaded);
-    }
-  }
-}
+//   for (var i = 0; i < totalImages; i++) {
+//     if (images[i].complete) {
+//       imageLoaded();
+//     } else {
+//       images[i].addEventListener('load', imageLoaded);
+//     }
+//   }
+// }
+// waitForImagesLoaded(function () {
+// });
 
 preload()
 
@@ -417,34 +264,22 @@ swup.on('contentReplaced', () => {
     mobileAnim();
   }
   clearTimeout(loadVideoT);
+  window.scrollTo(0, 0);
   if (mobile === true) {
-    window.scrollTo(0, 0);
     $('nav').css("transform", "translateX(0vw)");
-    PageCheck();
-  } else {
-    reloadResize()
-    changeToOffScroll();
   }
 });
 
 
 swup.on('animationInStart', function () {
-  if (mobile === false) {
-    waitForImagesLoaded(function () {
-        changeToOnScroll();
-        PageCheck();
-    });
-  }
+  PageCheck();
+
 });
 
 swup.on('popState', function () {
   setTimeout(() => {
-    waitForImagesLoaded(function () {
-      if (!mobile === true) {
-        changeToOnScroll();
-      }
-        PageCheck();
-    });
+    PageCheck();
+
   }, 50);
 
 });
@@ -478,6 +313,7 @@ function PageHomeScript() {
             if (!shouldMoveNav) return; // Проверка флага перед выполнением кода
 
             var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+
 
             if (scrollPercentage >= 3) {
               $('nav').css("transform", "translateX(20vw)");
@@ -515,9 +351,12 @@ function PageHomeScript() {
 Page2workScript = function () {
   
   $(document).ready(function () {
+    const video = document.getElementById("my-video");
+    const progressPath = document.querySelector('.progress-wrap');
     
+    
+    imageZoom()  
 
-    if (mobile === true) {
 
       $('.main_next_mob').css('display', 'block')
       $('.main_next').css('display', 'none')
@@ -564,9 +403,10 @@ Page2workScript = function () {
           })
         });
       }
-      $('.last_img').each(function () {
+    
+    
         const imgbox = document.querySelector('.imgbox');
-        const video = document.getElementById("my-video");
+        
         function LoadVideo() {
           setTimeout(() => {
             imgbox.style.opacity = '0';
@@ -575,242 +415,42 @@ Page2workScript = function () {
             $("#img_back_main").remove();
             $('.descrip').css('opacity', '1');
           }, 2500)
-
           Video();
         }
+        
+        
+    if (video) {
 
-        if (video) {
-          video.addEventListener("loadeddata", LoadVideo);
-
-        }
-      });
-
-
-    } else {
-
-      // $('.last_img').each(function () {
-      //   $(this).on('load', function () {
-
-          $('.main_next_mob').css('display', 'none')
-          $('.main_next').css('display', 'block')
-          nextAnim();
-    
-    
-          const imgbox = document.querySelector('.imgbox');
-          const video = document.getElementById("my-video");
-    
-    
-      function LoadVideo() {
-            
-        loadVideoT = setTimeout(() => {
-              imgbox.style.opacity = '0';
-              video.play();
-              $(".progress-wrap").addClass("playbt_on");
-              $("#img_back_main").remove();
-              $('.descrip').css('opacity', '1');
-            }, 2500)
-    
-            Video();
-          }
-    
-          if (video) {
-            video.addEventListener("loadeddata", LoadVideo);
-          }
-    
-    
-    
-          function nextAnim() {
-            scroll.on('scroll', (obj) => {
-              const video = document.getElementById("my-video");
-    
-              const progressPath = document.querySelector('.progress-wrap');
-              const scrollPercentage = obj.scroll.y / obj.limit.y;
-              if (video) {
-    
-                if (scrollPercentage >= 0 && scrollPercentage < 0.000000001) {
-                  if (!progressPath.classList.contains("pause")) {
-                    setTimeout(() => {
-                      video.play();
-                      $(".playButton__icon").addClass("icon_target");
-                    }, 200)
-                  }
-                } else {
-                  video.pause();
-                  $(".playButton__icon").removeClass("icon_target")
-                }
-    
-              }
-    
-              const image = document.querySelector('.scroll-image');
-              const imagenext = document.querySelector('.last_img');
-              const imageback = document.querySelector('.last_box_info');
-              const percentage = document.querySelector('.percentage');
-              const nextText = document.querySelector('.next_text');
-              const progresslines = document.querySelector('.progress_line');
-              const progresslinesbox = document.querySelector('.progress_line_box');
-              if (scrollPercentage >= 0.84) {
-                $('.last_img').css('transform', 'scale(105%)')
-              }
-              if (scrollPercentage >= 0.85) {
-                image.style.transform = 'scale(90%)';
-    
-    
-                if (scrollPercentage >= 0.70) {
-                  const progress = (scrollPercentage - 0.85) * 665;
-                  $('.last_img').css('transform', 'scale(100%)')
-                  imageback.style.opacity = '1';
-                  imagenext.style.opacity = '0.9';
-                  progresslines.style.width = `${progress * 2}px`;
-                  percentage.textContent = `${Math.round(progress)}%`;
-                  percentage.style.opacity = `1`;
-                  progresslinesbox.style.opacity = '1';
-                  nextText.style.opacity = '1';
-                  nextText.style.top = '48%';
-                  percentage.style.top = '52%';
-    
-    
-    
-                }
-                if (scrollPercentage >= 0.9995) {
-                  scroll.stop();
-                }
-                if (scrollPercentage >= 1) {
-                  image.style.transform = 'scale(100%)';
-                  $('.last_img').css('transform', 'scale(105%)')
-    
-                  if ($('#page').hasClass('page3')) {
-                    swup.loadPage({
-                      url: 'index4.html'
-                    })
-                  }
-                  if ($('#page').hasClass('page4')) {
-                    swup.loadPage({
-                      url: 'index5.html'
-                    })
-                  }
-                  if ($('#page').hasClass('page5')) {
-                    swup.loadPage({
-                      url: 'index6.html'
-                    })
-                  }
-                  if ($('#page').hasClass('page6')) {
-                    swup.loadPage({
-                      url: 'index7.html'
-                    })
-                  }
-                  if ($('#page').hasClass('page7')) {
-                    swup.loadPage({
-                      url: 'index8.html'
-                    })
-                  }
-                  if ($('#page').hasClass('page8')) {
-                    swup.loadPage({
-                      url: 'index9.html'
-                    })
-                  }
-                  if ($('#page').hasClass('page9')) {
-                    swup.loadPage({
-                      url: 'index10.html'
-                    })
-                  }
-                  if ($('#page').hasClass('page10')) {
-                    swup.loadPage({
-                      url: 'index11.html'
-                    })
-                  }
-                  if ($('#page').hasClass('page11')) {
-                    swup.loadPage({
-                      url: 'index12.html'
-                    })
-                  }
-                  if ($('#page').hasClass('page12')) {
-                    swup.loadPage({
-                      url: 'index3.html'
-                    })
-                  }
-                }
-              } else {
-                nextText.style.opacity = '0';
-                image.style.borderWidth = '0';
-                percentage.textContent = '0%';
-                percentage.style.opacity = `0`;
-                nextText.style.top = '50%';
-                percentage.style.top = '50%';
-                progresslines.style.width = '0px';
-                progresslinesbox.style.opacity = '0';
-                imagenext.style.opacity = '1';
-                image.style.transform = 'scale(100%)';
-                imageback.style.opacity = '0';
-    
-    
-              }
-    
-            });
-          }
-          Video = function () {
-            $(document).ready(function () {
-              var video = $('#my-video')[0];
-              var progressPath = $('.progress-wrap svg path');
-              const progressPath2 = document.querySelector('.progress-wrap');
-              const pwrap = document.querySelector('.progress-wrap ');
-    
-              var pathLength = progressPath[0].getTotalLength();
-              progressPath.css('stroke-dasharray', pathLength + ' ' + pathLength);
-              progressPath.css('stroke-dashoffset', pathLength);
-              progressPath.css('transition', '0.5s');
-              video.addEventListener('timeupdate', function () {
-                var progress = video.currentTime / video.duration;
-                progressPath.css('stroke-dashoffset', pathLength * (1 - progress));
-              });
-              pwrap.addEventListener("click", function () {
-                $(".progress-wrap").addClass("pause");
-                $(".progress-wrap").addClass("clck_anim");
-    
-                if (progressPath2.classList.contains("clck_anim")) {
-                  setTimeout(() => {
-                    $(".progress-wrap").removeClass("clck_anim");
-                  }, 450);
-                };
-    
-                if (video.paused) {
+      if (video.readyState === 4) {
+        LoadVideo();
+      } else {
+        video.addEventListener("loadeddata", LoadVideo);
+      }
+  
+      window.addEventListener('scroll', function () {
+            var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+            if (scrollPercentage >= -3 && scrollPercentage < 1) {
+              if (!progressPath.classList.contains("pause")) {
+                setTimeout(() => {
                   video.play();
                   $(".playButton__icon").addClass("icon_target");
-                  $(".progress-wrap").removeClass("pause");
-    
-                  progressPath.parent().addClass('active');
-                } else {
-                  video.pause();
-                  progressPath.parent().removeClass('active');
-                  $(".playButton__icon").removeClass("icon_target")
-    
-    
-    
-                }
-              })
-            });
+                }, 200)
+              }
+            } else {
+              video.pause();
+              $(".playButton__icon").removeClass("icon_target")
+            }
+          });
+
+        }
+
+
     
     
-          }
+    
 
-      //   })
-      // })
-
-
-
-
-
-      
-      
-      
-      
-
-
-
-      
-
-    }
-
-    });
+  });
+              
   
 
 
@@ -835,33 +475,49 @@ function AboutScript() {
     function tiltInt() {
       VanillaTilt.init(document.querySelectorAll(".tildcard"));
     }
-     
-    function miniPrew() {    
-      scroll.on('scroll', (instance) => {
-        const scrollPosition = instance.scroll.y;
-        const windowHeight = $(window).height();
-        const contentHeight = $('.content').height();
-        const textMinBarHeightPx = $('.text_min_bar').height();
+    let miniPrewEnabled = true;
     
-    
+    function miniPrew() {
+      if (!miniPrewEnabled) return;
+      window.onscroll = () => {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const contentHeight = document.querySelector('.content').offsetHeight;
+        const textMinBarHeightPx = document.querySelector('.text_min_bar').offsetHeight;
+
         const maxScrollPosition = contentHeight - windowHeight;
-    
+
         const cubePosition = (scrollPosition / maxScrollPosition) * (windowHeight - (0.72 * windowHeight));
-    
+
         const cubePosition2 = (scrollPosition / maxScrollPosition) * (windowHeight - (0.40 * windowHeight));
-    
-        $('.box_back').css('transform', `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${cubePosition}, 0, 1)`);
-        $('.text_min_bar').css('transform', `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -${cubePosition2}, 0, 1)`);
-      });
+
+        document.querySelector('.box_back').style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${cubePosition}, 0, 1)`;
+        document.querySelector('.text_min_bar').style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -${cubePosition2}, 0, 1)`;
+      };
     }
+
+
+    function miniPrewStop() {
+      miniPrewEnabled = false;
+      window.onscroll = null; // Remove the scroll event listener
+    }
+
     miniPrew();  
     tiltInt();
-  
+    
+    let minibar = true;
+    minibar = true;
+    swup.on('animationOutDone', () => {
+      if (minibar === true) {
+        miniPrewStop();
+
+        minibar = false;
+      }
+    })
   }
-
-
-
 }
+
+
 
 
 
