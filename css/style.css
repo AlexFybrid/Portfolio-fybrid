@@ -390,8 +390,8 @@ html.is-animating .transition-fade2 {
   stroke-dasharray: 1000, 1000;
 }
 
-.pg-1_bk_1 {
-  background-color: #c2c0c3;
+.pg-1_bk_1 img {
+  border-radius: 20px;
 }
 
 .pg-1_bk_carusel {
@@ -414,6 +414,7 @@ html.is-animating .transition-fade2 {
   background-color: #ffffff;
   padding-top: 150px;
   padding-bottom: 100px;
+  overflow: hidden;
 }
 
 .pg-1_bk_0 h2 {
@@ -688,6 +689,7 @@ html.is-animating .transition-fade2 {
   align-items: end;
   display: flex;
   z-index: 1;
+  margin-bottom: 30px;
 }
 
 .Prew .container .row .col {
@@ -1659,6 +1661,20 @@ html.is-animating .transition-fade2 {
 
 .carousel_img {
   border-radius: 15px;
+}
+
+.carousel-indicators [data-bs-target] {
+  border-radius: 100%;
+  width: 8px !important;
+  height: 8px !important;
+  margin-right: 4px !important;
+  margin-right: 4px !important;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 8% !important;
+  padding-bottom: 50px !important;
 }
 
 @media screen and (max-width: 1100px) {

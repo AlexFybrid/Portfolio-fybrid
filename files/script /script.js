@@ -355,7 +355,9 @@ Page2workScript = function () {
     const progressPath = document.querySelector('.progress-wrap');
     
     
-    imageZoom()  
+    imageZoom({
+      padding: 50,
+    })
 
 
       $('.main_next_mob').css('display', 'block')
@@ -516,6 +518,9 @@ function AboutScript() {
     })
   }
 }
+
+
+
 
 
 
