@@ -1692,6 +1692,10 @@ html.is-animating .transition-fade2 {
   padding-bottom: 50px !important;
 }
 
+.carousel-items {
+  transition: transform 0.3s cubic-bezier(0.48, 1.33, 0.67, 1.06) !important;
+}
+
 @media screen and (max-width: 1100px) {
   .left_box_bar {
     display: none;
