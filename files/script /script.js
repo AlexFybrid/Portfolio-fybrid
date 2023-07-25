@@ -27,7 +27,7 @@ const lightbox = new PhotoSwipeLightbox({
   arrowNextSVG: nothing,
   closeSVG: nothing,
   zoomSVG: nothing,
-  padding: { top: 50, bottom: 50, left: 50, right: 50 },
+  padding: { top: 150, bottom: 150, left: 150, right: 150 },
   mouseMovePan: false,
   wheelToZoom: true,
   imageClickAction: 'close',
