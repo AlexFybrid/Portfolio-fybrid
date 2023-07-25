@@ -1709,11 +1709,11 @@ html.is-animating .transition-fade2 {
 }
 
 .mobile-carusel-item-img {
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 .pswp__img {
-  border-radius: 45px;
+  border-radius: 35px;
 }
 
 .pswp__img--placeholder {

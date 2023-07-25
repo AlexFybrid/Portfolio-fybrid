@@ -31,7 +31,7 @@ const lightbox = new PhotoSwipeLightbox({
   mouseMovePan: false,
   wheelToZoom: true,
   imageClickAction: 'close',
-  showAnimationDuration: 300,
+  showAnimationDuration: 250,
   hideAnimationDuration: 200,
   // may select multiple "galleries"
   gallery: '#gallery-img',
