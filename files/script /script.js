@@ -163,7 +163,7 @@ function mobileCheck() {
       PageCheck();
     }
   } else {
-      mobile = false;
+      mobile = true;
       PageCheck();
   }
 }
@@ -353,9 +353,14 @@ function PageHomeScript() {
 
 Page2workScript = function () {
   var videoClick = false;
+  if (mobile === true) {
+    $('#my-video').remove();
+  }
 
   $(document).ready(function () {
     const video = document.getElementById("my-video");
+    
+
     const progressPath = document.querySelector('.progress-wrap');
     
     
@@ -414,35 +419,38 @@ Page2workScript = function () {
     
         const imgbox = document.querySelector('.imgbox');
         
-        function LoadVideo() {
-          setTimeout(() => {
-            window.addEventListener('scroll', function () {
-              var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+    function LoadVideo() {
+      if (!mobile === true) {
+
+        setTimeout(() => {
+          window.addEventListener('scroll', function () {
+            var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
               
-              imgbox.style.opacity = '0';
-              $(".progress-wrap").addClass("playbt_on");
-              $("#img_back_main").remove();
-              $('.descrip').css('opacity', '1');
+            imgbox.style.opacity = '0';
+            $(".progress-wrap").addClass("playbt_on");
+            $("#img_back_main").remove();
+            $('.descrip').css('opacity', '1');
 
 
-              if (scrollPercentage >= -3 && scrollPercentage < 1) {
-                if (videoClick === false) {
-                  if (!progressPath.classList.contains("pause")) {
-                    video.play();
-                    $(".playButton__icon").addClass("icon_target");
+            if (scrollPercentage >= -3 && scrollPercentage < 1) {
+              if (videoClick === false) {
+                if (!progressPath.classList.contains("pause")) {
+                  video.play();
+                  $(".playButton__icon").addClass("icon_target");
 
-                  }
-                }
-              } else {
-                if (videoClick === false) {
-                  video.pause();
-                  $(".playButton__icon").removeClass("icon_target")
                 }
               }
+            } else {
+              if (videoClick === false) {
+                video.pause();
+                $(".playButton__icon").removeClass("icon_target")
+              }
+            }
 
-            });
-          }, 2500)
-          Video();
+          });
+        }, 2500)
+        Video();
+      }
         }
         
         
