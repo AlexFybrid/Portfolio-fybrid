@@ -1705,18 +1705,19 @@ html.is-animating .transition-fade2 {
 .mobile-carusel-item {
   display: inline-block;
   width: 50%;
+  margin-left: 10px;
+}
+
+.mobile-carusel-item-img {
+  border-radius: 25px;
 }
 
 .pswp__img {
-  border-radius: 35px;
+  border-radius: 45px;
 }
 
 .pswp__img--placeholder {
-  border-radius: 12px;
-}
-
-.pswp__container {
-  transition: transform 0.35s ease-in-out;
+  border-radius: 25px;
 }
 
 .pswp__button--arrow {
