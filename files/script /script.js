@@ -14,8 +14,36 @@ const swup = new Swup({
 
 
 
+import PhotoSwipeLightbox from '../photoswipe-lightbox.esm.min.js';
+const nothing = ''
 
+const backEasing = {
+  out: 'cubic-bezier(.48, 1.33, .67, 1.06)',
+  in: 'ease',
 
+}
+const lightbox = new PhotoSwipeLightbox({
+  arrowPrevSVG: nothing,
+  arrowNextSVG: nothing,
+  closeSVG: nothing,
+  zoomSVG: nothing,
+  padding: { top: 40, bottom: 40, left: 200, right: 200 },
+  mouseMovePan: false,
+  wheelToZoom: true,
+  imageClickAction: 'close',
+  showAnimationDuration: 300,
+  hideAnimationDuration: 200,
+  // may select multiple "galleries"
+  gallery: '#gallery-img',
+  children: 'a',
+  pswpModule: () => import('../photoswipe.esm.min.js')
+});
+lightbox.on('firstUpdate', () => {
+  lightbox.pswp.options.easing = backEasing.out;
+});
+lightbox.on('close', () => {
+  lightbox.pswp.options.easing = backEasing.in;
+});
 
 
 
@@ -351,12 +379,13 @@ function PageHomeScript() {
 };
 
 
-Page2workScript = function () {
+function Page2workScript() {
   var videoClick = false;
   if (mobile === true) {
     $('#my-video').remove();
   }
-
+  lightbox.init();
+  imageZoom();  
   $(document).ready(function () {
     const video = document.getElementById("my-video");
     
@@ -364,15 +393,11 @@ Page2workScript = function () {
     const progressPath = document.querySelector('.progress-wrap');
     
     
-    imageZoom({
-      padding: 50,
-    })
-
 
       $('.main_next_mob').css('display', 'block')
       $('.main_next').css('display', 'none')
     
-      Video = function () {
+    function Video() {
         $(document).ready(function () {
           var video = $('#my-video')[0];
           var progressPath = $('.progress-wrap svg path');
