@@ -76,6 +76,14 @@ li a {
   font-weight: 400;
 }
 
+a {
+  transition: 0.2s;
+}
+
+a:active {
+  filter: brightness(50%);
+}
+
 .select_nav {
   position: absolute;
   border-radius: 35px;
@@ -412,7 +420,7 @@ html.is-animating .transition-fade2 {
 
 .pg-1_bk_0 {
   background-color: #ffffff;
-  padding-top: 150px;
+  padding-top: 80px;
   padding-bottom: 100px;
   overflow: hidden;
 }
@@ -1085,6 +1093,10 @@ html.is-animating .transition-fade2 {
   width: 80% !important;
 }
 
+#carouselExampleIndicators2 {
+  display: none;
+}
+
 /* Responsive layout - makes a two column-layout instead of four columns */
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -1474,7 +1486,10 @@ html.is-animating .transition-fade2 {
   left: -10vh;
   width: 150%;
   height: 47vh;
+  opacity: 0;
   background: radial-gradient(50% 50% at 50% 50%, #B2BFD8 0%, rgba(217, 217, 217, 0) 100%);
+  transform: scale(2.5);
+  transition: 0.5s;
 }
 
 .blur_obj_aston {
@@ -1801,6 +1816,14 @@ html.is-animating .transition-fade2 {
 
   .pg-1_bk_2 h2 {
     font-size: 3rem !important;
+  }
+
+  #carouselExampleIndicators {
+    display: none;
+  }
+
+  #carouselExampleIndicators2 {
+    display: block;
   }
 }
 

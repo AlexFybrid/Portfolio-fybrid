@@ -290,6 +290,9 @@ swup.on('popState', function () {
 //Page Script >
 
 function PageHomeScript() {
+  $('.blur_obj').css('transform', 'scale(1)')
+  $('.blur_obj').css('opacity', '1.5')
+
   mobileCk();
   function mobileCk() {    
     if (mobile === true) { 
@@ -349,7 +352,8 @@ function PageHomeScript() {
 
 
 Page2workScript = function () {
-  
+  var videoClick = false;
+
   $(document).ready(function () {
     const video = document.getElementById("my-video");
     const progressPath = document.querySelector('.progress-wrap');
@@ -362,7 +366,7 @@ Page2workScript = function () {
 
       $('.main_next_mob').css('display', 'block')
       $('.main_next').css('display', 'none')
-
+    
       Video = function () {
         $(document).ready(function () {
           var video = $('#my-video')[0];
@@ -379,6 +383,7 @@ Page2workScript = function () {
             progressPath.css('stroke-dashoffset', pathLength * (1 - progress));
           });
           pwrap.addEventListener("click", function () {
+            videoClick = !videoClick;
             $(".progress-wrap").addClass("pause");
             $(".progress-wrap").addClass("clck_anim");
 
@@ -411,11 +416,31 @@ Page2workScript = function () {
         
         function LoadVideo() {
           setTimeout(() => {
-            imgbox.style.opacity = '0';
-            video.play();
-            $(".progress-wrap").addClass("playbt_on");
-            $("#img_back_main").remove();
-            $('.descrip').css('opacity', '1');
+            window.addEventListener('scroll', function () {
+              var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+              
+              imgbox.style.opacity = '0';
+              $(".progress-wrap").addClass("playbt_on");
+              $("#img_back_main").remove();
+              $('.descrip').css('opacity', '1');
+
+
+              if (scrollPercentage >= -3 && scrollPercentage < 1) {
+                if (videoClick === false) {
+                  if (!progressPath.classList.contains("pause")) {
+                    video.play();
+                    $(".playButton__icon").addClass("icon_target");
+
+                  }
+                }
+              } else {
+                if (videoClick === false) {
+                  video.pause();
+                  $(".playButton__icon").removeClass("icon_target")
+                }
+              }
+
+            });
           }, 2500)
           Video();
         }
@@ -429,20 +454,7 @@ Page2workScript = function () {
         video.addEventListener("loadeddata", LoadVideo);
       }
   
-      window.addEventListener('scroll', function () {
-            var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
-            if (scrollPercentage >= -3 && scrollPercentage < 1) {
-              if (!progressPath.classList.contains("pause")) {
-                setTimeout(() => {
-                  video.play();
-                  $(".playButton__icon").addClass("icon_target");
-                }, 200)
-              }
-            } else {
-              video.pause();
-              $(".playButton__icon").removeClass("icon_target")
-            }
-          });
+
 
         }
 
