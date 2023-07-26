@@ -1535,7 +1535,7 @@ html.is-animating .transition-fade2 {
 
 .rotate_box {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -1820,15 +1820,21 @@ html.is-animating .transition-fade2 {
   }
 
   .Prew {
-    height: 40vh;
+    height: 30vh;
+  }
+
+  .Prew .imgbox {
+    width: 150%;
   }
 
   .name_d {
     padding-bottom: 10px;
+    padding-left: 5%;
+    height: 20vh;
   }
 
   .name_d svg {
-    width: 100%;
+    width: 150%;
   }
 
   .descrip h3 {
