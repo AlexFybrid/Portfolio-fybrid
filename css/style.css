@@ -1820,10 +1820,11 @@ html.is-animating .transition-fade2 {
   }
 
   .Prew {
-    height: 30vh;
+    height: 35vh;
   }
 
   .Prew .imgbox {
+    padding-top: 10vh;
     width: 150%;
   }
 
