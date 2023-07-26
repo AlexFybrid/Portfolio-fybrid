@@ -1698,6 +1698,7 @@ html.is-animating .transition-fade2 {
 }
 
 .mobile-carusel {
+  display: none;
   overflow-x: scroll;
   white-space: nowrap;
 }
@@ -1889,7 +1890,7 @@ html.is-animating .transition-fade2 {
     display: none;
   }
 
-  #carouselExampleIndicators2 {
+  .mobile-carusel {
     display: block;
   }
 }
