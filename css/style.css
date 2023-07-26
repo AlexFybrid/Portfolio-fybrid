@@ -1710,15 +1710,15 @@ html.is-animating .transition-fade2 {
 }
 
 .mobile-carusel-item-img {
-  border-radius: 15px;
+  border-radius: 9%;
 }
 
 .pswp__img {
-  border-radius: 35px;
+  border-radius: 9%;
 }
 
 .pswp__img--placeholder {
-  border-radius: 25px;
+  border-radius: 9%;
 }
 
 .pswp__button--arrow {
