@@ -14,7 +14,7 @@ const swup = new Swup({
 
 
 
-import PhotoSwipeLightbox from '../photoswipe-lightbox.esm.min.js';
+import PhotoSwipeLightbox from './photoswipe-lightbox.esm.min.js';
 const nothing = ''
 
 const backEasing = {
@@ -36,7 +36,7 @@ const lightbox = new PhotoSwipeLightbox({
   // may select multiple "galleries"
   gallery: '#gallery-img',
   children: 'a',
-  pswpModule: () => import('../photoswipe.esm.min.js')
+  pswpModule: () => import('./photoswipe.esm.min.js')
 });
 lightbox.on('firstUpdate', () => {
   lightbox.pswp.options.easing = backEasing.out;
@@ -191,7 +191,7 @@ function mobileCheck() {
       PageCheck();
     }
   } else {
-      mobile = true;
+      mobile = false;
       PageCheck();
   }
 }
@@ -231,7 +231,7 @@ function PageCheck() {
 }
 function mobileAnim() {
   if (homeanim === null) {
-    $('.blur_obj').css('opacity','1')
+    $('.blur_obj').addClass('blur_start')
       $('.anim-pic').each(function (index) {
         var $strip = $(this);
         setTimeout(function () {
@@ -241,8 +241,8 @@ function mobileAnim() {
 
       homeanim = true;
     } else {
-
-      $('.anim-pic').addClass('anim-pic_on');
+    $('.blur_obj').css('opacity', '1')
+    $('.anim-pic').css('opacity', '1')
     }
 }
 function RotateDevise() {
@@ -318,8 +318,7 @@ swup.on('popState', function () {
 //Page Script >
 
 function PageHomeScript() {
-  $('.blur_obj').css('transform', 'scale(1)')
-  $('.blur_obj').css('opacity', '1.5')
+
 
   mobileCk();
   function mobileCk() {    
