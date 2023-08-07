@@ -2343,9 +2343,18 @@ html.is-animating .transition-fade2 {
     width: 100% !important;
   }
 
+  .pg-1_bk_0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .pg-1_bk_0 h2 {
+    opacity: 0;
+  }
+
   .mob_on {
     width: 100% !important;
-    padding: 0px 50px !important;
+    padding: 0px 10px !important;
   }
 
   .mob_on2 {
@@ -2395,7 +2404,11 @@ html.is-animating .transition-fade2 {
   }
 
   .tasks_box {
-    height: 1600px;
+    height: 1250px;
+  }
+
+  .tasks_box .col-3 h2 {
+    font-size: 3rem !important;
   }
 
   .tasks_box .col-9 {
@@ -2482,6 +2495,23 @@ html.is-animating .transition-fade2 {
   .as_f1team p {
     padding-top: 100px;
     background: none;
+  }
+
+  .target_audience {
+    padding-top: 100px;
+    padding: 0px;
+  }
+
+  .model_range .col-12 {
+    margin-top: 80px;
+  }
+
+  .newspage {
+    margin-top: 0px;
+  }
+
+  .newspage img {
+    margin-top: 0px;
   }
 }
 
