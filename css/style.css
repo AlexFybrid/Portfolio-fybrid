@@ -484,6 +484,7 @@ html.is-animating .transition-fade2 {
 }
 
 .tasks_box .col-9 {
+  background-color: white;
   padding: 50px;
   border-radius: 30px;
   border: 1px solid black;
@@ -655,9 +656,7 @@ html.is-animating .transition-fade2 {
   padding: 30px;
   border-radius: 20px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.6823529412);
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
+  background-color: #080a0a;
 }
 
 .as_f1team .row {
@@ -855,7 +854,6 @@ html.is-animating .transition-fade2 {
 }
 
 .pg-1_bk_3 h2 {
-  font-size: 4rem !important;
   font-weight: 400;
   z-index: 100 !important;
 }
@@ -898,7 +896,7 @@ html.is-animating .transition-fade2 {
 }
 
 .pg-1_bk_3 .col-12 h2 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 500;
 }
 
@@ -1425,8 +1423,8 @@ html.is-animating .transition-fade2 {
 /* Responsive layout - makes a two column-layout instead of four columns */
 
 .icon-scroll_done svg {
-  width: 70px;
-  height: 40px;
+  width: 65px;
+  height: 35px;
 }
 
 .icon-scroll_done .icon-scroll {
@@ -1435,7 +1433,7 @@ html.is-animating .transition-fade2 {
   stroke-width: 2;
   stroke: #fff;
   stroke-miterlimit: 10;
-  box-shadow: inset 0px 0px 0px #007556;
+  box-shadow: inset 0px 0px 0px #1E7A51;
   -webkit-animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
           animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
 }
@@ -1491,13 +1489,13 @@ html.is-animating .transition-fade2 {
 
 @-webkit-keyframes fill {
   100% {
-    box-shadow: inset 0px 0px 0px 30px #007556;
+    box-shadow: inset 0px 0px 0px 30px #1E7A51;
   }
 }
 
 @keyframes fill {
   100% {
-    box-shadow: inset 0px 0px 0px 30px #007556;
+    box-shadow: inset 0px 0px 0px 30px #1E7A51;
   }
 }
 
@@ -2225,6 +2223,8 @@ html.is-animating .transition-fade2 {
   }
 
   .mob_on_obj p {
+    padding: 20px;
+    border-radius: 20px;
     width: 100%;
   }
 
@@ -2235,15 +2235,12 @@ html.is-animating .transition-fade2 {
   .avatarCenter_mob {
     left: 50% !important;
     right: auto !important;
-    top: -40% !important;
+    top: -60px !important;
     transform: translateX(-50%);
   }
 
-  .avatarCenter_mob2 {
-    left: 50% !important;
-    right: auto !important;
-    top: -30% !important;
-    transform: translateX(-50%);
+  .avatarCenter_mob img {
+    height: 80px;
   }
 
   .aston_home .container {
@@ -2251,7 +2248,57 @@ html.is-animating .transition-fade2 {
   }
 
   .aston_home h2 {
-    font-size: 5rem !important;
+    font-size: 3rem !important;
+  }
+
+  .model_range h2 {
+    font-size: 2rem !important;
+  }
+
+  .as_f1team h2 {
+    font-size: 2rem !important;
+  }
+
+  .as_f1team h4 {
+    font-size: 2rem !important;
+  }
+
+  .as_f1team .black_box {
+    width: 100% !important;
+    border-radius: 0px !important;
+  }
+
+  .fonts_colors_con h2 {
+    font-size: 2rem !important;
+  }
+
+  .fonts_colors_con .colors_box .bl_style {
+    height: 250px !important;
+  }
+
+  .fonts_colors_con .colors_box .fonts_box {
+    top: 120px;
+  }
+
+  .fonts_colors_con .colors_box .main_font h3 {
+    font-size: 3rem !important;
+  }
+
+  .fonts_colors_con .colors_box .font_letter h4 {
+    font-size: 1.2rem;
+  }
+
+  .fonts_box .color_site h3 {
+    font-size: 1rem !important;
+  }
+
+  .pj_ad h2,
+  .pj_ad h3 {
+    font-size: 2rem !important;
+  }
+
+  .newspage .col-4 {
+    margin-bottom: 0px;
   }
 }
 
@@ -2353,12 +2400,13 @@ html.is-animating .transition-fade2 {
 
   .tasks_box .col-9 {
     border: 0px;
+    padding: 5px !important;
     -webkit-backdrop-filter: blur(0px);
             backdrop-filter: blur(0px);
   }
 
   .black_box .circle {
-    width: 80%;
+    opacity: 0;
   }
 
   .userflow .col-12 {
@@ -2375,6 +2423,7 @@ html.is-animating .transition-fade2 {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 20;
   }
 
   .userflow .back_scroll_ico .icon-scroll,
@@ -2384,11 +2433,11 @@ html.is-animating .transition-fade2 {
   }
 
   .userflow .back_scroll_ico .icon-scroll {
-    width: 70px;
-    height: 40px;
+    width: 65px;
+    height: 35px;
     top: 90%;
     margin-top: -35px;
-    background: linear-gradient(rgb(131, 131, 131) 0%, rgb(115, 115, 115) 100%);
+    background: #474747;
     border-radius: 25px;
   }
 
@@ -2429,6 +2478,11 @@ html.is-animating .transition-fade2 {
       transform: translateX(-46px);
     }
 }
+
+  .as_f1team p {
+    padding-top: 100px;
+    background: none;
+  }
 }
 
 @media screen and (max-width: 736px) and (max-height: 414px) {
