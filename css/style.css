@@ -571,6 +571,10 @@ html.is-animating .transition-fade2 {
   padding: 45px;
 }
 
+.userflow .col-12 {
+  position: relative;
+}
+
 .userflow .col-12::-webkit-scrollbar {
   background-color: #181818;
   width: 16px;
@@ -1419,6 +1423,83 @@ html.is-animating .transition-fade2 {
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
+
+.icon-scroll_done svg {
+  width: 70px;
+  height: 40px;
+}
+
+.icon-scroll_done .icon-scroll {
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px #007556;
+  -webkit-animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+          animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+}
+
+.icon-scroll_done .checkmark__check {
+  -webkit-animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+          animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+.icon-scroll_done .icon-scroll:before {
+  -webkit-animation-name: none !important;
+          animation-name: none !important;
+  opacity: 0;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+}
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@-webkit-keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #007556;
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #007556;
+  }
+}
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 
@@ -2287,6 +2368,67 @@ html.is-animating .transition-fade2 {
   .userflow .col-12 img {
     width: 200% !important;
   }
+
+  .userflow .back_scroll_ico {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .userflow .back_scroll_ico .icon-scroll,
+  .userflow .back_scroll_ico .icon-scroll:before {
+    position: absolute;
+    right: 2%;
+  }
+
+  .userflow .back_scroll_ico .icon-scroll {
+    width: 70px;
+    height: 40px;
+    top: 90%;
+    margin-top: -35px;
+    background: linear-gradient(rgb(131, 131, 131) 0%, rgb(115, 115, 115) 100%);
+    border-radius: 25px;
+  }
+
+  .userflow .back_scroll_ico .icon-scroll:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    top: 40%;
+    left: 75%;
+    border-radius: 4px;
+    -webkit-animation-duration: 2.5s;
+            animation-duration: 2.5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-name: scroll;
+            animation-name: scroll;
+  }
+
+@-webkit-keyframes scroll {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(-46px);
+    }
+}
+
+@keyframes scroll {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(-46px);
+    }
+}
 }
 
 @media screen and (max-width: 736px) and (max-height: 414px) {

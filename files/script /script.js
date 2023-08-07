@@ -497,8 +497,11 @@ function Page2workScript() {
   });
               
   
+  const horizontalScrollDiv = document.getElementById('scroll_container');
 
-
+  horizontalScrollDiv.addEventListener('scroll', function () {
+    $('.back_scroll_ico').addClass('icon-scroll_done')
+  });
 
 }
 function AboutScript() {
