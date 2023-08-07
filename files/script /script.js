@@ -224,6 +224,9 @@ function PageCheck() {
       Page2workScript();
     }
     if ($('#page').hasClass('pageabout')) {
+      if(mobile === false){
+        $('.left_box_bar').removeClass('left_box_bar_on')
+      }
       $('.select_nav').addClass('select_about')
       AboutScript();
     }
@@ -301,7 +304,6 @@ swup.on('contentReplaced', () => {
 
 swup.on('animationInStart', function () {
   PageCheck();
-
 });
 
 swup.on('popState', function () {
@@ -514,7 +516,6 @@ function AboutScript() {
 
   } else {
 
-
     function tiltInt() {
       VanillaTilt.init(document.querySelectorAll(".tildcard"));
     }
@@ -536,6 +537,10 @@ function AboutScript() {
 
         document.querySelector('.box_back').style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${cubePosition}, 0, 1)`;
         document.querySelector('.text_min_bar').style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -${cubePosition2}, 0, 1)`;
+        setTimeout(() => {
+                $('.left_box_bar').addClass('left_box_bar_on')
+          
+        }, 800);
       };
     }
 
@@ -549,7 +554,7 @@ function AboutScript() {
     tiltInt();
     
     let minibar = true;
-    minibar = true;
+    minibar = true;  
     swup.on('animationOutDone', () => {
       if (minibar === true) {
         miniPrewStop();
