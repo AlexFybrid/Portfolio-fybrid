@@ -338,8 +338,8 @@ function PageHomeScript() {
       if (!mobilePC === true) {
         $('nav').css("transform","translateX(20vw)")
       }
-      swup.on('contentReplaced', function () {
-      
+
+      swup.hooks.on('content:replace', () => {
         $('w-1').css("transform", "scale(100%)")
         if ($('#page').hasClass('page1')) {
         }
@@ -372,7 +372,7 @@ function PageHomeScript() {
 
 
 
-      swup.on('willReplaceContent', function () {
+      swup.hooks.before('content:replace', () => {
         shouldMoveNav = false; // Установка флага в false при событии
         $('nav').css("transform", "translateX(0vw)");
         window.scrollTo(0, 0);
