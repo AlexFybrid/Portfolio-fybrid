@@ -15,39 +15,14 @@ var loadVideoT;
 // });
 
 const swup = new Swup({
-  plugins: [new SwupOverlayTheme()]
+  // plugins: [new SwupOverlayTheme()],
+  plugins: [new SwupFadeTheme()],
+  animateHistoryBrowsing: true,
 });
 
 import PhotoSwipeLightbox from './photoswipe-lightbox.esm.min.js';
 const nothing = ''
 
-const backEasing = {
-  out: 'cubic-bezier(.48, 1.33, .67, 1.06)',
-  in: 'ease',
-
-}
-const lightbox = new PhotoSwipeLightbox({
-  arrowPrevSVG: nothing,
-  arrowNextSVG: nothing,
-  closeSVG: nothing,
-  zoomSVG: nothing,
-  padding: { top: 50, bottom: 50, left: 50, right: 50 },
-  mouseMovePan: false,
-  secondaryZoomLevel: 0.6,
-  imageClickAction: 'close',
-  showAnimationDuration: 250,
-  hideAnimationDuration: 200,
-  // may select multiple "galleries"
-  gallery: '#gallery-img',
-  children: 'a',
-  pswpModule: () => import('./photoswipe.esm.min.js')
-});
-lightbox.on('firstUpdate', () => {
-  lightbox.pswp.options.easing = backEasing.out;
-});
-lightbox.on('close', () => {
-  lightbox.pswp.options.easing = backEasing.in;
-});
 
 
 
@@ -197,6 +172,34 @@ function mobileCheck() {
     if (mobile === true) {
       PageCheck();
     }
+    const backEasing = {
+      out: 'cubic-bezier(.48, 1.33, .67, 1.06)',
+      in: 'ease',
+
+    }
+    const lightbox = new PhotoSwipeLightbox({
+      arrowPrevSVG: nothing,
+      arrowNextSVG: nothing,
+      closeSVG: nothing,
+      zoomSVG: nothing,
+      padding: { top: 50, bottom: 50, left: 50, right: 50 },
+      mouseMovePan: false,
+      secondaryZoomLevel: 0.6,
+      imageClickAction: 'close',
+      showAnimationDuration: 250,
+      hideAnimationDuration: 200,
+      // may select multiple "galleries"
+      gallery: '#gallery-img',
+      children: 'a',
+      pswpModule: () => import('./photoswipe.esm.min.js')
+    });
+    lightbox.on('firstUpdate', () => {
+      lightbox.pswp.options.easing = backEasing.out;
+    });
+    lightbox.on('close', () => {
+      lightbox.pswp.options.easing = backEasing.in;
+    });
+
   } else {
       mobile = false;
       PageCheck();
@@ -225,6 +228,9 @@ function PageCheck() {
       PageHomeScript();
     }
     if ($('#page').hasClass('pagework')) {
+      if (mobile === false) {
+        imageZoom();  
+      }
       if ($('.select_nav').hasClass('select_about')) {
         $('.select_nav').removeClass('select_about')
       }
@@ -321,8 +327,7 @@ swup.hooks.on('history:popstate', () => {
 
 
 
-
-  }, 50);
+  },  50);
 
 });
 
@@ -398,7 +403,6 @@ function Page2workScript() {
     $('#my-video').remove();
     lightbox.init();
   }
-  imageZoom();  
   $(document).ready(function () {
     const video = document.getElementById("my-video");
     
