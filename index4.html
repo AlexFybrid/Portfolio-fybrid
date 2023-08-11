@@ -4,18 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20230711175948"></link>
-  <script src="https://code.createjs.com/1.0.0/preloadjs.min.js?_v=20230711175948"></script>
-  <script src="https://code.jquery.com/jquery-2.2.3.min.js?_v=20230711175948"></script>
-  <script src="https://unpkg.com/@swup/preload-plugin@2?_v=20230711175948"></script>
-  <script src="files/script /tilt.js?_v=20230711175948"></script>
+  <script src="https://code.createjs.com/1.0.0/preloadjs.min.js?_v=20230811171940"></script>
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js?_v=20230811171940"></script>
+  <script src="https://unpkg.com/@swup/preload-plugin@2?_v=20230811171940"></script>
+  <script src="https://unpkg.com/@swup/overlay-theme@2?_v=20230811171940"></script>
+  <script src="https://unpkg.com/@swup/fade-theme@2?_v=20230811171940"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?_v=20230811171940"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300&family=Open+Sans:wght@300;400;500;600;700&display=swap&_v=20230711175948" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css?_v=20230711175948" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   
-    <link rel="apple-touch-icon" sizes="57x57" href="files/favicon/apple-icon-57x57.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@100;200;300;400;500&family=Inter:wght@100;200;300&family=Open+Sans:wght@300;400;500;600;700&display=swap&_v=20230811171940" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe.css?_v=20230811171940">
+
+  <link rel="stylesheet" href="css/style.min.css?_v=20230811171940"></link>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css?_v=20230811171940" rel="stylesheet"integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="files/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="files/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="files/favicon/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="76x76" href="files/favicon/apple-icon-76x76.png">
@@ -30,15 +41,16 @@
     <link rel="icon" type="image/png" sizes="16x16" href="files/favicon/favicon-16x16.png">
     <link rel="manifest" href="files/favicon/manifest.json">
     <meta name="msapplication-TileImage" content="files/favicon/ms-icon-144x144.png">
+    <title>Alex Portfolio</title>
 </head>
 <header>
 	<nav class="Main_navbar">
-		<li><a data-swup-preload href="index2.html">Work</a></li>
-		<li><a href="index.html">About</a></li>
+		<li><a id="bt_work" data-swup-preload href="index.html">Work</a></li>
+		<li><a href="index2.html">About</a></li>
 		<div class="select_nav"></div>
 	</nav>
 	<div class="notify ny_1">
-		<h2>smooth scrolling is off</h2>
+		<h2>smooth scrolling is off</h2> 
 	</div>
 	<div class="notify ny_2">
 		<h2>fullscreen and restart</h2>
@@ -52,6 +64,7 @@
 			<div class="progresss"></div>
 		</div>
 	</div>
+	<div class="backgraund_bar_box"></div>
 </div>
 <div class="rotate_box">
 	<div>
@@ -59,31 +72,31 @@
 	<svg width="40%" height="40%" viewBox="0 0 4521 4468" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path
 			d="M607.76 2340C607.76 2308.8 633.056 2283.5 664.26 2283.5C695.464 2283.5 720.76 2308.8 720.76 2340L607.76 2340ZM664.26 2537.44L607.76 2537.44L664.26 2537.44ZM1834.26 3707.44L1834.26 3763.94L1834.26 3763.94L1834.26 3707.44ZM2228.67 3707.44L1663.67 4033.65L1663.67 3381.24L2228.67 3707.44ZM720.76 2340L720.76 2537.44L607.76 2537.44L607.76 2340L720.76 2340ZM720.76 2537.44C720.76 3152.41 1219.29 3650.94 1834.26 3650.94L1834.26 3763.94C1156.88 3763.94 607.76 3214.82 607.76 2537.44L720.76 2537.44Z"
-			fill="black" />
+			fill="white" />
 		<path
 			d="M3912.59 2127.39C3912.59 2158.59 3887.29 2183.89 3856.09 2183.89C3824.88 2183.89 3799.59 2158.59 3799.59 2127.39L3912.59 2127.39ZM3856.09 1929.94L3912.59 1929.94L3856.09 1929.94ZM2686.09 759.94L2686.09 703.44L2686.09 703.44L2686.09 759.94ZM2291.68 759.94L2856.68 433.737L2856.68 1086.14L2291.68 759.94ZM3799.59 2127.39L3799.59 1929.94L3912.59 1929.94L3912.59 2127.39L3799.59 2127.39ZM3799.59 1929.94C3799.59 1314.97 3301.06 816.44 2686.09 816.44L2686.09 703.44C3363.47 703.44 3912.59 1252.56 3912.59 1929.94L3799.59 1929.94Z"
-			fill="black" />
+			fill="white" />
 		<path fill-rule="evenodd" clip-rule="evenodd"
 			d="M850.447 1545.48C767.184 1628.75 767.184 1763.74 850.447 1847.01L2647.07 3643.63C2730.34 3726.89 2865.33 3726.89 2948.6 3643.63L3669.63 2922.6C3752.89 2839.33 3752.89 2704.34 3669.63 2621.07L1873.01 824.448C1789.74 741.185 1654.75 741.184 1571.48 824.448L850.447 1545.48ZM917.784 1577.07C851.963 1642.89 851.963 1749.6 917.783 1815.42L2678.06 3575.7C2743.88 3641.52 2850.6 3641.52 2916.42 3575.7L3601.1 2891.01C3666.92 2825.19 3666.92 2718.48 3601.1 2652.66L1840.83 892.38C1775.01 826.559 1668.29 826.559 1602.47 892.38L917.784 1577.07Z"
-			fill="black" stroke="black" stroke-width="41" />
+			fill="white" stroke="black" stroke-width="41" />
 		<path
 			d="M1443.52 1225.06L1279.06 1389.52C1260.63 1407.95 1260.63 1437.83 1279.06 1456.26C1297.49 1474.69 1327.37 1474.69 1345.8 1456.26L1510.26 1291.8C1528.69 1273.37 1528.69 1243.49 1510.26 1225.06C1491.83 1206.63 1461.95 1206.63 1443.52 1225.06Z"
-			fill="black" stroke="black" stroke-width="11" />
+			fill="white" stroke="black" stroke-width="11" />
 	</svg>
 	
 	
 		</div>
-		<h5>Please rotate your device.</h5>
+		<h5 style="font-weight: 300;">Please rotate your device.</h5>
 	</div>
 </div>
 
 </header>
-<!-- <link rel="stylesheet" href="https://cdn.plyr.io/3.7.7/plyr.css?_v=20230711175948" />
-<script src="https://cdn.plyr.io/3.7.7/plyr.polyfilled.js?_v=20230711175948"></script> -->
+<!-- <link rel="stylesheet" href="https://cdn.plyr.io/3.7.7/plyr.css?_v=20230811171940" />
+<script src="https://cdn.plyr.io/3.7.7/plyr.polyfilled.js?_v=20230811171940"></script> -->
 
-<body>
+<body style="background-color: rgb(28, 28, 28)">
   <main id="swup" class="transition-fade">
-    <div id="page" class="pagework page4" data-scroll-container>
+    <div id="page" class="pagework page4 as" data-scroll-container>
       <div class="rows_2" data-scroll-section>
         <div id="prew" class="Prew">
           <div class="container">
@@ -138,164 +151,481 @@
           <video class="video" id="my-video" loop loading="lazy" src="files/AstonMartin.mp4"></video>
           <div id="imgbox" class="imgbox imgbox_aston">
             <picture><source srcset="img/Back_Aston.webp" type="image/webp"><img class="img_back_main" id="img_back_main_AS" src="img/Back_Aston.jpg" alt=""></picture>
+            <div class="lds-dual-ring"></div>
           </div>
         </div>
-        <div class="pg-1_bk_1">
-          <div class="container">
-          </div>
+        <!-- <div class="pg-1_bk_1 mob_pic">
           <picture><source srcset="img/Aston_main.webp" type="image/webp"><img id="img_back_AS_2" width="100%" src="img/Aston_main.jpg" alt=""></picture>
-        </div>
-        <div class="pg-1_bk_0">
-          <div class="row justify-content-end align-items-center d-flex">
-            <h2>About</h2>
-            <div class="col-4 mob_off"></div>
-            <div class="col-4  mob_on justify-content-end align-items-center d-flex">
-              <p>"Aston Martin Website" is a web design project that showcases a stunning and dynamic interface for the official ASTON
-              MARTIN® website. The project aims to provide a seamless and immersive online experience for Aston Martin potential
-              customers. The project serves as a demonstration to showcase the likely appearance of the service, with all materials
-              used belonging to ASTON MARTIN®.</p>
-            </div>
-            <div class="col-4 mob_off"></div>
-
+        </div> -->
+        
+        
+        <div>
+        <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
           </div>
-        </div>
-        <div class="pg-1_bk_1">
-          <div class="container">
-          </div>
-          <picture><source srcset="img/aston_post_5.webp" type="image/webp"><img id="img_back_AS_3" width="100%" src="img/aston_post_5.jpg" alt=""></picture>
-        </div>
-        <div style="padding-bottom: 0px;" class="pg-1_bk_2 pg-1_bk_2_aston">
-
-              <div class="container text_plus_2">
-                <div style="padding-bottom: 0px;" class="row justify-content-center">
-                
-
-                  
-                <div class="row justify-content-center">
-                  <div class="col-2"></div>
-                  <div style="color: #e1e1e1;    text-align: center;" class="col-7">
-                    <h2>Convenient choice of vehicle</h2>
-                  </div>
-                  <div class="col-2"></div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row justify-content-center">
+                <div class="col-3">
+                  <picture><source srcset="img/aston_post_10.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/aston_post_10.jpg" alt="ASTON"></picture>
                 </div>
-                <div style="padding-bottom: 0px;" class="row">
-                  <div class="col-12">
-                    <picture><source srcset="img/aston_macbook.webp" type="image/webp"><img id="img_back_AS_4" style="margin-bottom: 0px; border-radius: 0px;" width="100%" src="img/aston_macbook.png" alt=""></picture>
-                  </div>
+                <div class="col-3">
+                  <picture><source srcset="img/aston_post_8.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/aston_post_8.jpg" alt="ASTON"></picture>
+                </div>
+                <div class="col-3">
+                  <picture><source srcset="img/aston_post_13.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/aston_post_13.jpg" alt="ASTON"></picture>
                 </div>
               </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-3">
+                  <picture><source srcset="img/aston_post_7.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/aston_post_7.jpg" alt="ASTON"></picture>
+                </div>
+                <div class="col-3">
+                  <picture><source srcset="img/aston_post_6.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/aston_post_6.jpg" alt="ASTON"></picture>
+                </div>
+                <div class="col-3">
+                  <picture><source srcset="img/Aston_8.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/Aston_8.jpg" alt="ASTON"></picture>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-3">
+                  <picture><source srcset="img/aston_post_11.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/aston_post_11.jpg" alt="ASTON"></picture>
+                </div>
+                <div class="col-3">
+                  <picture><source srcset="img/aston_post_14.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/aston_post_14.jpg" alt="ASTON"></picture>
+                </div>
+                <div class="col-3">
+                  <picture><source srcset="img/aston_post_12.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/aston_post_12.jpg" alt="ASTON"></picture>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        </div>
+        <div>
+
+
+          <div class="mobile-carusel" id="gallery-img">
+            <a style="margin-left: 10vw;" href="img/aston_mobile.jpg" data-pswp-width="638" data-pswp-height="956" target="_blank" class="mobile-carusel-item">
+              <picture><source srcset="img/aston_mobile.webp" type="image/webp"><img  width="100%" class="mobile-carusel-item-img" src="img/aston_mobile.jpg" alt=''></picture>
+            </a>
+            <a href="img/aston_mobile_2.jpg" data-pswp-width="638" data-pswp-height="956" target="_blank" class="mobile-carusel-item">
+              <picture><source srcset="img/aston_mobile_2.webp" type="image/webp"><img width="100%" class="mobile-carusel-item-img" src="img/aston_mobile_2.jpg" alt=''></picture>
+            </a>
+            <a href="img/aston_mobile_3.jpg" data-pswp-width="638" data-pswp-height="956" target="_blank" class="mobile-carusel-item">
+              <picture><source srcset="img/aston_mobile_3.webp" type="image/webp"><img width="100%" class="mobile-carusel-item-img" src="img/aston_mobile_3.jpg" alt=''></picture>
+            </a>
+            <a href="img/aston_mobile_5.jpg" data-pswp-width="638" data-pswp-height="956" target="_blank" class="mobile-carusel-item">
+              <picture><source srcset="img/aston_mobile_5.webp" type="image/webp"><img width="100%" class="mobile-carusel-item-img" src="img/aston_mobile_5.jpg" alt=''></picture>
+            </a>
+            <a href="img/aston_mobile_8.jpg" data-pswp-width="638" data-pswp-height="956" target="_blank" class="mobile-carusel-item">
+              <picture><source srcset="img/aston_mobile_8.webp" type="image/webp"><img width="100%" class="mobile-carusel-item-img" src="img/aston_mobile_8.jpg" alt=''></picture>
+            </a>
+            <a style="margin-right: 10vw;" href="img/aston_mobile_7.jpg" data-pswp-width="638" data-pswp-height="956" target="_blank" class="mobile-carusel-item">
+              <picture><source srcset="img/aston_mobile_7.webp" type="image/webp"><img width="100%" class="mobile-carusel-item-img" src="img/aston_mobile_7.jpg" alt=''></picture>
+            </a>
+  
+  
+          </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-10">
+
+          </div>
         </div>
       </div>
-        <div class="pg-1_bk_1">
+
+
+
+        
+        
+      
+
+
+        <div class="pg-1_bk_0">
           <div class="container">
+            <div class="row justify-content-end align-items-center d-flex">
+              <h2>About</h2>
+              <div class="col-4 mob_off"></div>
+              <div class="col-4 mob_on justify-content-end align-items-center d-flex">
+                <p>"Aston Martin Website" is a web design project that showcases a stunning and dynamic interface for the official ASTON
+                MARTIN® website. The project aims to provide a seamless and immersive online experience for Aston Martin potential
+                customers. The project serves as a demonstration to showcase the likely appearance of the service, with all materials
+                used belonging to ASTON MARTIN®.</p>
+              </div>
+              <div class="col-4 mob_off"></div>
+  
+            </div>
           </div>
-          <picture><source srcset="img/aston_post_6.webp" type="image/webp"><img id="img_back_AS_5" width="100%" src="img/aston_post_6.jpg" alt=""></picture>
         </div>
-        <div style="padding-bottom: 0px;" class="pg-1_bk_2 pg-1_bk_2_aston">
-          <div class="container text_plus_2">
-            <div style="padding-bottom: 0px;" class="row justify-content-center">
-              <div class="row justify-content-center">
-                <div class="col-2"></div>
-                <div style="color: #e1e1e1;    text-align: center;" class="col-7">
-                  <h2>Convenient choice of vehicle</h2>
-                </div>
-                <div class="col-2"></div>
+        <div class="container tasks_box">
+          <div class="row">
+            <div class="col-3 img_as">
+              <h2>Tasks</h2>
+            </div>
+            <div class="col-9 img_as">
+              <ol>
+                <li>
+                  Improve User Experience (UX):
+                  <ul>
+                    <li>Make navigation more intuitive and user-friendly, allowing users to find information quickly.</li>
+                    <li>Optimize interaction with website elements to enhance usability and reduce the likelihood of errors.</li>
+                    <li>Ensure fast page loading and smooth interface performance to increase user satisfaction.</li>
+                  </ul>
+                </li>
+                <li>
+                  Create an Attractive and Modern User Interface (UI):
+                  <ul>
+                    <li>Develop a stylish and aesthetically appealing website design that aligns with the premium Aston Martin brand.</li>
+                    <li>Utilize modern design trends and elements to create a unique and memorable website appearance.</li>
+                  </ul>
+                </li>
+                <li>
+                  Increase Conversion:
+                  <ul>
+                    <li>Optimize page layouts based on conversion design principles to maximize successful user actions (e.g., orders,
+                    inquiries, subscriptions).</li>
+                    <li>Strengthen visual elements that attract attention and encourage users to take desired actions.</li>
+                  </ul>
+                </li>
+                <li>
+                  Maintain Brand Identity:
+                  <ul>
+                    <li>ncorporate corporate colors, logo, and branding elements of Aston Martin to establish a consistent and unified brand
+                    perception on the website.</li>
+                    <li>Highlight the premium characteristics of the brand and communicate its values through design and visual effects.</li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <picture><source srcset="img/task_back.webp" type="image/webp"><img src="img/task_back.jpg" alt=""></picture>
+        </div>
+        <div class="black_box">
+          <div class="target_audience container">
+            <div class="row">
+              <div class="col-6 img_as"><h2>Target audience</h2></div></div>
+              <div class="row">
+              <div class="col-6 mob_off"></div>
+              <div class="col-6 img_as"> 
+                <p>Premium Car Fans: Includes fans of the automotive industry, especially those who are interested in and prefer premium
+                cars. <br><br>
+                
+                Potential Aston Martin buyers: People who are considering purchasing a car from this prestigious brand and are looking
+                for information on available models and features.<br><br>
+                
+                Current Aston Martin owners: People who already own Aston Martin vehicles and are looking for service, accessories,
+                updates and more information about the company's products and services.<br><br></p>
               </div>
             </div>
+            <div class="circle"></div>
+          </div>
+          <div class="reserarch container">
+            <div class="row">
+            <div class="col-6"><h2>Reserarch</h2></div>
+            <div class="col-6"></div>
+          </div>
+          <div class="row">
+              <div class="col-6 mob_off_obj"></div>
+              <div class="col-6 img_as">
+                <p>In order to gather data for further analysis, it was essential to understand the primary concerns people have when
+                building application files. Therefore, a series of surveys and user polls were conducted during the booking process. The
+                goal was to identify the key pain points and challenges faced by users while creating application files."</p>
+            </div>
+            </div>
+
+            <div class="row comments">
+              <div class="col-5 mob_on_obj">
+                <div class="avatar avatarCenter_mob">
+                  <picture><source srcset="img/memoji_1.webp" type="image/webp"><img src="img/memoji_1.png" alt=""></picture>
+                </div>
+                <p>"When I go to the Aston Martin website, I always expect to experience luxury and upmarket, but something is always
+                missing..."</p>
+              </div>
+              <div class="col-1 mob_off_obj"></div>
+              <div class="col-6 mob_on_obj">
+                <div class="avatar avatarLeft avatarCenter_mob">
+                  <picture><source srcset="img/memoji_2.webp" type="image/webp"><img src="img/memoji_2.png" alt=""></picture>
+                </div>
+                <p>"I opened their website and it seems like the pages take forever to load! I can't wait to view the models."</p>
+              </div>
+
+              <div class="col-5 mob_off_obj"></div>
+              <div class="col-5 mob_on_obj">
+                <div class="avatar avatarLeft avatarCenter_mob">
+                  <picture><source srcset="img/memoji_3.webp" type="image/webp"><img src="img/memoji_3.png" alt=""></picture>
+                </div>
+                <p>"I have visited their website several times, but I always get lost in the pile of information! I can't find what I'm
+                interested in quickly."</p>
+              </div>
+              <div class="col-2 mob_off_obj"></div>
+
+              <div class="col-2 mob_off_obj"></div>
+              <div class="col-5 mob_on_obj">
+                <div class="avatar avatarCenter_mob">
+                  <picture><source srcset="img/memoji_4.webp" type="image/webp"><img src="img/memoji_4.png" alt=""></picture>
+                </div>
+                <p>"Where can I customize the car the way I need it?"</p>
+              </div>
+              <div class="col-4 mob_off_obj"></div>
+
+              <div class="justify-content-center d-flex w-100">
+
+                <div class="col-5 mob_on_obj avatarCenter_last">
+                  <div class="avatar avatarCenter_mob ">
+                    <picture><source srcset="img/memoji_5.webp" type="image/webp"><img src="img/memoji_5.png" alt=""></picture>
+                  </div>
+                  <p>"Planning to buy an Aston Martin, but I'm not sure how to go about it. Where can I find information about dealers and
+                  buying conditions?"</p>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="userflow container">
+            <div class="row">
+              <div style="position: relative;" class="col-3 mob_on_full"><h2>User Flow</h2>
+                <div class="back_scroll_ico">
+                <div class='icon-scroll'>
+                  <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                  </svg>
+                </div>
+              </div>
+              </div>
+              <div class="col-9"></div>
+              <div id="scroll_container" class="col-12">
+                <picture><source srcset="img/aston_shems.webp" type="image/webp"><img width="100%" src="img/aston_shems.jpg" alt=""></picture>
+              </div>
+
+            </div>
+          </div>
+          <div class="aston_home">
+            <div class="container">
+              <div class="row">
+               <div class="col-12">
+                <h2>HOME PAGE</h2>
+              </div>
+              <picture><source srcset="img/aston_macbook.webp" type="image/webp"><img src="img/aston_macbook.png" alt=""></picture>
+              </div>
+            </div>
+            <div class="back_blur_f1" >
+              <picture><source srcset="img/f1_blur.webp" type="image/webp"><img width="100%" src="img/f1_blur.jpg" alt=""></picture>
+            </div>
           </div>
         </div>
-      <div class="pg-1_bk_3">
-        <div class="container">
+        <div class="model_range container">
           <div class="row">
-            <div class="col text-center as_header" >
-              <h2>Main colors</h2>
+            <div class="col-12">
+              <h2>MODEL RANGE</h2>
+              <p>The lineup is in the palm of your hand</p>
+              <picture><source srcset="img/modelrange.webp" type="image/webp"><img width="100%" src="img/modelrange.jpg" alt=""></picture>
             </div>
-            <picture><source srcset="img/Aston_mac.webp" type="image/webp"><img id="img_back_AS_6" class="bk_2_img" width="100%" src="img/Aston_mac.jpg" alt=""></picture>
+            <div class="col-12">
+              <h2>CONFIGURATOR</h2>
+              <p>Aston Martin car configurator. It features an intuitive and uncluttered interface, yet is visually appealing. Users can
+              easily customize the car of their dreams!</p>
+              <video width="100%" autoplay loop src="files/confirator.mp4"></video>
+            </div>
+            <div class="col-12">
+              <h2>CAR SEARCH</h2>
+              <p>The lineup is in the palm of your hand</p>
+              <picture><source srcset="img/as_living_cars.webp" type="image/webp"><img width="100%" src="img/as_living_cars.jpg" alt=""></picture>
+            </div>
+          </div>
+        </div>
 
-          <div class="col-4 black0000">
+        <div class="as_f1team ">
+          <div class="container">
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-11">
+                <h2>ASTON MARTON </h2> <h4>F1 team</h4>
+              </div>
+              <div class="col-1"></div>
+              <div class="col-5 mob_on_full">
+                <p>Discover the essence of simplicity and beauty with Aston Martin car search pages. The intuitive and uncomplicated
+                interface allows users to easily find their dream Aston Martin car, while the visually appealing design enhances the
+                overall experience.</p>
+              </div>
+              <div class="col-7"></div>
+              <div class="col-12">
+                <picture><source srcset="img/as_f1_team.webp" type="image/webp"><img width="100%" src="img/as_f1_team.jpg" alt=""></picture>
+              </div>
+            </div>
+            <div class="logof1">
+              <picture><source srcset="img/logo_f1.webp" type="image/webp"><img width="45%" src="img/logo_f1.jpg" alt=""></picture>
+            </div>
+          </div>
+          <div class="black_box"></div>
+        </div>
+        <div class="newspage">
+          <div class="container">
+            <div class="row">
+              <div class="col-1 mob_off_obj"></div>
+              <div class="col-11 mob_on_full">
+                <h2>NEWS PAGE</h2>
+                <div class="col-4 mob_on_obj">
+                  <p>it's all nice and easy to understand. To keep abreast of upcoming events</p>
+                </div>
+                <div class="col-12"> 
+                  <picture><source srcset="img/as_news.webp" type="image/webp"><img width="100%" src="img/as_news.jpg" alt=""></picture>
+                </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+
+        <div class="model_range container">
+          <div class="row">
+            <div class="col-12">
+              <h2>CLOTING PAGE</h2>
+              <p>It's all nice and easy to understand. To keep abreast of upcoming events</p>
+              <picture><source srcset="img/as_cloting.webp" type="image/webp"><img width="100%" src="img/as_cloting.jpg" alt=""></picture>
+            </div>
+            <div class="col-12">
+              <h2>COMPONETS</h2>
+              <picture><source srcset="img/as_components.webp" type="image/webp"><img width="100%" src="img/as_components.jpg" alt=""></picture>
+            </div>
+          </div>
+        </div>
+
+
+
+      <div class="pg-1_bk_3">
+        <div class="container fonts_colors_con">
+          <div class="row">
+            <div class="col-12"><h2>COLOR <span>&</span> TYPOGRAPHY</h2></div>
+          </div>
+          <div class="row colors_box">
+          <div class="col-4 color_bl_1 bl_style">
             <h3>#000000</h3>
           </div>
-          <div class="col-4 b202020 b20958B">
+          <div class="col-4 color_bl_2 bl_style" style="background-color: #20958B;">
             <h3>#20958B</h3>
           </div>
-          <div class="col-4 b6c1d32 b1E7A51">
+          <div class="col-4 color_bl_3 bl_style" style="background-color: #1E7A51;">
             <h3>#1E7A51</h3>
           </div>
+          <div class="fonts_box">
+            <div class="row fonts_main_box">
+              <div class="col-2">
+                <h3>Fonts</h3>
+              </div>
+            </div>
+          <div class="row">
+            <div class="col-12 main_font">
+              <h3>Anek Kannada</h3>
+            </div>
+            <div class="col-12 font_letter">
+              <h4>
+                A B C D E F G H I J K L M N O P Q R D T U V W X Y Z
+              </h4>
+              <h4>
+                a d c d e f g h i j k l m n o p q r d t u v w x y z 
+              </h4>
+            </div>
+          </div>
+          <div class="row color_site_box">
+            <div class="col-5 color_site color_bl_4" style="background-color: #FFF500;">
+              <h3 style="color: rgb(54, 54, 54);">#FFF500</h3>
+            </div>
+            <div class="col-5 color_site color_bl_5" style="background-color: #20958B;">
+              <h3>#20958B</h3>
+            </div>
+          </div>
+          </div>
+          <div class="fonts_box_back">
           </div>
         </div>
+        </div>
+      </div>
+      <div class="pj_ad">
         <div class="container">
-          <div class="row text_plus">
+          <div class="row">
             <div class="col-6">
-              <h3>- The Aston Martin website design showcases a host of advantages that elevate the user's browsing experience and
-              exemplify
-              the brand's elegance and performance. With a focus on user experience (UX) and user interface (UI) design, this
-              captivating website boasts a range of features that set it apart from the rest.</h3>
+              <h2>PROJECT</h2>
+              <h3>ADVANTAGES</h3>
             </div>
-            <div class="col-6">
-              <h3>- One of the standout advantages is the implementation of a dynamic menu, which seamlessly adapts to the user's needs.
-              This innovative feature ensures effortless navigation, allowing visitors to explore various sections of the website with
-              ease. Whether they are searching for specific models, discovering the latest innovations, or exploring the rich heritage
-              of Aston Martin, the dynamic menu intuitively presents the most relevant options, resulting in a seamless browsing
-              experience.</h3>
+          </div>
+          <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6 mob_on_full">
+              <ul>
+                <li>Streamlined Design: A well-structured design that avoids unnecessary clutter and distracting images,
+                  ensuring a seamless
+                  user experience without overwhelming the user. </li><br>
+                <li>Intuitive Navigation: User-friendly interface that guides users effortlessly through the process, making
+                  it easy to find
+                  what they need and achieve their goals.</li><br>
+                <li>Visual Appeal: Striking visuals and aesthetics that enhance user engagement and create a captivating and
+                  memorable
+                  experience.</li><br>
+                <li>Brand Consistency: Harmonious design elements that reinforce the brand identity, enhancing brand
+                  recognition and trust.<br></li>
+                <li>Data-driven Decision Making: User feedback and data analysis used to continuously improve the design and
+                  user experience
+                  over time.</li><br>
+              </ul>
             </div>
-            <div class="col-6">
-              <h3>- Moreover, the UX/UI design of the Aston Martin website is meticulously crafted to offer a visually stunning and
-              engaging
-              interface. The user interface combines sleek aesthetics with intuitive functionality, enabling visitors to interact
-              effortlessly with the content. Through a harmonious blend of striking visuals, well-organized layouts, and carefully
-              chosen typography, the design creates a sophisticated and immersive experience that reflects the brand's prestigious
-              image.</h3>
-            </div>
-            <div class="col-6">
-              <h3>- Additionally, the Aston Martin website design places emphasis on optimal usability, ensuring that every visitor can
-              access desired information efficiently. From clear and concise call-to-action buttons to thoughtfully placed menus and
-              filters, every element is strategically positioned to guide users through their journey on the website. This
-              user-centric approach guarantees a seamless interaction, enabling visitors to effortlessly find the information they
-              seek and engage with Aston Martin's exceptional products and services.</h3>
-            </div>
-            <h3>- In summary, the Aston Martin website design stands out by incorporating a dynamic menu that intuitively adapts to the
-            user's needs, a visually stunning UX/UI design that exudes elegance, and an emphasis on optimal usability. These
-            advantages collectively create an immersive and effortless browsing experience, allowing visitors to delve into the
-            world of Aston Martin and discover the epitome of automotive luxury and performance..</h3>
           </div>
         </div>
       </div>
       <div class="pg-1_bk_41">
         <div class="main_next_mob">
           <div class="container">
-            <div class="row justify-content-center w-2">
-              <div class="col-10 position-relative">
-                <h3 class="text-center">Next Project</h3>
+              <div class="row justify-content-center w-2">
+                <div class="col-10 position-relative">
+                  <h3 class="text-center">Next Project</h3>
                   <a href="index5.html">
-                    <picture><source srcset="img/Landing_Memoj.webp" type="image/webp"><img id="img_main_3" class="mobile_pic anim-pic" src="img/Landing_Memoj.jpg" alt=""></picture>
+                    <picture><source srcset="img/Landing_Memoj.webp" type="image/webp"><img id="img_main_4" class="mobile_pic" src="img/Landing_Memoj.jpg" alt=""></picture>
                   </a>
-                <div class="row row_info_main">
-                  <div class="col-6">
-                    <h2>MEMOJI</h2>
+                  <div class="row row_info_main">
+                    <div class="col-6">
+                      <h2>MEMOJI</h2>
+                    </div>
+                    <div class="col-4">
+                      <a href="index5.html">
+                        <svg width="40%" height="40%" viewBox="0 0 30 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M29.7071 8.7071C30.0976 8.31658 30.0976 7.68341 29.7071 7.29289L23.3431 0.92893C22.9526 0.538405 22.3195 0.538405 21.9289 0.92893C21.5384 1.31945 21.5384 1.95262 21.9289 2.34314L27.5858 8L21.9289 13.6569C21.5384 14.0474 21.5384 14.6805 21.9289 15.0711C22.3195 15.4616 22.9526 15.4616 23.3431 15.0711L29.7071 8.7071ZM1.11539e-07 9L29 9L29 7L-1.11539e-07 7L1.11539e-07 9Z"
+                            fill="white" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
-                  <div class="col-4">
-                    <a href="index5.html">
-                      <svg width="40%" height="40%" viewBox="0 0 30 16" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M29.7071 8.7071C30.0976 8.31658 30.0976 7.68341 29.7071 7.29289L23.3431 0.92893C22.9526 0.538405 22.3195 0.538405 21.9289 0.92893C21.5384 1.31945 21.5384 1.95262 21.9289 2.34314L27.5858 8L21.9289 13.6569C21.5384 14.0474 21.5384 14.6805 21.9289 15.0711C22.3195 15.4616 22.9526 15.4616 23.3431 15.0711L29.7071 8.7071ZM1.11539e-07 9L29 9L29 7L-1.11539e-07 7L1.11539e-07 9Z"
-                          fill="white" />
-                      </svg>
-                    </a>
+                </div>
+                <div class="back_blur">
+                  <div class="position-relative">
+                    <span class="blur_obj blur_obj_memoji"></span>
                   </div>
                 </div>
               </div>
-              <div class="back_blur">
-                <div class="position-relative">
-                  <span class="blur_obj blur_obj_aston"></span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <div class="main_next">
 
-          <div class="last_scroll_box" data-scroll data-scroll-sticky data-scroll-target=".main_next">
+          <div class="last_scroll_box">
             <div class="last_box_info"></div>
             <div class="next_text">
               <p>Next Project</p>
@@ -313,6 +643,8 @@
       </div>
     </div>
   </main>
+
+
 </body>
 
 
@@ -321,30 +653,25 @@
 
 
 
-<!-- <script src="https://cdn.blobity.dev/by.js?autoStart&licenseKey=...&_v=20230711175948"></script>
-  <script src="https://cdn.blobity.dev/by.js?_v=20230711175948"></script> -->
+<!-- <script src="https://cdn.blobity.dev/by.js?autoStart&licenseKey=...&_v=20230811171940"></script>
+  <script src="https://cdn.blobity.dev/by.js?_v=20230811171940"></script> -->
 
 
 
 
 
+<script src="files/script /swup.js?_v=20230811171940"></script>
+<script src="files/script /locomotive.js?_v=20230811171940"></script>
+<script src="files/script /fast-image-zoom.js?_v=20230811171940"></script>
 
-
-
-
-
-<script src="files/script /swup.js?_v=20230711175948"></script>
-<script src="files/script /locomotive.js?_v=20230711175948"></script>
-<script src="files/script /SwupProgressPlugin.min.js?_v=20230711175948"></script>
-
-<script src="files/script /script.js?_v=20230711175948"></script>
+<script src="files/script /tilt.js?_v=20230811171940"></script>
+<script type="module" src="files/script /script.js?_v=20230811171940"></script>
 
 
 <footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js?_v=20230711175948"
-                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?_v=20230811171940"
+                integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
                 crossorigin="anonymous"></script>
-
 </footer>
 
 </html>
