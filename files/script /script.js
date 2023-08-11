@@ -59,7 +59,9 @@ function preload() {
     const preloader = document.getElementById('preloader');
     const progressBar = document.querySelector('.progresss');
     const queue = new createjs.LoadQueue();
-    preloader.style.backgroundColor = '#1c1c1c';
+    $('.backgraund_bar_box').css('background-color','#1c1c1c')
+
+
     queue.addEventListener('progress', function (event) {
       const progressPercentage = Math.floor(event.progress * 100);
       progressBar.style.width = progressPercentage + '%';
@@ -174,8 +176,9 @@ function preload() {
         mobileCheck();
 
         preloader.style.display = 'none';
-      }, 1000)
-      preloader.style.opacity = '0';
+      }, 1500)
+      $('.backgraund_bar_box').addClass('preload_anim_on')
+      $('.progress-bar_box').css('opacity','0')
       if ($('#page').hasClass('page1')) {
           setTimeout(() => {
             mobileAnim();
@@ -240,7 +243,7 @@ function PageCheck() {
 }
 function mobileAnim() {
   if (homeanim === null) {
-    $('.blur_obj').addClass('blur_start')
+    // $('.blur_obj').addClass('blur_start')
       $('.anim-pic').each(function (index) {
         var $strip = $(this);
         setTimeout(function () {
@@ -393,8 +396,8 @@ function Page2workScript() {
   var videoClick = false;
   if (mobile === true) {
     $('#my-video').remove();
+    lightbox.init();
   }
-  lightbox.init();
   imageZoom();  
   $(document).ready(function () {
     const video = document.getElementById("my-video");
