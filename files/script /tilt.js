@@ -487,7 +487,10 @@ var VanillaTilt = (function () {
     /* expose the class to window */
     window.VanillaTilt = VanillaTilt;
 
-
+    /**
+     * Auto load
+     */
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"));
   }
 
   return VanillaTilt;
