@@ -56,6 +56,9 @@ nav {
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   transition: 0.5s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 nav li {
@@ -1843,6 +1846,7 @@ html.is-animating .transition-fade2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #000000 !important;
   z-index: -1;
 }
 

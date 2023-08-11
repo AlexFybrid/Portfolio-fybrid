@@ -172,35 +172,6 @@ function mobileCheck() {
     if (mobile === true) {
       PageCheck();
     }
-    const backEasing = {
-      out: 'cubic-bezier(.48, 1.33, .67, 1.06)',
-      in: 'ease',
-
-    }
-    const lightbox = new PhotoSwipeLightbox({
-      arrowPrevSVG: nothing,
-      arrowNextSVG: nothing,
-      closeSVG: nothing,
-      zoomSVG: nothing,
-      padding: { top: 50, bottom: 50, left: 50, right: 50 },
-      mouseMovePan: false,
-      secondaryZoomLevel: 0.6,
-      imageClickAction: 'close',
-      showAnimationDuration: 250,
-      hideAnimationDuration: 200,
-      // may select multiple "galleries"
-      gallery: '#gallery-img',
-      children: 'a',
-      pswpModule: () => import('./photoswipe.esm.min.js')
-    });
-    lightbox.on('firstUpdate', () => {
-      lightbox.pswp.options.easing = backEasing.out;
-    });
-    lightbox.on('close', () => {
-      lightbox.pswp.options.easing = backEasing.in;
-    });
-    lightbox.init();
-
   } else {
       mobile = false;
       PageCheck();
@@ -307,6 +278,12 @@ function RotateDevise() {
 preload()
 
 swup.hooks.on('content:replace', () => { 
+
+  $('body').css('pointer-events', 'none')
+setTimeout(() => {
+  $('body').css('pointer-events', 'auto')
+}, 350);
+
   if ($('#page').hasClass('page1')) {
     mobileAnim();
   }
@@ -399,24 +376,38 @@ function PageHomeScript() {
 
 
 function Page2workScript() {
+  lightbox.init();
+
   var videoClick = false;
   if (mobile === true) {
     $('#my-video').remove();
-  }
-
-
-  $(document).ready(function () {
+  } else {
     const video = document.getElementById("my-video");
-    
+
 
     const progressPath = document.querySelector('.progress-wrap');
-    
-    
 
-      $('.main_next_mob').css('display', 'block')
-      $('.main_next').css('display', 'none')
+
+
+
     
-    function Video() {
+    
+    if (video) {
+      setTimeout(() => {
+        if ($('#page').hasClass('pagework')) {
+          if (video.readyState === 4) {
+            LoadVideo();
+          } else {
+            video.addEventListener("loadeddata", LoadVideo);
+          }
+
+        }
+
+      }, 1500);
+
+
+
+      function Video() {
         $(document).ready(function () {
           var video = $('#my-video')[0];
           var progressPath = $('.progress-wrap svg path');
@@ -459,15 +450,15 @@ function Page2workScript() {
           })
         });
       }
-    
-    
-        const imgbox = document.querySelector('.imgbox');
-        
-    function LoadVideo() {
-      if (!mobile === true) {
+
+
+      const imgbox = document.querySelector('.imgbox');
+
+      function LoadVideo() {
+        if (!mobile === true) {
           window.addEventListener('scroll', function () {
             var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
-              
+
             imgbox.style.opacity = '0';
             $(".progress-wrap").addClass("playbt_on");
             $("#img_back_main").remove();
@@ -490,24 +481,24 @@ function Page2workScript() {
             }
 
           });
-        Video();
+          Video();
+        }
       }
-        }
-        
-        
-        if (video) {
-      setTimeout(() => {
-  
-        if (video.readyState === 4) {
-          LoadVideo();
-        } else {
-          video.addEventListener("loadeddata", LoadVideo);
-        }
-    
-  
-  
-      }, 1500);
+
+
+
+
     }
+
+  }
+
+
+  $(document).ready(function () {
+    
+
+      $('.main_next_mob').css('display', 'block')
+      $('.main_next').css('display', 'none')
+
 
 
 
@@ -591,3 +582,30 @@ function AboutScript() {
 
 
 
+const backEasing = {
+  out: 'cubic-bezier(.48, 1.33, .67, 1.06)',
+  in: 'ease',
+
+}
+const lightbox = new PhotoSwipeLightbox({
+  arrowPrevSVG: nothing,
+  arrowNextSVG: nothing,
+  closeSVG: nothing,
+  zoomSVG: nothing,
+  padding: { top: 50, bottom: 50, left: 50, right: 50 },
+  mouseMovePan: false,
+  secondaryZoomLevel: 0.6,
+  imageClickAction: 'close',
+  showAnimationDuration: 250,
+  hideAnimationDuration: 200,
+  // may select multiple "galleries"
+  gallery: '#gallery-img',
+  children: 'a',
+  pswpModule: () => import('./photoswipe.esm.min.js')
+});
+lightbox.on('firstUpdate', () => {
+  lightbox.pswp.options.easing = backEasing.out;
+});
+lightbox.on('close', () => {
+  lightbox.pswp.options.easing = backEasing.in;
+});
