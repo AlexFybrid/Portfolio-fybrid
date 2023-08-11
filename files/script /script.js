@@ -531,7 +531,7 @@ function AboutScript() {
       VanillaTilt.init(document.querySelectorAll(".tildcard"));
     }
     let miniPrewEnabled = true;
-    
+    tiltInt();
     function miniPrew() {
       if (!miniPrewEnabled) return;
       window.onscroll = () => {
