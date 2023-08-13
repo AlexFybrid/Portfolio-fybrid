@@ -1077,7 +1077,6 @@ html.is-animating .transition-fade2 {
 }
 
 .main_next_mob {
-  display: none;
   width: 100vw;
   background-color: white;
   padding: 80px 0px;
