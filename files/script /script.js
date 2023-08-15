@@ -6,7 +6,8 @@ var mobile = null;
 
 const swup = new Swup({
   plugins: [new SwupFadeTheme(),
-    new SwupPreloadPlugin()],
+    // new SwupPreloadPlugin()
+  ],
 });
 
 
