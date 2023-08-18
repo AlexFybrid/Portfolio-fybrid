@@ -518,6 +518,19 @@ html.is-animating .transition-fade2 {
   font-weight: 500 !important;
 }
 
+.memoji_target {
+  margin: 200px 0px;
+}
+
+.memoji_target h2 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.memoji_text_last h3 {
+  color: #808080 !important;
+}
+
 .black_box {
   background-color: #181818;
   color: white;
@@ -1167,6 +1180,66 @@ html.is-animating .transition-fade2 {
 
 .senator_color h3 {
   color: #787878 !important;
+}
+
+.senator_task {
+  background: linear-gradient(131deg, #000 0%, #686868 100%);
+  padding: 100px 0px;
+}
+
+.senator_task .col-4 {
+  align-items: center;
+  display: flex;
+}
+
+.senator_task h2 {
+  font-family: "Italiana", serif;
+  font-size: 6rem;
+  color: white;
+}
+
+.senator_task .sentar_task_info {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50px;
+  padding: 50px;
+  color: white;
+}
+
+.senator_target {
+  margin: 200px 0px;
+}
+
+.senator_target .col-6 {
+  align-items: center;
+  display: flex;
+}
+
+.senator_target h2 {
+  font-family: "Italiana", serif;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.senator_reserarch .avatar {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+}
+
+.senator_reserarch .col-12 h2 {
+  font-family: "Italiana", serif;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.senator_reserarch .comments p {
+  background-color: #000;
+  color: white;
+}
+
+.font-senator .col-12 h3,
+.font-senator .col-12 h4 {
+  font-family: "Italiana", serif !important;
 }
 
 .rows_2 {
