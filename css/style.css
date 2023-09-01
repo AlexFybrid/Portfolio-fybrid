@@ -89,11 +89,11 @@ a {
   transition: 0.13s;
 }
 
-a:hover {
+a:hover img {
   filter: brightness(85%);
 }
 
-a:active {
+a:active img {
   filter: brightness(100%);
 }
 
@@ -2086,11 +2086,11 @@ html.is-animating .transition-fade2 {
 }
 
 .imgbox_drdoogy {
-  background-color: #72100c;
+  background-color: #6c0a07;
 }
 
 .imgbox_drdoogy img {
-  width: 73% !important;
+  width: 85% !important;
 }
 
 #carouselExampleIndicators2 {
@@ -3348,6 +3348,14 @@ html.is-animating .transition-fade2 {
 
   .Friesa_phones {
     width: 150%;
+  }
+
+  .comments_friesa .col-2 img {
+    width: 100% !important;
+  }
+
+  .comments_friesa .col-6 {
+    width: 75% !important;
   }
 }
 
