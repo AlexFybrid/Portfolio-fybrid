@@ -2086,11 +2086,11 @@ html.is-animating .transition-fade2 {
 }
 
 .imgbox_drdoogy {
-  background-color: #832720;
+  background-color: #72100c;
 }
 
 .imgbox_drdoogy img {
-  width: 80% !important;
+  width: 73% !important;
 }
 
 #carouselExampleIndicators2 {
@@ -3115,6 +3115,10 @@ html.is-animating .transition-fade2 {
 
   .name_d svg {
     width: 150%;
+  }
+
+  .name_d_doogy svg {
+    width: 100%;
   }
 
   .model_name_d svg {
