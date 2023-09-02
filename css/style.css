@@ -2097,6 +2097,14 @@ html.is-animating .transition-fade2 {
   display: none;
 }
 
+.des_off {
+  display: inline-block;
+}
+
+.mobs_off {
+  display: none;
+}
+
 /* Responsive layout - makes a two column-layout instead of four columns */
 
 .icon-scroll_done svg {
@@ -2950,6 +2958,14 @@ html.is-animating .transition-fade2 {
 }
 
 @media screen and (max-width: 1100px) {
+  .des_off {
+    display: none;
+  }
+
+  .mobs_off {
+    display: inline-block;
+  }
+
   .left_box_bar {
     display: none;
   }
@@ -3350,12 +3366,51 @@ html.is-animating .transition-fade2 {
     width: 150%;
   }
 
-  .comments_friesa .col-2 img {
+  .comments_friesa .col-1 img {
     width: 100% !important;
   }
 
   .comments_friesa .col-6 {
     width: 75% !important;
+  }
+
+  .reserarch_model .avatar {
+    width: 20%;
+  }
+
+  .reserarch_model .avatar img {
+    width: 100%;
+  }
+
+  .reserarch_model .col-5 {
+    width: 75% !important;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+
+  .memoji_target,
+  .target_model {
+    margin: 0px;
+  }
+
+  .memoji_target h2,
+  .target_model h2 {
+    font-size: 2rem;
+  }
+
+  .task_model .col-4 h2 {
+    font-size: 3rem;
+  }
+
+  .task_model .info {
+    padding: 50px 10px;
+    background: #ececec;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+  }
+
+  .userflow_model img {
+    border-radius: 9%;
   }
 }
 
