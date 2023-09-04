@@ -1524,6 +1524,11 @@ html.is-animating .transition-fade2 {
   z-index: 500;
 }
 
+.page-fybrids h3 {
+  position: relative;
+  z-index: 500;
+}
+
 .page-fybrids .col-10 {
   margin-top: 150px;
 }
@@ -2828,7 +2833,7 @@ html.is-animating .transition-fade2 {
   width: 100vw;
   transition: 0.6s;
   z-index: 1;
-  transform: skew(10deg) scale(1.3);
+  transform: skew(10deg) scale(1.4);
   -webkit-animation-delay: 0.9s;
           animation-delay: 0.9s;
 }
@@ -3064,7 +3069,7 @@ html.is-animating .transition-fade2 {
   }
 
   .avatarCenter_mob img {
-    height: 80px;
+    height: 70px;
   }
 
   .aston_home .container {
@@ -3201,9 +3206,7 @@ html.is-animating .transition-fade2 {
   }
 
   .Prew .imgbox_mod {
-    padding-top: 15vh;
-    padding-left: 20vh;
-    width: 140%;
+    width: 190%;
   }
 
   .name_d {
@@ -3314,7 +3317,7 @@ html.is-animating .transition-fade2 {
   }
 
   .pg-1_bk_2 ol {
-    color: #c7c7c7;
+    color: #eeeeee;
   }
 
   #carouselExampleIndicators {
@@ -3494,7 +3497,7 @@ html.is-animating .transition-fade2 {
 
   .memoji_target,
   .target_model {
-    margin: 0px;
+    margin: 50px 0px;
   }
 
   .memoji_target h2,
@@ -3542,6 +3545,10 @@ html.is-animating .transition-fade2 {
     border-radius: 9px;
   }
 
+  .senator_reserarch .avatar img {
+    border-radius: 100%;
+  }
+
   .senator_reserarch .comments p {
     background-color: #111111;
   }
@@ -3556,6 +3563,7 @@ html.is-animating .transition-fade2 {
 
   .sentar_task_info {
     background: rgba(0, 0, 0, 0) !important;
+    padding: 0px !important;
   }
 
   .name_d_rial svg {
@@ -3584,6 +3592,35 @@ html.is-animating .transition-fade2 {
 }
 
 @media screen and (max-width: 600px) {
+  .senator_reserarch .col-12 h2 {
+    font-size: 3rem;
+  }
+
+  .color_site_box {
+    bottom: -40px !important;
+  }
+
+  .model_chat h2 {
+    margin-top: 50px;
+    font-size: 3rem;
+  }
+
+  .page_model .row-2 {
+    margin-top: -200px;
+  }
+
+  .page_model {
+    margin-top: -50px;
+  }
+
+  .home_model .text {
+    padding-top: 20px;
+  }
+
+  .home_model .text h2 {
+    font-size: 2rem;
+  }
+
   .pg-1_bk_0 {
     padding-left: 10px;
     padding-right: 10px;
