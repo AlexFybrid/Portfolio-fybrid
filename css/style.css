@@ -625,6 +625,10 @@ html.is-animating .transition-fade2 {
   border-radius: 500px;
 }
 
+.comments .avatar img {
+  border-radius: 100%;
+}
+
 .comments .avatarCenter_last {
   margin-top: 100px;
 }
@@ -1494,6 +1498,10 @@ html.is-animating .transition-fade2 {
   background-color: rgba(0, 0, 0, 0);
   -webkit-backdrop-filter: blur(0px);
   backdrop-filter: blur(0px);
+}
+
+.senator_reserarch .avatar img {
+  border-radius: 100%;
 }
 
 .senator_reserarch .col-12 h2 {
@@ -3145,6 +3153,7 @@ html.is-animating .transition-fade2 {
 
   .fybrid_research .img_as p {
     background: rgba(0, 0, 0, 0) !important;
+    color: #000;
   }
 
   .page_fyb {
@@ -3152,6 +3161,8 @@ html.is-animating .transition-fade2 {
   }
 
   .page_fyb img {
+    margin-top: -100px;
+    margin-bottom: -100px;
     border-radius: 20px !important;
   }
 
@@ -3173,8 +3184,8 @@ html.is-animating .transition-fade2 {
 
   .ek_info p {
     text-align: start;
-    font-weight: 500;
-    font-size: 1.5rem;
+    font-weight: 400;
+    font-size: 1rem;
   }
 
   .ek-mob_page {
@@ -3545,10 +3556,6 @@ html.is-animating .transition-fade2 {
     border-radius: 9px;
   }
 
-  .senator_reserarch .avatar img {
-    border-radius: 100%;
-  }
-
   .senator_reserarch .comments p {
     background-color: #111111;
   }
@@ -3567,7 +3574,7 @@ html.is-animating .transition-fade2 {
   }
 
   .name_d_rial svg {
-    width: 100% !important;
+    width: 60% !important;
   }
 
   .home_rial h2 {
@@ -3582,6 +3589,51 @@ html.is-animating .transition-fade2 {
 
   .identity_rial .col-6 {
     margin-top: 0px;
+  }
+
+  .identity_rial .col-6 h2 {
+    font-size: 3rem;
+  }
+
+  .identity_rial img {
+    margin-bottom: 30px;
+  }
+
+  .page-fybrids {
+    margin: 100px 0px;
+  }
+
+  .page-fybrids img {
+    border-radius: 10px;
+  }
+
+  .page-fybrids .col-10 {
+    margin-top: 100px;
+  }
+
+  .page-fybrids h2 {
+    font-size: 2rem;
+  }
+
+  .fybrid_next_cont {
+    margin-bottom: 50px;
+  }
+
+  .fybrid_next_cont h2 {
+    font-size: 2rem;
+  }
+
+  .senator_task h2 {
+    font-size: 4rem;
+    margin-bottom: 50px;
+  }
+
+  .ek_h2 {
+    font-size: 3rem;
+  }
+
+  .resept_ek img {
+    width: 170%;
   }
 }
 
