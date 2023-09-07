@@ -1316,6 +1316,7 @@ html.is-animating .transition-fade2 {
 
 .reserarch_model .avatar img {
   border-radius: 50px;
+  width: 85%;
 }
 
 .userflow_model {
@@ -3018,7 +3019,7 @@ html.is-animating .transition-fade2 {
   }
 
   .about_text h3 {
-    font-size: calc(1.3rem + 0.6vw) !important;
+    font-size: 1rem !important;
   }
 
   .tildcard {
