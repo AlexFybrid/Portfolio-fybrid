@@ -3648,6 +3648,9 @@ html.is-animating .transition-fade2 {
 }
 
 @media screen and (max-width: 600px) {
+  .row_info_main .col-6 {
+      display: block !important;
+    }
   .senator_reserarch .col-12 h2 {
     font-size: 3rem;
   }
