@@ -862,6 +862,11 @@ html.is-animating .transition-fade2 {
   font-weight: 600;
   font-family: "Inter", sans-serif;
 }
+.font_course .fonts_box h3,
+.font_course .fonts_box h4 {
+  font-weight: 600;
+  font-family: 'Gilroy-Medium', sans-serif;
+}
 
 .model_font .fonts_box_back {
   background: linear-gradient(135deg, #B8C9D3 0%, #BAB8BB 20%, #DCC7BF 40%, #DBCEC3 60%, #D7CBBF 79.41%, #ACB2B8 100%);
@@ -1077,6 +1082,9 @@ html.is-animating .transition-fade2 {
 
 .pg-1_bk_2_drdoogy {
   background: radial-gradient(circle, rgb(84, 11, 11) 0%, rgb(113, 11, 11) 28%, rgb(112, 40, 40) 73%, rgb(255, 255, 255) 95%);
+}
+.pg-1_bk_2_course {
+background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1) 11%, rgba(19, 80, 60, 1) 88%, rgba(255, 255, 255, 1) 100%);
 }
 
 .img_as img {
@@ -2126,9 +2134,16 @@ html.is-animating .transition-fade2 {
 .imgbox_drdoogy {
   background-color: #6c0a07;
 }
-
 .imgbox_drdoogy img {
   width: 85% !important;
+}
+.imgbox_course {
+  background-color: #13503c !important;
+}
+.imgbox_course img {
+  position: absolute;
+  width: 85% !important;
+  padding-top: 20%;
 }
 
 #carouselExampleIndicators2 {
@@ -3223,6 +3238,10 @@ html.is-animating .transition-fade2 {
   .Prew .imgbox_mod {
     width: 190%;
   }
+  .Prew .imgbox_course{
+    padding-top: 32% !important;
+    padding-right: 40vh !important;
+  }
 
   .name_d {
     padding-bottom: 10px;
@@ -3241,7 +3260,9 @@ html.is-animating .transition-fade2 {
   .model_name_d svg {
     width: 100% !important;
   }
-
+  .name_d_course{
+  width: 60% !important;
+  }
   .descrip h3 {
     display: none;
   }
