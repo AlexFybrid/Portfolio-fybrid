@@ -783,7 +783,12 @@ Theme Name: Fybrid Studio
     padding-bottom: 100px;
   }
   .avto_mob {
-    background-color: #ffe303 !important;
+    background-color: #dec500 !important;
+  }
+  .avto_text{
+    h3{
+        color: #000;
+    }
   }
   .friesa_mob .text_plus {
     padding: 60px;
