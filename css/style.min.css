@@ -1087,7 +1087,7 @@ Theme Name: Fybrid Studio
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1) 11%, rgba(19, 80, 60, 1) 88%, rgba(255, 255, 255, 1) 100%);
   }
   .pg-1_bk_2_avto {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, #c2a700 11%, rgb(255, 242, 0) 88%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), #c2a100 11%, rgb(255, 212, 0) 87.82%, rgba(255, 255, 255, 1));
     }
   
   .img_as img {
