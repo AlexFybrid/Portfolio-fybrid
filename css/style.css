@@ -785,6 +785,9 @@ html.is-animating .transition-fade2 {
 .avto_mob {
   background-color: #dec500 !important;
 }
+.avto_text h3{
+      color: #000 !important;
+}
 .friesa_mob .text_plus {
   padding: 60px;
 }
