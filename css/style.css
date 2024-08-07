@@ -1086,6 +1086,9 @@ html.is-animating .transition-fade2 {
 .pg-1_bk_2_course {
 background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1) 11%, rgba(19, 80, 60, 1) 88%, rgba(255, 255, 255, 1) 100%);
 }
+.pg-1_bk_2_avto {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, #c2a700 11%, rgb(255, 242, 0) 88%, rgba(255, 255, 255, 1) 100%);
+  }
 
 .img_as img {
   box-shadow: 0px 0px 60px rgb(70, 70, 70);
