@@ -2151,7 +2151,6 @@ background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1)
 .imgbox_avto img{
   position: absolute;
   width: 85% !important;
-  padding-top: 20%;
 }
 
 #carouselExampleIndicators2 {
