@@ -2157,8 +2157,11 @@ Theme Name: Fybrid Studio
     background-color: #ffe300 !important;
   }
   .imgbox_Ai{
-    background-color: #ce0041 !important;
-
+    background-color: #e42457 !important;
+  }
+  .imgbox_Ai img{
+    width: 70%;
+    transform: translateX(10%);
   }
   .imgbox_avto img{
     position: absolute;
