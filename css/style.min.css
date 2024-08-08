@@ -2156,6 +2156,10 @@ Theme Name: Fybrid Studio
   .imgbox_avto{
     background-color: #ffe300 !important;
   }
+  .imgbox_Ai{
+    background-color: #ce0041 !important;
+
+  }
   .imgbox_avto img{
     position: absolute;
     width: 85% !important;
