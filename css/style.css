@@ -1719,6 +1719,9 @@ background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1)
 .imgbox_aston {
   background-color: #007556 !important;
 }
+.imgbox_maria{
+  background-color: #ffe800 !important;
+}
 
 .imgbox_aston img {
   width: 85% !important;
