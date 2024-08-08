@@ -1094,6 +1094,9 @@ background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1)
 .pg-1_bk_2_avto {
   background: linear-gradient(to top, rgba(255, 255, 255, 1), #c2a100 11%, rgb(255, 212, 0) 87.82%, rgba(255, 255, 255, 1));
   }
+  .pg-1_bk_2_ai{
+      background: linear-gradient(to top, rgba(255, 255, 255, 1), #f11852 11%, rgb(219, 21, 74) 87.82%, rgba(255, 255, 255, 1));
+  }
 
 .img_as img {
   box-shadow: 0px 0px 60px rgb(70, 70, 70);
