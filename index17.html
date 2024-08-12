@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.createjs.com/1.0.0/preloadjs.min.js?_v=20230909135036"></script>
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js?_v=20230909135036"></script>
+  <script src="https://unpkg.com/@swup/preload-plugin@3?_v=20230909135036"></script>
+  <script src="https://unpkg.com/@swup/fade-theme@2?_v=20230909135036"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?_v=20230909135036"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@100;200;300;400;500&family=Inter:wght@100;200;300;600;700&family=Italiana&family=Open+Sans:wght@300;400;500;600;700&display=swap&_v=20230909135036"
+  rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe.css?_v=20230909135036">
+
+  <link rel="stylesheet" href="css/style.css"></link>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css?_v=20230909135036" rel="stylesheet"integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="files/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="files/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="files/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="files/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="files/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="files/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="files/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="files/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="files/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="files/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="files/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="files/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="files/favicon/favicon-16x16.png">
+    <link rel="manifest" href="files/favicon/manifest.json">
+    <meta name="msapplication-TileImage" content="files/favicon/ms-icon-144x144.png">
+    <title>Alex Portfolio</title>
+</head>
+<header>
+	<nav class="Main_navbar">
+		<li><a id="bt_work" data-swup-preload href="index.html">Work</a></li>
+		<li><a href="index2.html">About</a></li>
+		<div class="select_nav"></div>
+	</nav>
+<div id="preloader">
+	<div class="progress-bar_box">
+		<div class="progresss-bar-main">
+			<div class="progresss"></div>
+		</div>
+	</div>
+	<div class="backgraund_bar_box"></div>
+</div>
+<div class="rotate_box">
+	<div>
+		<div class="rotate">
+	<svg width="40%" height="40%" viewBox="0 0 4521 4468" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path
+			d="M607.76 2340C607.76 2308.8 633.056 2283.5 664.26 2283.5C695.464 2283.5 720.76 2308.8 720.76 2340L607.76 2340ZM664.26 2537.44L607.76 2537.44L664.26 2537.44ZM1834.26 3707.44L1834.26 3763.94L1834.26 3763.94L1834.26 3707.44ZM2228.67 3707.44L1663.67 4033.65L1663.67 3381.24L2228.67 3707.44ZM720.76 2340L720.76 2537.44L607.76 2537.44L607.76 2340L720.76 2340ZM720.76 2537.44C720.76 3152.41 1219.29 3650.94 1834.26 3650.94L1834.26 3763.94C1156.88 3763.94 607.76 3214.82 607.76 2537.44L720.76 2537.44Z"
+			fill="white" />
+		<path
+			d="M3912.59 2127.39C3912.59 2158.59 3887.29 2183.89 3856.09 2183.89C3824.88 2183.89 3799.59 2158.59 3799.59 2127.39L3912.59 2127.39ZM3856.09 1929.94L3912.59 1929.94L3856.09 1929.94ZM2686.09 759.94L2686.09 703.44L2686.09 703.44L2686.09 759.94ZM2291.68 759.94L2856.68 433.737L2856.68 1086.14L2291.68 759.94ZM3799.59 2127.39L3799.59 1929.94L3912.59 1929.94L3912.59 2127.39L3799.59 2127.39ZM3799.59 1929.94C3799.59 1314.97 3301.06 816.44 2686.09 816.44L2686.09 703.44C3363.47 703.44 3912.59 1252.56 3912.59 1929.94L3799.59 1929.94Z"
+			fill="white" />
+		<path fill-rule="evenodd" clip-rule="evenodd"
+			d="M850.447 1545.48C767.184 1628.75 767.184 1763.74 850.447 1847.01L2647.07 3643.63C2730.34 3726.89 2865.33 3726.89 2948.6 3643.63L3669.63 2922.6C3752.89 2839.33 3752.89 2704.34 3669.63 2621.07L1873.01 824.448C1789.74 741.185 1654.75 741.184 1571.48 824.448L850.447 1545.48ZM917.784 1577.07C851.963 1642.89 851.963 1749.6 917.783 1815.42L2678.06 3575.7C2743.88 3641.52 2850.6 3641.52 2916.42 3575.7L3601.1 2891.01C3666.92 2825.19 3666.92 2718.48 3601.1 2652.66L1840.83 892.38C1775.01 826.559 1668.29 826.559 1602.47 892.38L917.784 1577.07Z"
+			fill="white" stroke="black" stroke-width="41" />
+		<path
+			d="M1443.52 1225.06L1279.06 1389.52C1260.63 1407.95 1260.63 1437.83 1279.06 1456.26C1297.49 1474.69 1327.37 1474.69 1345.8 1456.26L1510.26 1291.8C1528.69 1273.37 1528.69 1243.49 1510.26 1225.06C1491.83 1206.63 1461.95 1206.63 1443.52 1225.06Z"
+			fill="white" stroke="black" stroke-width="11" />
+	</svg>
+	
+	
+		</div>
+		<h5 style="font-weight: 300;">Please rotate your device.</h5>
+	</div>
+</div>
+
+</header>
+<!-- <link rel="stylesheet" href="https://cdn.plyr.io/3.7.7/plyr.css?_v=20230909135036" />
+<script src="https://cdn.plyr.io/3.7.7/plyr.polyfilled.js?_v=20230909135036"></script> -->
+
+<body style="background-color: rgb(28, 28, 28)">
+  <main id="swup" class="transition-fade">
+    <div id="page" class="pagework page12" data-scroll-container>
+      <div class="rows_2" data-scroll-section>
+        <div id="prew" class="Prew">
+          <div class="container">
+
+
+            <div class="row name_d name_d_course">
+              <div class="col-2 text-center mob_on3">
+                <svg width="278" height="47" viewBox="0 0 278 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.9477 10.4091C11.5651 10.7569 11.1825 10.7569 10.7999 10.4091C10.452 10.0613 10.4694 9.69605 10.852 9.31345C16.3128 3.7483 19.2693 1.88746 19.7215 3.73091C19.9302 4.60047 19.5997 6.37436 18.7302 9.05258C17.5128 12.8438 14.1042 20.6524 8.50423 32.4783C11.8433 27.5393 15.1824 23.1567 18.5215 19.3307C21.8606 15.4699 24.904 12.4264 27.6518 10.2004C29.4605 8.73954 31.0257 7.71347 32.3474 7.12217C34.33 6.25262 35.7386 6.32218 36.5734 7.33086C36.7473 7.53956 36.8517 7.83521 36.8865 8.21781C36.9212 8.60041 36.8691 9.10475 36.7299 9.73083C36.6256 10.3569 36.5039 10.983 36.3647 11.6091C36.2256 12.2004 35.9821 12.983 35.6343 13.9569C35.2865 14.9308 34.9908 15.7655 34.7474 16.4612C34.5039 17.122 34.1387 18.0612 33.6517 19.2785C33.1995 20.4959 32.8343 21.4524 32.5561 22.1481C32.2778 22.8089 31.8778 23.7828 31.3561 25.0698C30.4518 27.261 29.7735 28.9132 29.3213 30.0262C28.904 31.1392 28.3996 32.4262 27.8083 33.887C27.2518 35.3479 26.8692 36.4087 26.6605 37.0696C26.4518 37.7305 26.3996 38.0957 26.504 38.1652C26.6779 38.2696 27.1648 37.9739 27.9648 37.2783C28.7648 36.5826 29.9474 35.4 31.5126 33.7305C33.0778 32.061 34.4169 30.6175 35.53 29.4001C36.6778 28.148 38.3299 26.3045 40.4864 23.8698C42.6081 21.5046 44.2081 19.7307 45.2863 18.5481C46.3994 17.3307 47.7211 15.9221 49.2515 14.3221C50.8167 12.7221 52.0515 11.5917 52.9558 10.9308C53.8601 10.27 54.521 9.97431 54.9384 10.0439C55.7384 10.1482 56.0514 10.7221 55.8775 11.7656C55.7036 13.1569 54.208 16.9307 51.3906 23.0872C48.4689 29.4871 45.4603 35.5914 42.3646 41.4C42.1212 41.8521 41.7733 41.9565 41.3212 41.713C40.869 41.4695 40.7647 41.1217 41.0081 40.6695C44.1037 34.8609 47.095 28.7914 49.9819 22.4611C52.6602 16.5829 54.121 12.983 54.3645 11.6612C53.9819 11.8699 53.3906 12.3395 52.5906 13.0699C51.7906 13.8003 50.7124 14.896 49.3559 16.3568C47.9993 17.8177 46.8341 19.0872 45.8602 20.1655C44.9211 21.2089 43.5125 22.7741 41.6342 24.8611C40.1038 26.6002 38.9386 27.9045 38.1386 28.7741C37.3386 29.6436 36.2604 30.8088 34.9039 32.2697C33.5822 33.7305 32.5213 34.8261 31.7213 35.5566C30.9561 36.287 30.1213 37.0522 29.217 37.8522C28.3127 38.6174 27.5822 39.1217 27.0257 39.3652C26.4692 39.6087 26.0518 39.6435 25.7736 39.4696C25.4953 39.3304 25.3214 39.0522 25.2518 38.6348C25.217 38.2174 25.304 37.6087 25.5127 36.8087C25.7214 35.974 25.9301 35.1914 26.1388 34.4609C26.3475 33.7305 26.6953 32.7044 27.1822 31.3827C27.704 30.0262 28.1214 28.948 28.4344 28.148C28.7822 27.348 29.2866 26.1306 29.9474 24.4958C30.9561 22.0263 31.7039 20.1481 32.1909 18.8611C32.7126 17.5394 33.3039 15.9742 33.9648 14.1656C34.6604 12.3221 35.1126 10.9482 35.3213 10.0439C35.53 9.10475 35.5473 8.53085 35.3734 8.32216C35.0256 7.90477 34.2256 7.97433 32.9735 8.53085C31.7561 9.05258 30.2952 10.0091 28.5909 11.4004C24.7649 14.496 20.4519 19.1046 15.652 25.2263C10.852 31.3131 6.31296 38.2174 2.03475 45.939C1.82606 46.3564 1.49563 46.4608 1.04346 46.2521C0.591296 46.0434 0.469559 45.6956 0.678252 45.2086C1.26955 44.026 1.96519 42.6173 2.76518 40.9826C3.56517 39.3478 4.31298 37.8522 5.00863 36.4957C5.70427 35.1044 6.46948 33.5566 7.30425 31.8523C8.13902 30.1479 8.90423 28.5654 9.59987 27.1045C10.2955 25.6089 11.0259 24.0263 11.7911 22.3567C12.5564 20.6524 13.252 19.0698 13.8781 17.609C14.5042 16.1134 15.1128 14.5829 15.7041 13.0177C16.2954 11.4525 16.8172 9.97431 17.2693 8.58302C17.8258 6.8787 17.8085 6.04393 17.2172 6.07871C16.4172 6.18305 14.6607 7.62651 11.9477 10.4091ZM54.6253 11.5569H54.7297C54.6949 11.5221 54.6601 11.5221 54.6253 11.5569ZM64.9026 24.1828C64.694 23.7306 63.9287 23.6611 62.607 23.9741C61.807 24.1828 61.007 24.5132 60.2071 24.9654C59.3723 25.4176 58.6766 25.9045 58.1201 26.4263L58.068 26.4784C57.0245 27.5567 56.8506 28.461 57.5462 29.1914C57.6158 29.2262 57.668 29.2436 57.7027 29.2436C58.0853 29.4871 58.7462 29.4001 59.6853 28.9827C60.694 28.461 61.7723 27.6436 62.9201 26.5306C63.6505 25.8002 64.3114 25.0176 64.9026 24.1828ZM59.4766 23.6089C60.4158 23.0872 61.3375 22.722 62.2418 22.5133C63.9461 22.0959 65.1635 22.235 65.8939 22.9307C66.1026 22.8611 66.3287 22.9133 66.5722 23.0872C66.8852 23.2959 66.9548 23.748 66.7809 24.4437C66.2592 26.5654 66.2244 27.8871 66.6765 28.4088C67.5113 29.4871 70.4852 27.9915 75.5982 23.9219C76.0155 23.6089 76.3808 23.6611 76.6938 24.0785C77.0068 24.4611 76.9547 24.8089 76.5373 25.1219C70.6591 29.8175 66.9722 31.2262 65.4766 29.348C64.9896 28.7567 64.7809 27.8697 64.8505 26.6871C64.5722 27.0349 64.2766 27.348 63.9635 27.6262C62.7462 28.8436 61.5288 29.748 60.3114 30.3392C58.8853 31.0349 57.7375 31.1045 56.868 30.5479C56.7288 30.4436 56.6071 30.3392 56.5028 30.2349C55.0767 28.8088 55.2506 27.1915 57.0245 25.3828C57.0245 25.3828 57.0245 25.3654 57.0245 25.3306C57.6854 24.7045 58.5027 24.1306 59.4766 23.6089ZM76.0852 23.6089C76.5026 22.0437 76.7461 20.6176 76.8157 19.3307C76.8157 19.122 76.8852 18.9481 77.0244 18.809C77.1983 18.6351 77.3896 18.5655 77.5983 18.6003C77.807 18.6003 77.9809 18.6872 78.12 18.8611C78.2591 19.0003 78.3287 19.1742 78.3287 19.3829C78.2939 20.6698 78.0678 22.0785 77.6504 23.6089C78.5548 22.1828 79.2852 21.1046 79.8417 20.3742C80.4678 19.5742 81.1113 19.0177 81.7721 18.7046C82.1895 18.4959 82.5895 18.409 82.9721 18.4438C83.4591 18.5481 83.8417 18.8264 84.1199 19.2785C84.3982 19.6959 84.5373 20.3046 84.5373 21.1046C84.5373 21.2785 84.5373 21.5394 84.5373 21.8872C84.5025 22.548 84.5199 23.0176 84.5895 23.2959C84.659 23.7133 84.9025 24.0437 85.3199 24.2872C85.7373 24.4958 86.5373 24.5828 87.7199 24.548C88.9372 24.5132 90.5372 24.2698 92.5198 23.8176C92.7285 23.7828 92.9198 23.835 93.0937 23.9741C93.2676 24.0785 93.372 24.235 93.4067 24.4437C93.4415 24.6524 93.4067 24.8437 93.3024 25.0176C93.1981 25.1915 93.0415 25.2958 92.8328 25.3306C91.0242 25.7132 89.4764 25.9567 88.1894 26.061C86.9373 26.1306 85.9634 26.061 85.2677 25.8524C84.5721 25.6089 84.0503 25.3132 83.7025 24.9654C83.3895 24.6176 83.1808 24.1654 83.0764 23.6089C83.0069 23.2263 82.9721 22.635 82.9721 21.835C83.0069 21.522 83.0243 21.2959 83.0243 21.1568C82.9895 20.635 82.9199 20.2698 82.8156 20.0611C82.7808 19.9916 82.7634 19.9568 82.7634 19.9568C82.6938 19.9568 82.5721 19.9916 82.3982 20.0611C81.9808 20.2698 81.5286 20.6872 81.0417 21.3133C80.4504 22.0785 79.4765 23.5741 78.12 25.8002C76.7983 27.9567 75.8418 29.4349 75.2505 30.2349C75.007 30.5827 74.694 30.6697 74.3114 30.4958C73.8244 30.2871 73.6853 29.9566 73.894 29.5045C74.8679 27.3132 75.5983 25.348 76.0852 23.6089ZM94.4751 20.635C95.0316 20.009 95.6229 19.8698 96.249 20.2176C96.875 20.5307 96.9098 21.0002 96.3533 21.6263C95.7272 22.322 95.1011 22.5133 94.4751 22.2002C94.162 21.9568 94.0229 21.7133 94.0577 21.4698C94.0925 21.1915 94.2316 20.9133 94.4751 20.635ZM91.0838 30.7045C89.1708 30.8784 88.3186 30.374 88.5273 29.1914C88.7012 27.9393 90.0751 25.9219 92.649 23.1393C92.9968 22.7567 93.362 22.7394 93.7446 23.0872C94.1272 23.435 94.1446 23.7828 93.7968 24.1306C90.6316 27.5741 89.6925 29.261 90.9795 29.1914C92.9968 29.0175 97.5011 27.2784 104.492 23.9741C104.979 23.7306 105.327 23.8524 105.536 24.3393C105.744 24.7915 105.623 25.1219 105.171 25.3306C98.0055 28.7393 93.3099 30.5305 91.0838 30.7045ZM110.554 24.1828C110.346 23.7306 109.58 23.6611 108.259 23.9741C107.459 24.1828 106.659 24.5132 105.859 24.9654C105.024 25.4176 104.328 25.9045 103.772 26.4263L103.72 26.4784C102.676 27.5567 102.502 28.461 103.198 29.1914C103.267 29.2262 103.32 29.2436 103.354 29.2436C103.737 29.4871 104.398 29.4001 105.337 28.9827C106.346 28.461 107.424 27.6436 108.572 26.5306C109.302 25.8002 109.963 25.0176 110.554 24.1828ZM105.128 23.6089C106.067 23.0872 106.989 22.722 107.893 22.5133C109.598 22.0959 110.815 22.235 111.545 22.9307C111.754 22.8611 111.98 22.9133 112.224 23.0872C112.537 23.2959 112.606 23.748 112.432 24.4437C111.911 26.5654 111.876 27.8871 112.328 28.4088C113.163 29.4871 116.137 27.9915 121.25 23.9219C121.667 23.6089 122.032 23.6611 122.345 24.0785C122.658 24.4611 122.606 24.8089 122.189 25.1219C116.311 29.8175 112.624 31.2262 111.128 29.348C110.641 28.7567 110.432 27.8697 110.502 26.6871C110.224 27.0349 109.928 27.348 109.615 27.6262C108.398 28.8436 107.18 29.748 105.963 30.3392C104.537 31.0349 103.389 31.1045 102.52 30.5479C102.38 30.4436 102.259 30.3392 102.154 30.2349C100.728 28.8088 100.902 27.1915 102.676 25.3828C102.676 25.3828 102.676 25.3654 102.676 25.3306C103.337 24.7045 104.154 24.1306 105.128 23.6089ZM200.522 14.7916C200.314 15.2438 199.983 15.3655 199.531 15.1568C199.079 14.9134 198.957 14.5655 199.166 14.1134C200.592 11.1917 200.557 8.89606 199.062 7.22652C197.879 5.87002 195.844 4.9309 192.957 4.40916C190.105 3.88743 186.94 3.7483 183.462 3.99178C179.984 4.23525 176.366 4.79177 172.61 5.66132C168.853 6.49609 165.445 7.52217 162.384 8.73954C159.358 9.95692 156.871 11.383 154.923 13.0177C152.975 14.6525 152.036 16.2699 152.106 17.8699C152.21 18.4611 152.523 19.1046 153.045 19.8003C153.567 20.4959 154.123 21.122 154.714 21.6785C155.306 22.235 156.175 22.9307 157.323 23.7654C158.471 24.5654 159.41 25.2089 160.14 25.6958C160.871 26.148 161.949 26.8263 163.375 27.7306C166.088 29.4697 168.053 30.774 169.271 31.6436C171.079 30.8436 173.045 30.0262 175.166 29.1914C177.288 28.3219 179.775 27.3828 182.627 26.3741C185.514 25.3306 188.123 24.5654 190.453 24.0785C192.818 23.5567 194.488 23.435 195.462 23.7133C195.601 23.748 195.705 23.8176 195.775 23.9219C195.879 24.0263 195.949 24.148 195.983 24.2872C196.018 24.3915 196.018 24.5132 195.983 24.6524C195.914 24.8611 195.792 25.0176 195.618 25.1219C195.444 25.2263 195.253 25.2437 195.044 25.1741C193.931 24.8611 191.583 25.2263 188.001 26.2697C184.418 27.3132 181.253 28.3741 178.505 29.4523C175.758 30.5305 173.131 31.6088 170.627 32.687C174.036 35.3653 175.514 37.7652 175.062 39.8869C174.853 40.8608 174.123 41.7478 172.871 42.5478C171.618 43.3478 170.14 43.9738 168.436 44.426C166.732 44.8782 164.888 45.2434 162.906 45.5217C160.923 45.8347 159.114 45.9738 157.48 45.939C155.845 45.939 154.488 45.8869 153.41 45.7825C151.393 45.4695 150.21 44.826 149.862 43.8521C149.584 43.1217 149.827 42.3565 150.593 41.5565C151.427 40.6522 153.41 39.3652 156.54 37.6957C159.706 35.9913 163.392 34.2001 167.601 32.3218C166.558 31.5914 164.871 30.4958 162.54 29.0349C161.045 28.061 159.914 27.3306 159.149 26.8436C158.384 26.3567 157.393 25.6784 156.175 24.8089C154.958 23.9046 154.019 23.1393 153.358 22.5133C152.732 21.8872 152.14 21.1742 151.584 20.3742C151.027 19.5742 150.697 18.8264 150.593 18.1307C150.593 18.0959 150.575 18.0612 150.54 18.0264C150.471 16.1481 151.445 14.2873 153.462 12.4438C155.48 10.6004 158.088 9.00041 161.288 7.6439C164.488 6.25262 168.053 5.10481 171.984 4.20047C175.949 3.26136 179.757 2.67006 183.41 2.42658C187.097 2.18311 190.47 2.37441 193.531 3.00049C196.627 3.62657 198.853 4.68742 200.209 6.18306C202.157 8.37433 202.262 11.2439 200.522 14.7916ZM153.619 44.2695C155.219 44.5478 157.497 44.5651 160.453 44.3217C163.41 44.113 166.262 43.5739 169.01 42.7043C171.792 41.8695 173.323 40.8261 173.601 39.5739C173.914 37.9391 172.401 35.8696 169.062 33.3653C164.784 35.2435 161.027 37.0348 157.793 38.7391C154.558 40.4435 152.54 41.7304 151.74 42.6C151.393 42.9478 151.254 43.2086 151.323 43.3825C151.462 43.7652 152.227 44.0608 153.619 44.2695ZM195.158 23.0872C195.436 22.6698 195.784 22.6002 196.201 22.8785C196.618 23.1567 196.688 23.5046 196.41 23.9219C194.705 26.6002 194.079 28.5827 194.531 29.8697C194.671 30.3219 194.984 30.6523 195.471 30.861C195.992 31.1045 196.671 31.174 197.505 31.0697C198.271 31.0001 199.088 30.7914 199.957 30.4436C200.827 30.0958 201.697 29.6262 202.566 29.0349C203.436 28.4088 204.201 27.6958 204.862 26.8958C204.653 26.7915 204.462 26.6523 204.288 26.4784C203.349 25.5045 203.349 24.5654 204.288 23.6611C204.67 23.3133 205.14 23.0698 205.697 22.9307C206.323 22.7915 206.862 22.8611 207.314 23.1393C208.079 23.6611 208.166 24.5132 207.575 25.6958C209.105 25.5219 211.192 24.8263 213.836 23.6089C214.322 23.435 214.67 23.5741 214.879 24.0263C215.088 24.4785 214.949 24.8089 214.462 25.0176C211.401 26.3741 209.018 27.1219 207.314 27.261C207.036 27.2958 206.775 27.3132 206.531 27.3132C205.349 28.8088 203.94 30.0262 202.305 30.9653C200.671 31.9044 199.123 32.461 197.662 32.6349C196.584 32.7392 195.662 32.6175 194.897 32.2697C193.992 31.8871 193.384 31.261 193.071 30.3914C192.445 28.6175 193.14 26.1828 195.158 23.0872ZM205.383 25.3828C205.523 25.4871 205.679 25.5741 205.853 25.6437L205.905 25.5393C206.357 24.8437 206.531 24.4611 206.427 24.3915C206.392 24.3567 206.253 24.3741 206.01 24.4437C205.731 24.4785 205.505 24.5828 205.331 24.7567C205.157 24.9306 205.175 25.1393 205.383 25.3828ZM212.228 27.4175C212.576 26.2002 213.393 24.5306 214.68 22.4089C214.958 21.9568 215.306 21.8698 215.724 22.1481C216.176 22.4263 216.263 22.7741 215.984 23.1915C214.767 25.2089 214.002 26.7567 213.689 27.8349C213.48 28.5654 213.515 28.9654 213.793 29.0349H213.845C214.228 29.1045 215.776 28.2349 218.489 26.4263C219.88 25.5219 220.958 24.8437 221.723 24.3915C222.489 23.9046 223.41 23.4698 224.489 23.0872C225.567 22.6698 226.436 22.5654 227.097 22.7741H227.149C227.984 23.0872 228.523 23.7828 228.767 24.8611C228.976 25.8002 228.941 26.948 228.663 28.3045C228.384 29.5219 228.315 30.1479 228.454 30.1827C229.01 30.2871 230.906 28.8436 234.141 25.8524C235.462 24.6698 236.349 23.9046 236.802 23.5567C237.219 23.2437 237.567 23.2959 237.845 23.7133C238.158 24.1306 238.106 24.4785 237.688 24.7567C237.306 25.0698 236.471 25.8176 235.184 27.0002C234.071 28.0436 233.184 28.8436 232.523 29.4001C231.897 29.9566 231.132 30.5132 230.228 31.0697C229.358 31.5914 228.663 31.8001 228.141 31.6958C227.028 31.4523 226.697 30.2175 227.149 27.9915C227.393 26.8436 227.445 25.9219 227.306 25.2263C227.167 24.6698 226.941 24.3393 226.628 24.235C226.176 24.0959 225.497 24.2176 224.593 24.6002C223.689 24.9828 222.889 25.4002 222.193 25.8524C221.532 26.2697 220.576 26.8958 219.324 27.7306C218.28 28.4262 217.48 28.948 216.924 29.2958C216.402 29.6088 215.793 29.9219 215.097 30.2349C214.437 30.5132 213.898 30.6001 213.48 30.4958C212.158 30.2175 211.741 29.1914 212.228 27.4175ZM234.901 27.4175C235.249 26.2002 236.066 24.5306 237.353 22.4089C237.631 21.9568 237.979 21.8698 238.396 22.1481C238.849 22.4263 238.936 22.7741 238.657 23.1915C237.44 25.2089 236.675 26.7567 236.362 27.8349C236.153 28.5654 236.188 28.9654 236.466 29.0349H236.518C236.901 29.1045 238.449 28.2349 241.162 26.4263C242.553 25.5219 243.631 24.8437 244.396 24.3915C245.162 23.9046 246.083 23.4698 247.162 23.0872C248.24 22.6698 249.109 22.5654 249.77 22.7741H249.822C250.657 23.0872 251.196 23.7828 251.44 24.8611C251.648 25.8002 251.614 26.948 251.335 28.3045C251.057 29.5219 250.988 30.1479 251.127 30.1827C251.683 30.2871 253.579 28.8436 256.814 25.8524C258.135 24.6698 259.022 23.9046 259.474 23.5567C259.892 23.2437 260.24 23.2959 260.518 23.7133C260.831 24.1306 260.779 24.4785 260.361 24.7567C259.979 25.0698 259.144 25.8176 257.857 27.0002C256.744 28.0436 255.857 28.8436 255.196 29.4001C254.57 29.9566 253.805 30.5132 252.901 31.0697C252.031 31.5914 251.335 31.8001 250.814 31.6958C249.701 31.4523 249.37 30.2175 249.822 27.9915C250.066 26.8436 250.118 25.9219 249.979 25.2263C249.84 24.6698 249.614 24.3393 249.301 24.235C248.849 24.0959 248.17 24.2176 247.266 24.6002C246.362 24.9828 245.562 25.4002 244.866 25.8524C244.205 26.2697 243.249 26.8958 241.996 27.7306C240.953 28.4262 240.153 28.948 239.596 29.2958C239.075 29.6088 238.466 29.9219 237.77 30.2349C237.11 30.5132 236.57 30.6001 236.153 30.4958C234.831 30.2175 234.414 29.1914 234.901 27.4175ZM260.496 22.3046C260.809 21.8872 261.156 21.835 261.539 22.1481C261.956 22.4611 262.009 22.8263 261.695 23.2437C260.443 24.8089 259.974 26.148 260.287 27.261C260.356 27.6089 260.53 27.8523 260.809 27.9915C261.087 28.2001 261.452 28.2697 261.904 28.2001C264.026 27.9915 266.53 26.061 269.417 22.4089C269.73 21.9915 270.095 21.9394 270.513 22.2524C270.826 22.4959 270.895 22.8089 270.721 23.1915C270.478 23.7133 269.869 24.8263 268.895 26.5306C271.226 25.2784 273.643 24.2698 276.147 23.5046C276.287 23.4698 276.408 23.4698 276.513 23.5046C276.652 23.5393 276.774 23.6089 276.878 23.7133C276.982 23.7828 277.052 23.8872 277.087 24.0263C277.156 24.235 277.139 24.4437 277.034 24.6524C276.93 24.8263 276.774 24.9306 276.565 24.9654C273.295 25.9741 270.217 27.4002 267.33 29.2436L266.808 30.0784L261.904 37.9044C259.087 42.2173 256.896 44.8782 255.33 45.8869C254.496 46.4086 253.817 46.426 253.296 45.939C252.878 45.5564 252.756 44.9304 252.93 44.0608C253.348 41.9043 254.826 39.2435 257.365 36.0783C259.73 33.1218 262.548 30.5653 265.817 28.4088L266.182 28.148L266.495 27.5741C264.861 28.8958 263.382 29.6088 262.061 29.7132C261.226 29.8175 260.513 29.6784 259.922 29.2958C259.365 28.9132 258.982 28.3567 258.774 27.6262C258.356 26.0263 258.93 24.2524 260.496 22.3046ZM254.496 44.5825C255.887 43.713 257.939 41.2087 260.652 37.0696L264.2 31.4871C262.078 33.1566 260.2 35.0001 258.565 37.0174C256.2 39.9739 254.826 42.4086 254.443 44.3217C254.443 44.426 254.443 44.513 254.443 44.5825C254.409 44.6869 254.391 44.7564 254.391 44.7912C254.356 44.826 254.339 44.8434 254.339 44.8434H254.391C254.391 44.7043 254.426 44.6173 254.496 44.5825Z" fill="black"/>
+                  </svg>                                  
+              </div>
+              <div class="col-2 mob_off">
+                <h3></h3>
+              </div>
+              <div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="info_gradient"></div>
+          <div id="imgbox" class="imgbox imgbox_maria">
+            <picture><img class="img_back_main"  src="img/Landing_inv.jpg" alt=""></picture>
+            <div class="lds-dual-ring"></div>
+          </div>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row justify-content-center">
+                <div class="col-3">
+                  <picture><source srcset="img/maria_img_1.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/maria_img_1.jpg" alt="ASTON"></picture>
+                </div>
+                <div class="col-3">
+                  <picture><source srcset="img/maria_img_2.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/maria_img_2.jpg" alt="ASTON"></picture>
+                </div>
+                <div class="col-3">
+                  <picture><source srcset="img/maria_img_3.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/maria_img_3.jpg" alt="ASTON"></picture>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-3">
+                  <picture><source srcset="img/maria_img_4.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/maria_img_4.jpg" alt="ASTON"></picture>
+                </div>
+                <div class="col-3">
+                  <picture><source srcset="img/maria_img_5.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/maria_img_5.jpg" alt="ASTON"></picture>
+                </div>
+                <div class="col-3">
+                  <picture><source srcset="img/maria_img_6.webp" type="image/webp"><img width="100%" class="carousel_img" id="img_back_AS_2" src="img/maria_img_6.jpg" alt="ASTON"></picture>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+          <div class="mobile-carusel" id="gallery-img">
+            <a style="margin-left: 10vw;" href="img/maria_mobile_1.jpg" data-pswp-width="638" data-pswp-height="956"
+              target="_blank" class="mobile-carusel-item">
+              <picture><img width="100%" class="mobile-carusel-item-img" src="img/maria_mobile_1.jpg" alt=''></picture>
+            </a>
+            <a href="img/maria_mobile_2.jpg" data-pswp-width="638" data-pswp-height="956" target="_blank"
+              class="mobile-carusel-item">
+              <picture><img width="100%" class="mobile-carusel-item-img" src="img/maria_mobile_2.jpg" alt=''></picture>
+            </a>
+            <a href="img/maria_mobile_3.jpg" data-pswp-width="638" data-pswp-height="956" target="_blank"
+              class="mobile-carusel-item">
+              <picture><img width="100%" class="mobile-carusel-item-img" src="img/maria_mobile_3.jpg" alt=''></picture>
+            </a>
+            <a href="img/maria_mobile_4.jpg" data-pswp-width="638" data-pswp-height="956" target="_blank"
+              class="mobile-carusel-item">
+              <picture><img width="100%" class="mobile-carusel-item-img" src="img/maria_mobile_4.jpg" alt=''></picture>
+            </a>
+            <a href="img/maria_mobile_5.jpg" data-pswp-width="638" data-pswp-height="956" target="_blank"
+              class="mobile-carusel-item">
+              <picture><img width="100%" class="mobile-carusel-item-img" src="img/maria_mobile_5.jpg" alt=''></picture>
+            </a>
+            <a style="margin-right: 10vw;" href="img/maria_mobile_6.jpg" data-pswp-width="638" data-pswp-height="956"
+              target="_blank" class="mobile-carusel-item">
+              <picture><img width="100%" class="mobile-carusel-item-img" src="img/maria_mobile_6.jpg" alt=''></picture>
+            </a>
+        
+        
+          </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-10">
+      
+          </div>
+        </div>
+      </div>
+        <div class="pg-1_bk_0">
+          <div class="container">
+          <div class="row justify-content-end align-items-center d-flex">
+            <h2>About</h2>
+            <div class="col-3 mob_off"></div>
+            <div class="col-6  mob_on justify-content-end align-items-center d-flex">
+              <p>"The Academy is a project designed to attract users to our course and increase conversion rates. We've created 10 screens
+              that combine visual appeal and informative content to deliver a compelling user experience. The color scheme was
+              carefully chosen to evoke associations with wealth, tranquility, and monkeys.</p>
+            </div>
+            <div class="col-3 mob_off"></div>
+
+          </div>
+          </div>
+        </div>
+        <div class="task_model">
+          <div class="container">
+            <div class="row">
+              <div class="col-4">
+                <h2>TASKS</h2>
+              </div>
+              <div class="col-8 info mob_on_full">
+                <ol>
+                  <li>
+                    Enhance User Experience (UX):
+                    <ul><br>
+                      <li>Develop intuitiveness and ease of navigation, ensuring users can find information quickly. Improve interaction with site
+                      elements to improve usability and minimize errors on the homepage</li><br>
+                    </ul>
+                  </li><br>
+                  <li>
+                    Creating an attractive and modern user interface (UI):
+                    <ul><br>
+                    <li>
+                      Develop a website UI that is stylish and aesthetically pleasing and perfectly aligned with Academy brand identity.
+                      Utilizing modern design trends and elements allowed us to create an original and unforgettable visual identity for the
+                      site.</li>
+                    </ul>
+                  </li><br>
+                  <li>
+                    Increase of conversion rate:
+                    <ul><br>
+                      <li>Develop page layouts based on conversion-focused design principles to optimize successful user interactions such as
+                      orders, and. Reinforce visually appealing elements that attract attention and motivate users to take desired actions.</li>
+                    </ul>
+                  </li><br>
+                  <li>
+                    Develop User flow :
+                    <ul><br>
+                      <li>Develop the possible user flow of such a site</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="container">
+            <div class="row">
+              <div class="col-6 mob_on_full">
+                <h2>Target audience</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 mob_on_full">
+                <p>This course is geared towards individuals between the ages of 20 and 35 who are driven to enhance their financial
+                situation and yearn for the flexibility of remote work.
+                
+                We're targeting those who are actively seeking ways to break free from traditional office settings and embrace the
+                freedom of location-independent work. This includes individuals who are passionate about personal growth, financial
+                independence, and the ability to design a lifestyle that aligns with their values and aspirations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding-bottom: 0px;" class="pg-1_bk_2 pg-1_bk_2_maria ">
+
+          <div class="container text_plus_2">
+            <div style="padding-bottom: 0px;" class="row justify-content-center">
+              <div class="row justify-content-center">
+                <div class="col-8 mob_on_full">
+                  <picture><img id="img_back_DR_3" width="100%" src="img/maria_ver.jpg" alt=""></picture>
+                </div>
+              </div>
+              <div style="padding-bottom: 0px;" class="row">
+                <div class="col-12">
+                  <picture><img  id="img_back_DR_4" style="margin-bottom: 0px; border-radius: 0px;" width="100%" src="img/maria_macbook.png" alt=""></picture>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 100px;" class="fybrid-mob_page container">
+          <div class="row">
+            <div class="col-12 text-center text_drdoogy">
+              <h2>Course<br><span>Images<br></span></h2>
+              <svg width="30" height="25" viewBox="0 0 30 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13.9393 20.0607C14.5251 20.6464 15.4749 20.6464 16.0607 20.0607L25.6066 10.5147C26.1924 9.92893 26.1924 8.97918 25.6066 8.3934C25.0208 7.80761 24.0711 7.80761 23.4853 8.3934L15 16.8787L6.51472 8.3934C5.92893 7.80761 4.97918 7.80761 4.3934 8.3934C3.80761 8.97918 3.80761 9.92893 4.3934 10.5147L13.9393 20.0607ZM13.5 17V19H16.5V17H13.5Z"
+                  fill="black" />
+              </svg>
+            </div>
+            <div class="col-9" id="gallery-img">
+              <picture></picture><img width="100%" class="carousel_img des_off" id="img_back_AS_2" src="img/maria_img_2.jpg" alt="ASTON"></picture>
+              <a href="img/maria_img_2.jpg" data-pswp-width="1784" data-pswp-height="890" target="_blank" class="mobs_off">
+                <picture><img width="100%" class="mobile-carusel-item-img" src="img/maria_img_2.jpg" alt=''></picture>
+              </a>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-3"></div>
+            <div class="col-9" id="gallery-img">
+              <picture><img width="100%" class="carousel_img des_off" id="img_back_AS_2" src="img/maria_img_3.jpg" alt="ASTON"></picture>
+              <a href="img/maria_img_3.jpg" data-pswp-width="1784" data-pswp-height="890" target="_blank" class="mobs_off">
+                <picture><img width="100%" class="mobile-carusel-item-img" src="img/maria_img_3.jpg" alt=''></picture>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="pg-1_bk_3">
+          <div style="margin-bottom: 200px;" class="container fonts_colors_con ">
+            <div class="row">
+              <div class="col-12 font-ek">
+                <h2>COLOR <span>&</span> TYPOGRAPHY</h2>
+              </div>
+            </div>
+            <div class="row colors_box">
+              <div class="col-4 color_bl_1 bl_style"
+                style="border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color); border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);">
+                <h3>#000000</h3>
+              </div>
+              <div class="col-4 color_bl_2 bl_style"
+                style="background-color: #ebebeb; border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);color: black;">
+                <h3 style="color: black;">#ebebeb</h3>
+              </div>
+              <div class="col-4 color_bl_3 bl_style"
+              style="background-color: #ffe800; border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);">
+              <h3 style="color: black;">#ffe800</h3>
+            </div>
+              <div class="fonts_box_back">
+                <div class="fonts_box">
+                  <div class="row fonts_main_box">
+                    <div class="col-2">
+                      <h3>Fonts</h3>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 main_font">
+                      <h3>Roboto</h3>
+                    </div>
+                    <div class="col-12 font_letter">
+                      <h4>
+                        A B C D E F G H I J K L M N O P Q R D T U V W X Y Z
+                      </h4>
+                      <h4>
+                        a d c d e f g h i j k l m n o p q r d t u v w x y z
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="row color_site_box">
+                    <!-- <div class="col-5 color_site color_bl_4" style="background-color: #ff1252;">
+                      <h3>#ff1252</h3>
+                    </div> -->
+                    <div class="col-5 color_site color_bl_5" style="background-color: #ebebeb;">
+                      <h3 style="color: black;">#ebebeb</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pg-1_bk_41">
+          <div class="main_next_mob">
+            <div class="container">
+              <div class="row justify-content-center w-2">
+                <div class="col-10 position-relative">
+                  <h3 class="text-center">Next Project</h3>
+                  <a href="index7.html">
+                    <picture><source srcset="img/model_post_5.webp" type="image/webp"><img id="img_main_5" class="mobile_pic" src="img/model_post_5.jpg" alt=""></picture>
+                  </a>
+                  <div class="row row_info_main">
+                    <div class="col-6">
+                      <h2>MODEL</h2>
+                    </div>
+                    <div class="col-4">
+                      <a href="index14.html">
+                        <svg width="40%" height="40%" viewBox="0 0 30 16" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M29.7071 8.7071C30.0976 8.31658 30.0976 7.68341 29.7071 7.29289L23.3431 0.92893C22.9526 0.538405 22.3195 0.538405 21.9289 0.92893C21.5384 1.31945 21.5384 1.95262 21.9289 2.34314L27.5858 8L21.9289 13.6569C21.5384 14.0474 21.5384 14.6805 21.9289 15.0711C22.3195 15.4616 22.9526 15.4616 23.3431 15.0711L29.7071 8.7071ZM1.11539e-07 9L29 9L29 7L-1.11539e-07 7L1.11539e-07 9Z"
+                            fill="white" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="back_blur">
+                  <div class="position-relative">
+                    <span class="blur_obj blur_obj_model"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+</body>
+
+
+
+
+
+
+
+<!-- <script src="https://cdn.blobity.dev/by.js?autoStart&licenseKey=...&_v=20230909135036"></script>
+  <script src="https://cdn.blobity.dev/by.js?_v=20230909135036"></script> -->
+
+
+
+
+
+
+
+
+
+
+<script src="files/script /swup.js?_v=20230909135036"></script>
+<script src="files/script /fast-image-zoom.js?_v=20230909135036"></script>
+
+<script src="files/script /tilt.js?_v=20230909135036"></script>
+<script type="module" src="files/script /script.js?_v=20230909135036"></script>
+
+
+
+<footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?_v=20230909135036"
+                integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+                crossorigin="anonymous"></script>
+</footer>
+
+</html>
