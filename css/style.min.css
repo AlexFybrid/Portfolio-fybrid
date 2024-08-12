@@ -1847,6 +1847,11 @@ Theme Name: Fybrid Studio
     font-family: "Anek Kannada", sans-serif;
     font-size: 5rem !important;
   }
+  .main_font_inter h3{
+    padding-top: 0px;
+    font-family: "Inter", sans-serif;
+    font-size: 5rem !important;
+  }
   
   .font_letter h4 {
     padding: 20px;

@@ -1847,6 +1847,11 @@ background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1)
   font-family: "Anek Kannada", sans-serif;
   font-size: 5rem !important;
 }
+.main_font_inter h3{
+  padding-top: 0px;
+  font-family: "Inter", sans-serif;
+  font-size: 5rem !important;
+}
 
 .font_letter h4 {
   padding: 20px;
@@ -2762,14 +2767,7 @@ background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1)
   left: 0vh;
   background: radial-gradient(50% 50% at 50% 50%, #EBC895 0%, rgba(217, 217, 217, 0) 100%);
 }
-.blur_obj_ivert{
-  background: radial-gradient(50% 50% at 50% 50%, #d94b0f 0%, rgba(217, 217, 217, 0) 100%);
 
-}
-.blur_obj_maria{
-  background: radial-gradient(50% 50% at 50% 50%, #fff465 0%, rgba(217, 217, 217, 0) 100%);
-
-}
 .blur_obj_senator {
   left: -10vh;
   background: radial-gradient(50% 50% at 50% 50%, #f3c478, rgba(217, 217, 217, 0));
