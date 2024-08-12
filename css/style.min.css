@@ -1726,6 +1726,9 @@ Theme Name: Fybrid Studio
   .imgbox_maria{
     background-color: #ffe800 !important;
   }
+  .imgbox_inver{
+    background-color: #ce5112 !important;
+  }
   .imgbox_maria img {
     width: 70% !important;
   }
