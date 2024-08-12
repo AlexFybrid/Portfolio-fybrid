@@ -1101,6 +1101,9 @@ Theme Name: Fybrid Studio
     .pg-1_bk_2_maria{
         background: linear-gradient(to top, rgba(255, 255, 255, 1), #ffed06 11%, rgb(255, 237, 6) 87.82%, rgba(255, 255, 255, 1));
     }
+    .pg-1_bk_2_invert{
+        background: linear-gradient(to top, rgba(217, 75, 14, 0), #d94b0f 8.4%, #d94b0f 87.82%, rgba(217, 75, 14, 0));
+    }
     
   .img_as img {
     box-shadow: 0px 0px 60px rgb(70, 70, 70);
