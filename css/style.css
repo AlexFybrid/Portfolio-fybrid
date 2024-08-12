@@ -1750,6 +1750,10 @@ background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1)
   width: 45%;
   will-change: transform, opacity;
 }
+.img_back_mai_invert{
+
+  width: 60%;
+}
 
 .img_back {
   width: 600px;
