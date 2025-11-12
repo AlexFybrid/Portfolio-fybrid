@@ -233,22 +233,22 @@ swup.hooks.on('content:replace', () => {
 
 
 
-// function AnimHome() {
-//   if (homeanim === null) {
-//     // $('.blur_obj').addClass('blur_start')
-//     $('.anim-pic').each(function (index) {
-//       var $strip = $(this);
-//       setTimeout(function () {
-//         $strip.addClass('anim-pic-anim');
-//       }, index * 100);
-//     });
+function AnimHome() {
+  if (homeanim === null) {
+    // $('.blur_obj').addClass('blur_start')
+    $('.anim-pic').each(function (index) {
+      var $strip = $(this);
+      setTimeout(function () {
+        $strip.addClass('anim-pic-anim');
+      }, index * 100);
+    });
 
-//     homeanim = true;
-//   } else {
-//     $('.blur_obj').css('opacity', '1')
-//     $('.anim-pic').css('opacity', '1')
-//   }
-// } 
+    homeanim = true;
+  } else {
+    $('.blur_obj').css('opacity', '1')
+    $('.anim-pic').css('opacity', '1')
+  }
+} 
 
 
 
@@ -323,50 +323,4 @@ export default lightbox;
 
 
 
-
-const swiper = new Swiper('.swiper', {
-  spaceBetween: 0,
-  speed:10000,
-	direction: 'horizontal',
-  autoplay: {delay: 0},
-  loop: true,
-  slidesPerView: 1,
-  freeMode: true,
-  grabCursor: true,
-  
-  breakpoints: {
-    640: {
-      slidesPerView: 1.5,
-    },    
-    768: {
-      slidesPerView: 2,
-    },
-    1324: {
-      slidesPerView: 3,
-    },
-  }
-    
-});
-
-
-const swiper2 = new Swiper('.swiper2', {
-  spaceBetween: 0,
-  speed:9000,
-	direction: 'horizontal',
-  autoplay: {delay: 0},
-  loop: true,
-  slidesPerView: 1,
-  allowTouchMove: false,
-  freeMode: true,
-  breakpoints: {
-    640: {
-      slidesPerView: 5,
-    },    
-
-    1324: {
-      slidesPerView: 7,
-    },
-  }
-    
-});
 

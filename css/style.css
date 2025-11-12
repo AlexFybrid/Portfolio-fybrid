@@ -25,7 +25,7 @@ body {
 }
 
 #swup {
-  background-color: #F6F7F9;
+  background-color: #ffffff;
 }
 
 .pagework,
@@ -1023,212 +1023,6 @@ html.is-animating .transition-fade2 {
   color: white;
 }
 
-.start_block{
-  position: relative;
-text-align: center;
-align-items: center;
-height: 750px;
-padding-top: 10vh;
-display: flex;
-justify-content: center;
-z-index: 2;
-}
-
-.bg_pattern{
-position: absolute;
-top: 0;
-left: 0;
-z-index: 0;
-width: 100%;
-height: 50vh;
-  --dot-bg: #F6F7F9; /* Более светлый цвет фона, как на изображении */
-  --dot-color: #cccccc; /* Более светлый цвет точек */
-  --dot-size: 2px;
-  --dot-space: 22px;
-  background:
-    /* Новый градиент для плавного перехода, теперь снизу вверх */
-    linear-gradient(to top, var(--dot-bg) 0%, transparent 40%), /* Снизу цвет фона, затем прозрачный */
-    /* Существующий точечный узор */
-    linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-    linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-    /* Основной цвет фона */
-    var(--dot-color);
-}
-
-.img_start_bg{
-  position: absolute;
-border-radius: inherit;
-inset: 0px;
-background-image: url("https://framerusercontent.com/images/jIzgWv1ngkkV3oGhfkZy0ymiHU.png?width=114&height=114");
-background-repeat: repeat;
-background-position: center top;
-border: 0px;
-background-size: 32px auto;
-}
-.start_block .img_logo1{
-  position: absolute;
-  top: 20%;
-  left: -20%;
-}
-.start_block .img_logo2{
-    position: absolute;
-      top: 0%;
-  right: -20%;
-}
-
-.start_text h1{
-  font-size: 50px;
-}
-.start_text h5{
-  margin: 40px 0px;
-}
-
-
-
-/* Very important for having a smooth transitions. */
-.swiper-free-mode > .swiper-wrapper {
-    transition-timing-function: linear;
-}
-
-
-
-
-
-
-
-.c-carousel__wrapper.swiper {
-  /* margin: 0 48px; */
-  position: static;
-}
-
-.c-carousel__inner-wrapper.swiper-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.c-carousel img {
-  margin: 0 auto;
-}
-
-.brands_block {
-margin: 100px 0px;
-pointer-events: none;
-}
-.brands_block h4{
-  text-align: center;
-  font-weight: bold;
-  color: #9b9b9b;
-}
-.brands_block p{
-  text-align: center;
-  color: #9b9b9b;
-}
-.brands_block svg{
-  width: 100%;
-  padding: 5px 15px;
-  
-}
-.brands_block .swiper2{
-  overflow: hidden;
-    mask-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0) 0%,   /* Полностью прозрачный слева */
-    rgba(0, 0, 0, 1) 15%,  /* Полностью непрозрачный от 15% */
-    rgba(0, 0, 0, 1) 85%,  /* Полностью непрозрачный до 85% */
-    rgba(0, 0, 0, 0) 100%  /* Полностью прозрачный справа */
-  );
-}
-.brands_block .c-carousel{
-  margin: 50px 0px;
-  opacity: 70%;
-}
-
-
-
-
-.button_GIT{
-  background-color: #151619;
-  border-radius: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: min-content;
-  max-width: 300px !important;
-  text-decoration: none;
-  padding: 2px 5px !important;
-  margin-top: 30px !important;
-  box-shadow: #000 0px 11px 20px -8px;
-}
-.button_GIT:hover{
-
-  background-color: #333333;
-
-}
-.button_GIT .text{
-  display: flex;
-  justify-content: center;
- align-items: center;
-margin: 20px 0px 20px 30px;
-height: 100%;
-width: 100%;
-}
-.button_GIT .text p{
-  margin-bottom: 0px;
-  color: white;
-}
-.mini_works_img{
-display: flex;
-
-}
-.mini_works img{
-  margin-left: -15px;
-  border: #F6F7F9 5px solid;
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-  object-fit: cover;
-
-}
-.img_more{
-  position: relative;
-  background-color: white;
-  margin-left: -15px;
-  border: #F6F7F9 5px solid;
-  width: 52px;
-  height: 52px;
-  border-radius: 100px;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-.img_more p{
-  margin-bottom: 0px !important;
-}
-.text_many {
-text-align: start;
-padding: 0px 10px;
-}
-
-.text_block h2{
-  font-size: 50px;
-  font-weight: 600;
-}
-.text_block p{
-  font-size: 50px;
-  font-weight: 600;
-  color: #98ADD7;
-}
-
-.UXUI_block, .Visual_block, .Offline_block{
-background-color: white;
-border-radius: 25px;
-padding: 40px !important;
-border: 1px solid #e3e3e3;
-height: 48.2%;
-}
-.Offline_block{
-  margin-top: calc(var(--bs-gutter-x) * .5);
-}
 .pg-1_bk_0 h2 {
   position: absolute;
   top: 50%;
@@ -2820,12 +2614,7 @@ background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1)
 }
 
 .block_main_home {
-  background-color: white;
-  padding: 10px;
-  padding-bottom: 20px;
-  border-radius: 40px;
   z-index: 1;
-  border: #dadada solid 1px;
   max-width: 700px !important;
 }
 
@@ -2893,10 +2682,10 @@ background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1)
 .mobile_pic {
   position: relative;
   width: 100%;
-  height: 320px;
+  height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 35px;
+  border-radius: 39px;
 }
 
 .row_info_main {
@@ -2918,15 +2707,19 @@ background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 60, 1)
 }
 
 .row_info_main a {
-  /* display: inline-block; */
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  border-radius: 20px;
   position: relative;
 }
 
 .row_info_main a svg {
   position: absolute;
-  top: 100%;
-  left: 100%;
-  /* transform: translate(20%, 0%); */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .back_blur {
