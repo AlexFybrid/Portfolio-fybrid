@@ -348,6 +348,7 @@ const swiper = new Swiper('.swiper', {
     
 });
 
+
 const swiper2 = new Swiper('.swiper2', {
   spaceBetween: 0,
   speed:9000,
